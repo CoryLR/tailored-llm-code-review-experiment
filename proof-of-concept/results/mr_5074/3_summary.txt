@@ -1,0 +1,33 @@
+Proof of Concept: Reviewer + Judge Evaluation for MR !5074
+============================================================
+
+Match Results:
+  Total human comments: 3
+  Full matches:         0
+  Partial matches:      1
+  No matches:           2
+  Novel agent comments: 14
+
+  Recall (full only):       0.00%
+  Recall (full + partial):  33.00%
+
+Novel Agent Comments:
+  [true_positive] Agent #0: Correctly identifies a real inconsistency between the JSDoc comment on the align prop (listing start/end as primary), the implementation (mapping left/right to start/end), and the docs/stories (listing only left/center/right). This is a genuine API documentation bug the human reviewers did not flag.
+  [true_positive] Agent #1: Correctly notes the align prop lacks a validator, which is a real gap compared to similar props elsewhere in the codebase. Actionable and well-supported by examples.
+  [true_positive] Agent #2: Correctly identifies that the mutually exclusive tabs/pills props silently suppress pills without any developer warning. Suggesting a console.warn in created() is a practical recommendation.
+  [true_positive] Agent #3: Identifies an unconventional class-binding pattern where a string value is used as the boolean in a dynamic class object. The edge case of an empty-string key is a real (if harmless) code smell worth noting.
+  [true_positive] Agent #5: Correctly spots a genuine typo ('style style') in a test description string.
+  [true_positive] Agent #6: Correctly flags that the alignment tests only cover the trivial 'center' case and miss the actual mapping logic for 'left' and 'right'. Missing coverage for the non-trivial code path is a real gap.
+  [true_positive] Agent #7: Correctly notes the absence of a test for the tabs+pills=true combination, which would document the component's priority logic and guard against regressions.
+  [true_positive] Agent #8: Spots a real stray character typo in nav.md ('pWith' instead of 'With').
+  [true_positive] Agent #9: Correctly notes that generateProps and the Default story template omit cardHeader and tag props, leaving those features invisible in Storybook. Actionable.
+  [true_positive] Agent #10: Points out the inconsistency between the Storybook options array and the JSDoc values. Follows naturally from agent comment 0, but is still a distinct, useful observation about the stories file.
+  [false_positive] Agent #11: This is a general positive summary praising the implementation rather than actionable review feedback. It does not identify any issue or improvement opportunity.
+  [true_positive] Agent #12: Correctly observes that every test callback is marked async despite containing no await expressions. While harmless, removing the keyword improves clarity and is a legitimate code quality finding.
+  [false_positive] Agent #13: This is purely informational/explanatory — it correctly describes why inheritAttrs:false was removed but concludes 'No action needed.' It is not actionable review feedback and reads more like documentation than a code review finding.
+  [true_positive] Agent #14: Correctly flags that GlNavItem still wraps BNavItem, meaning the migration is incomplete and the vendor dependency is not fully removed. This is a meaningful architectural observation that the human reviewers did not surface.
+
+Duration:
+  Reviewer: 346.4s
+  Judge:    61.1s
+  Total:    407.6s

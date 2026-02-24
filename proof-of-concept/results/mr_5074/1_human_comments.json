@@ -1,0 +1,29 @@
+[
+  {
+    "body": "**suggestion (non-blocking):** I find the BSV specs to be quite repetitive and making assertions that are unrelated to the actual description of the spec. For example I don't know if we need to have `expect(wrapper.element.tagName).toBe('UL');` in every single spec, only the ones related to the `tag` prop.",
+    "author": "peterhegman",
+    "resolved": true,
+    "note_type": "DiffNote",
+    "category": "inline",
+    "file_path": "src/components/base/nav/nav.spec.js",
+    "line_number": 38
+  },
+  {
+    "body": "**nitpick:** we shouldn't need to put `wrapper.destroy()` in our specs",
+    "author": "peterhegman",
+    "resolved": true,
+    "note_type": "DiffNote",
+    "category": "inline",
+    "file_path": "src/components/base/nav/nav.spec.js",
+    "line_number": 43
+  },
+  {
+    "body": "**suggestion (non-blocking):** we could simplify these three assertions into one:\n\n`expect(wrapper.classes()).toEqual(['nav', 'nav-pills'])`;\n\nSuggestion applies to all specs in this file",
+    "author": "peterhegman",
+    "resolved": true,
+    "note_type": "DiffNote",
+    "category": "inline",
+    "file_path": "src/components/base/nav/nav.spec.js",
+    "line_number": 56
+  }
+]

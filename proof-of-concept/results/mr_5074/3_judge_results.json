@@ -1,0 +1,115 @@
+{
+  "matches": [
+    {
+      "human_comment_index": 0,
+      "human_type": "inline",
+      "human_file": "src/components/base/nav/nav.spec.js",
+      "human_line": 38,
+      "human_summary": "BSV specs are repetitive with assertions unrelated to the spec description (e.g., tagName check in every spec, not just the tag-prop spec)",
+      "verdict": "no_match",
+      "matched_agent_comment_index": null,
+      "explanation": "No AI comment specifically identifies the pattern of asserting wrapper.element.tagName in every test regardless of relevance to the spec description. AI comment 4 discusses brittle length assertions but addresses a different specific issue at a different location."
+    },
+    {
+      "human_comment_index": 1,
+      "human_type": "inline",
+      "human_file": "src/components/base/nav/nav.spec.js",
+      "human_line": 43,
+      "human_summary": "wrapper.destroy() should not be needed in specs",
+      "verdict": "no_match",
+      "matched_agent_comment_index": null,
+      "explanation": "No AI comment mentions wrapper.destroy() being unnecessary. This specific cleanup pattern is not addressed anywhere in the AI review."
+    },
+    {
+      "human_comment_index": 2,
+      "human_type": "inline",
+      "human_file": "src/components/base/nav/nav.spec.js",
+      "human_line": 56,
+      "human_summary": "Three separate class assertions could be simplified into one expect(wrapper.classes()).toEqual([...]) call",
+      "verdict": "partial_match",
+      "matched_agent_comment_index": 4,
+      "explanation": "AI comment 4 at line 10 raises a related concern about class assertions and explicitly suggests using expect(wrapper.classes()).toEqual(['nav']) as a better pattern \u2014 the same consolidation technique the human reviewer recommends. However, the AI frames it as a brittleness/resilience issue rather than a simplification issue, is located at a different line, and does not note that three separate assertions can collapse into one. The substance partially overlaps but the precise diagnosis and location differ."
+    }
+  ],
+  "novel_agent_comments": [
+    {
+      "agent_comment_index": 0,
+      "assessment": "true_positive",
+      "explanation": "Correctly identifies a real inconsistency between the JSDoc comment on the align prop (listing start/end as primary), the implementation (mapping left/right to start/end), and the docs/stories (listing only left/center/right). This is a genuine API documentation bug the human reviewers did not flag."
+    },
+    {
+      "agent_comment_index": 1,
+      "assessment": "true_positive",
+      "explanation": "Correctly notes the align prop lacks a validator, which is a real gap compared to similar props elsewhere in the codebase. Actionable and well-supported by examples."
+    },
+    {
+      "agent_comment_index": 2,
+      "assessment": "true_positive",
+      "explanation": "Correctly identifies that the mutually exclusive tabs/pills props silently suppress pills without any developer warning. Suggesting a console.warn in created() is a practical recommendation."
+    },
+    {
+      "agent_comment_index": 3,
+      "assessment": "true_positive",
+      "explanation": "Identifies an unconventional class-binding pattern where a string value is used as the boolean in a dynamic class object. The edge case of an empty-string key is a real (if harmless) code smell worth noting."
+    },
+    {
+      "agent_comment_index": 5,
+      "assessment": "true_positive",
+      "explanation": "Correctly spots a genuine typo ('style style') in a test description string."
+    },
+    {
+      "agent_comment_index": 6,
+      "assessment": "true_positive",
+      "explanation": "Correctly flags that the alignment tests only cover the trivial 'center' case and miss the actual mapping logic for 'left' and 'right'. Missing coverage for the non-trivial code path is a real gap."
+    },
+    {
+      "agent_comment_index": 7,
+      "assessment": "true_positive",
+      "explanation": "Correctly notes the absence of a test for the tabs+pills=true combination, which would document the component's priority logic and guard against regressions."
+    },
+    {
+      "agent_comment_index": 8,
+      "assessment": "true_positive",
+      "explanation": "Spots a real stray character typo in nav.md ('pWith' instead of 'With')."
+    },
+    {
+      "agent_comment_index": 9,
+      "assessment": "true_positive",
+      "explanation": "Correctly notes that generateProps and the Default story template omit cardHeader and tag props, leaving those features invisible in Storybook. Actionable."
+    },
+    {
+      "agent_comment_index": 10,
+      "assessment": "true_positive",
+      "explanation": "Points out the inconsistency between the Storybook options array and the JSDoc values. Follows naturally from agent comment 0, but is still a distinct, useful observation about the stories file."
+    },
+    {
+      "agent_comment_index": 11,
+      "assessment": "false_positive",
+      "explanation": "This is a general positive summary praising the implementation rather than actionable review feedback. It does not identify any issue or improvement opportunity."
+    },
+    {
+      "agent_comment_index": 12,
+      "assessment": "true_positive",
+      "explanation": "Correctly observes that every test callback is marked async despite containing no await expressions. While harmless, removing the keyword improves clarity and is a legitimate code quality finding."
+    },
+    {
+      "agent_comment_index": 13,
+      "assessment": "false_positive",
+      "explanation": "This is purely informational/explanatory \u2014 it correctly describes why inheritAttrs:false was removed but concludes 'No action needed.' It is not actionable review feedback and reads more like documentation than a code review finding."
+    },
+    {
+      "agent_comment_index": 14,
+      "assessment": "true_positive",
+      "explanation": "Correctly flags that GlNavItem still wraps BNavItem, meaning the migration is incomplete and the vendor dependency is not fully removed. This is a meaningful architectural observation that the human reviewers did not surface."
+    }
+  ],
+  "summary": {
+    "total_human_comments": 3,
+    "full_matches": 0,
+    "partial_matches": 1,
+    "no_matches": 2,
+    "novel_agent_comments": 14,
+    "recall_at_full": 0.0,
+    "recall_at_partial": 0.33
+  }
+}

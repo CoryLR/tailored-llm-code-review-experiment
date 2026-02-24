@@ -1,0 +1,10 @@
+[project]
+name = "tailored-llm-code-review-experiment"
+version = "0.1.0"
+description = "Experiment code for Tailored vs. Generic LLM Code Review"
+requires-python = ">=3.13"
+dependencies = [
+    "httpx",
+    "nltk>=3.9.2",
+    "python-dotenv",
+]

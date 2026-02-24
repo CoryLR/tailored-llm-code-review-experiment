@@ -1,0 +1,548 @@
+diff --git a/src/components/base/nav/nav.md b/src/components/base/nav/nav.md
+index af8f69d99..a9d868a82 100644
+--- a/src/components/base/nav/nav.md
++++ b/src/components/base/nav/nav.md
+@@ -1,6 +1,184 @@
+-The navigation component is built with flexbox and provides a strong foundation for building all
+-types of navigation components.
++## Overview
+ 
+-## `GlNavItem`
++The base `<gl-nav>` component is built with flexbox and provides a strong foundation for building all
++types of navigation components. It includes some style overrides (for working with lists), some link
++padding for larger hit areas, and basic disabled styling. No active states are included in the base
++nav.
+ 
+-Use `GlNavItem` to add actionable links (or router links) to your nav. `GlNavItem` wraps [`BNavItem`](https://bootstrap-vue.org/docs/components/navbar#b-nav-item).
++`<gl-nav>` supports the `<gl-nav-item>` child component for actionable links (or router-links).
++
++## Link appearance
++
++Two style variations are supported: `tabs` and `pills`, which support `active` state styling. These
++variants are mutually exclusive - use only one style or the other.
++
++### Tab style
++
++Make the nav look like tabs by setting the `tabs` prop.
++
++```html
++<div>
++  <gl-nav tabs>
++    <gl-nav-item active>Active</gl-nav-item>
++    <gl-nav-item>Link</gl-nav-item>
++    <gl-nav-item>Another Link</gl-nav-item>
++    <gl-nav-item disabled>Disabled</gl-nav-item>
++  </gl-nav>
++</div>
++```
++
++### Pill style
++
++Use the pill style by setting the `pills` prop.
++
++```html
++<div>
++  <gl-nav pills>
++    <gl-nav-item active>Active</gl-nav-item>
++    <gl-nav-item>Link</gl-nav-item>
++    <gl-nav-item>Another Link</gl-nav-item>
++    <gl-nav-item disabled>Disabled</gl-nav-item>
++  </gl-nav>
++</div>
++```
++
++### Small
++
++Make the nav smaller by setting the `small` prop.
++
++```html
++<div>
++  <gl-nav small>
++    <gl-nav-item active>Active</gl-nav-item>
++    <gl-nav-item>Link</gl-nav-item>
++    <gl-nav-item>Another Link</gl-nav-item>
++    <gl-nav-item disabled>Disabled</gl-nav-item>
++  </gl-nav>
++</div>
++```
++
++## Fill and justify
++
++Force your `<gl-nav>` content to extend the full available width.
++
++### Fill
++
++To proportionately fill all available space with your `<gl-nav-item>` components, set the `fill`
++prop. Notice that all horizontal space is occupied, but not every nav item has the same width.
++
++```html
++<div>
++  <gl-nav tabs fill>
++    <gl-nav-item active>Active</gl-nav-item>
++    <gl-nav-item>Link</gl-nav-item>
++    <gl-nav-item>Link with a long name </gl-nav-item>
++    <gl-nav-item disabled>Disabled</gl-nav-item>
++  </gl-nav>
++</div>
++```
++
++### Justified
++
++For equal-width elements, set the `justified` prop instead. All horizontal space will be occupied by
++nav links, but unlike `fill` above, every `<gl-nav-item>` will be the same width.
++
++```html
++<div>
++  <gl-nav tabs justified>
++    <gl-nav-item active>Active</gl-nav-item>
++    <gl-nav-item>Link</gl-nav-item>
++    <gl-nav-item>Link with a long name </gl-nav-item>
++    <gl-nav-item disabled>Disabled</gl-nav-item>
++  </gl-nav>
++</div>
++```
++
++## Alignment
++
++To align your `<gl-nav-item>` components, use the `align` prop. Available values are `left`, `center`
++and `right`.
++
++```html
++<div>
++  <gl-nav tabs align="center">
++    <gl-nav-item active>Active</gl-nav-item>
++    <gl-nav-item>Link</gl-nav-item>
++    <gl-nav-item>Link with a long name </gl-nav-item>
++    <gl-nav-item disabled>Disabled</gl-nav-item>
++  </gl-nav>
++</div>
++```
++
++## Tabbed local content support
++
++See the [`<gl-tabs>`](?path=/docs/base-tabs--docs) component for creating tabbable panes of local
++content (not suited for navigation).
++
++## Card integration
++
++Use a `<gl-nav>` in a [`<gl-card>`](?path=/docs/base-card--docs) header, by enabling the
++`card-header` prop on `<gl-nav>` and setting either the `pills` or `tabs` props:
++
++```html
++<div>
++  <gl-card title="Card Title">
++    <template #header>
++      <gl-nav card-header tabs>
++        <gl-nav-item active>Active</gl-nav-item>
++        <gl-nav-item>Inactive</gl-nav-item>
++      </gl-nav>
++    </template>
++
++    <template #default>
++      <p>With supporting text below as a natural lead-in to additional content.</p>
++      <gl-button variant="primary">Go somewhere</gl-button>
++    </template>
++  </gl-card>
++</div>
++```
++
++**Plain style:**
++
++The `card-header` prop is only needed when you are applying `tabs` or `pills` style. Note that
++we do not have special styling for `active` state plain style nav items.
++
++```html
++<div>
++  <gl-card title="Card Title">
++    <template #header>
++      <gl-nav>
++        <gl-nav-item active>Active</gl-nav-item>
++        <gl-nav-item>Inactive</gl-nav-item>
++      </gl-nav>
++    </template>
++
++    <template #default>
++      <p>pWith supporting text below as a natural lead-in to additional content.</p>
++      <gl-button variant="primary">Go somewhere</gl-button>
++    </template>
++  </gl-card>
++</div>
++```
++
++## Accessibility
++
++If you're using `<gl-nav>` to provide a navigation bar, be sure to add a `role="navigation"` to the
++most logical parent container of `<gl-nav>`, or wrap a `<nav>` element around `<gl-nav>`. Do **not**
++add the role to the `<gl-nav>` itself, as this would prevent it from being announced as an actual
++list by assistive technologies.
++
++### Tabbed interface accessibility
++
++Note that navigation bars, even if visually styled as tabs, should **not** be given
++`role="tablist"`, `role="tab"` or `role="tabpanel"` attributes. These are only appropriate for
++[tabbed interfaces](?path=/docs/base-tabs--docs) that do not change the URL or `$route`, as
++described in the [WAI ARIA Authoring Practices](https://www.w3.org/TR/wai-aria-practices/#tabpanel).
++See [`<gl-tabs>`](?path=/docs/base-tabs--docs) for dynamic tabbed interfaces that are compliant with
++WAI ARIA.
++
++## See also
++
++- [tabs](?path=/docs/base-tabs--docs) to create tabbable panes of local content, even via dropdown
++  menus.
++- [Router Link Support reference](?path=/docs/base-link--docs#router-link-support) for information
++  about router-link specific props available on `<gl-nav-item>`
+diff --git a/src/components/base/nav/nav.spec.js b/src/components/base/nav/nav.spec.js
+index 31a736944..6c85bb71a 100644
+--- a/src/components/base/nav/nav.spec.js
++++ b/src/components/base/nav/nav.spec.js
+@@ -1,19 +1,177 @@
+-import { shallowMount } from '@vue/test-utils';
++import { mount } from '@vue/test-utils';
+ import GlNav from './nav.vue';
+-import GlNavItem from './nav_item.vue';
+ 
+-describe('GlNav', () => {
+-  let wrapper;
++describe('nav', () => {
++  it('has expected default structure', async () => {
++    const wrapper = mount(GlNav);
+ 
+-  describe('Nav style', () => {
+-    it('renders slot content', () => {
+-      wrapper = shallowMount(GlNav, {
+-        slots: {
+-          default: [GlNavItem, GlNavItem],
+-        },
+-      });
++    expect(wrapper.element.tagName).toBe('UL');
++    expect(wrapper.classes()).toContain('nav');
++    expect(wrapper.classes().length).toBe(1);
++    expect(wrapper.text()).toBe('');
+ 
+-      expect(wrapper.findAllComponents(GlNavItem).exists()).toBe(true);
++    wrapper.destroy();
++  });
++
++  it('renders custom root element when prop tag set', async () => {
++    const wrapper = mount(GlNav, {
++      propsData: {
++        tag: 'ol',
++      },
++    });
++
++    expect(wrapper.element.tagName).toBe('OL');
++    expect(wrapper.classes()).toContain('nav');
++    expect(wrapper.classes().length).toBe(1);
++    expect(wrapper.text()).toBe('');
++
++    wrapper.destroy();
++  });
++
++  it('renders default slot content', async () => {
++    const wrapper = mount(GlNav, {
++      slots: {
++        default: 'foobar',
++      },
+     });
++
++    expect(wrapper.element.tagName).toBe('UL');
++    expect(wrapper.classes()).toContain('nav');
++    expect(wrapper.classes().length).toBe(1);
++    expect(wrapper.text()).toBe('foobar');
++
++    wrapper.destroy();
++  });
++
++  it('applies pill style', async () => {
++    const wrapper = mount(GlNav, {
++      propsData: {
++        pills: true,
++      },
++    });
++
++    expect(wrapper.element.tagName).toBe('UL');
++    expect(wrapper.classes()).toContain('nav');
++    expect(wrapper.classes()).toContain('nav-pills');
++    expect(wrapper.classes().length).toBe(2);
++    expect(wrapper.text()).toBe('');
++
++    wrapper.destroy();
++  });
++
++  it('applies tab style', async () => {
++    const wrapper = mount(GlNav, {
++      propsData: {
++        tabs: true,
++      },
++    });
++
++    expect(wrapper.element.tagName).toBe('UL');
++    expect(wrapper.classes()).toContain('nav');
++    expect(wrapper.classes()).toContain('nav-tabs');
++    expect(wrapper.classes().length).toBe(2);
++    expect(wrapper.text()).toBe('');
++
++    wrapper.destroy();
++  });
++
++  it('applies justify style when justified', async () => {
++    const wrapper = mount(GlNav, {
++      propsData: {
++        justified: true,
++      },
++    });
++
++    expect(wrapper.element.tagName).toBe('UL');
++    expect(wrapper.classes()).toContain('nav');
++    expect(wrapper.classes()).toContain('nav-justified');
++    expect(wrapper.classes().length).toBe(2);
++    expect(wrapper.text()).toBe('');
++
++    wrapper.destroy();
++  });
++
++  it('applies fill style style when fill set', async () => {
++    const wrapper = mount(GlNav, {
++      propsData: {
++        fill: true,
++      },
++    });
++
++    expect(wrapper.element.tagName).toBe('UL');
++    expect(wrapper.classes()).toContain('nav');
++    expect(wrapper.classes()).toContain('nav-fill');
++    expect(wrapper.classes().length).toBe(2);
++    expect(wrapper.text()).toBe('');
++
++    wrapper.destroy();
++  });
++
++  it('applies alignment correctly', async () => {
++    const wrapper = mount(GlNav, {
++      propsData: {
++        align: 'center',
++      },
++    });
++
++    expect(wrapper.element.tagName).toBe('UL');
++    expect(wrapper.classes()).toContain('nav');
++    expect(wrapper.classes()).toContain('justify-content-center');
++    expect(wrapper.classes().length).toBe(2);
++    expect(wrapper.text()).toBe('');
++
++    wrapper.destroy();
++  });
++
++  it('applies small style', async () => {
++    const wrapper = mount(GlNav, {
++      propsData: {
++        small: true,
++      },
++    });
++
++    expect(wrapper.element.tagName).toBe('UL');
++    expect(wrapper.classes()).toContain('nav');
++    expect(wrapper.classes()).toContain('small');
++    expect(wrapper.classes().length).toBe(2);
++    expect(wrapper.text()).toBe('');
++
++    wrapper.destroy();
++  });
++
++  it('applies card-header-tabs class when tabs and card-header props set', async () => {
++    const wrapper = mount(GlNav, {
++      propsData: {
++        tabs: true,
++        cardHeader: true,
++      },
++    });
++
++    expect(wrapper.element.tagName).toBe('UL');
++    expect(wrapper.classes()).toContain('nav');
++    expect(wrapper.classes()).toContain('nav-tabs');
++    expect(wrapper.classes()).toContain('card-header-tabs');
++    expect(wrapper.classes().length).toBe(3);
++    expect(wrapper.text()).toBe('');
++
++    wrapper.destroy();
++  });
++
++  it('applies card-header-pills class when pills and card-header props set', async () => {
++    const wrapper = mount(GlNav, {
++      propsData: {
++        pills: true,
++        cardHeader: true,
++      },
++    });
++
++    expect(wrapper.element.tagName).toBe('UL');
++    expect(wrapper.classes()).toContain('nav');
++    expect(wrapper.classes()).toContain('nav-pills');
++    expect(wrapper.classes()).toContain('card-header-pills');
++    expect(wrapper.classes().length).toBe(3);
++    expect(wrapper.text()).toBe('');
++
++    wrapper.destroy();
+   });
+ });
+diff --git a/src/components/base/nav/nav.stories.js b/src/components/base/nav/nav.stories.js
+index fb13d0228..2376973b8 100644
+--- a/src/components/base/nav/nav.stories.js
++++ b/src/components/base/nav/nav.stories.js
+@@ -1,10 +1,25 @@
+ import { getA11yParameters } from '../../../utils/stories_utils';
+ import GlIcon from '../icon/icon.vue';
+-import BVueReadme from '../../../vendor/bootstrap-vue/src/components/nav/README.md';
+ import GlNavItem from './nav_item.vue';
+ import GlNav from './nav.vue';
+ import readme from './nav.md';
+ 
++const generateProps = ({
++  align = '',
++  fill = false,
++  justified = false,
++  pills = false,
++  small = false,
++  tabs = false,
++} = {}) => ({
++  align,
++  fill,
++  justified,
++  pills,
++  small,
++  tabs,
++});
++
+ export const Default = (_args, { argTypes }) => ({
+   props: Object.keys(argTypes),
+   components: {
+@@ -14,14 +29,23 @@ export const Default = (_args, { argTypes }) => ({
+   },
+   template: `
+     <div style="height: 150px">
+-      <gl-nav>
+-        <gl-nav-item active>Active</gl-nav-item>
+-        <gl-nav-item>Link</gl-nav-item>
+-        <gl-nav-item disabled>Disabled</gl-nav-item>
++      <gl-nav
++        :align="align"
++        :fill="fill"
++        :justified="justified"
++        :pills="pills"
++        :small="small"
++        :tabs="tabs"
++      >
++        <gl-nav-item active href='#foo'>Active</gl-nav-item>
++        <gl-nav-item href='#bar'>Link</gl-nav-item>
++        <gl-nav-item disabled href='https://gitlab.com'>Disabled</gl-nav-item>
+       </gl-nav>
+     </div>`,
+ });
+ 
++Default.args = generateProps();
++
+ export default {
+   title: 'base/nav',
+   component: GlNav,
+@@ -30,13 +54,16 @@ export default {
+   },
+   parameters: {
+     a11y: getA11yParameters({ temporarySkipRules: ['link-name'] }),
+-    bootstrapComponent: 'b-nav',
+-    bootstrapDocs: BVueReadme,
+-
+     docs: {
+       description: {
+         component: readme,
+       },
+     },
+   },
++  argTypes: {
++    align: {
++      options: ['left', 'center', 'right'],
++      control: 'select',
++    },
++  },
+ };
+diff --git a/src/components/base/nav/nav.vue b/src/components/base/nav/nav.vue
+index 833b05851..d2b58434c 100644
+--- a/src/components/base/nav/nav.vue
++++ b/src/components/base/nav/nav.vue
+@@ -1,17 +1,70 @@
+ <script>
+-import { BNav } from '../../../vendor/bootstrap-vue/src/components/nav/nav';
+-
+ export default {
+   name: 'GlNav',
+-  components: {
+-    BNav,
++  props: {
++    /**
++     * Align the nav items in the nav: 'start' (or 'left'), 'center', 'end' (or 'right')
++     */
++    align: { type: String, required: false, default: '' },
++    /**
++     * Set this prop when the nav is placed inside a card header
++     */
++    cardHeader: { type: Boolean, required: false, default: false },
++    /**
++     * Proportionately fills all horizontal space with nav items.
++     * All horizontal space is occupied, but not every nav item has the same width
++     */
++    fill: { type: Boolean, required: false, default: false },
++    /**
++     * Fills all horizontal space with nav items, but unlike 'fill', every nav item will be the same width
++     */
++    justified: { type: Boolean, required: false, default: false },
++    /**
++     * Renders the nav items with the appearance of pill buttons
++     */
++    pills: { type: Boolean, required: false, default: false },
++    /**
++     * Makes the nav smaller
++     */
++    small: { type: Boolean, required: false, default: false },
++    /**
++     * Renders the nav items with the appearance of tabs
++     */
++    tabs: { type: Boolean, required: false, default: false },
++    /**
++     * Specify the HTML tag to render instead of the default tag
++     */
++    tag: { type: String, required: false, default: 'ul' },
++  },
++  computed: {
++    justifyContent() {
++      if (!this.align) return '';
++
++      const alignMapping = {
++        left: 'start',
++        right: 'end',
++      };
++
++      return `justify-content-${alignMapping[this.align] || this.align}`;
++    },
++    classes() {
++      return {
++        'nav-tabs': this.tabs,
++        'nav-pills': this.pills && !this.tabs,
++        'card-header-tabs': this.cardHeader && this.tabs,
++        'card-header-pills': this.cardHeader && this.pills && !this.tabs,
++        'nav-fill': this.fill,
++        'nav-justified': this.justified,
++        [this.justifyContent]: this.align,
++        small: this.small,
++      };
++    },
+   },
+-  inheritAttrs: false,
+ };
+ </script>
+ 
+ <template>
+-  <b-nav v-bind="$attrs" v-on="$listeners">
++  <component :is="tag" class="nav" :class="classes">
+     <slot></slot>
+-  </b-nav>
++  </component>
+ </template>

@@ -1,3 +1,9 @@
+# Experiment data (large JSON files from API scraping)
+data/
+
+# Cloned subject project repos (large, used as input data)
+subject-repos/
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[codz]

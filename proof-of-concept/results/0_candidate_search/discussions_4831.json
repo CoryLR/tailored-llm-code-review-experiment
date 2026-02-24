@@ -1,0 +1,1630 @@
+[
+  {
+    "id": "29d194c3fa9d44ff59888429294c2cd7377e4216",
+    "individual_note": true,
+    "notes": [
+      {
+        "id": 2215105944,
+        "type": null,
+        "body": "assigned to @rchanila",
+        "author": {
+          "id": 11214192,
+          "username": "rchanila",
+          "public_email": "rchanila@gitlab.com",
+          "name": "Rahul Chanila",
+          "state": "active",
+          "locked": false,
+          "avatar_url": "https://gitlab.com/uploads/-/system/user/avatar/11214192/avatar.png",
+          "web_url": "https://gitlab.com/rchanila"
+        },
+        "created_at": "2024-11-18T02:32:04.859Z",
+        "updated_at": "2024-11-18T02:32:04.864Z",
+        "system": true,
+        "noteable_id": 343586845,
+        "noteable_type": "MergeRequest",
+        "project_id": 7071551,
+        "resolvable": false,
+        "confidential": false,
+        "internal": false,
+        "imported": false,
+        "imported_from": "none",
+        "noteable_iid": 4831,
+        "commands_changes": {}
+      }
+    ]
+  },
+  {
+    "id": "782111daacd55ab3df71431cce3844b0c26138e4",
+    "individual_note": true,
+    "notes": [
+      {
+        "id": 2215106388,
+        "type": null,
+        "body": "<table>\n  <thead>\n    <tr>\n      <th width=\"5%\"></th>\n      <th width=\"95%\" data-danger-table=\"true\" data-kind=\"Warning\">\n          1 Warning\n      </th>\n     </tr>\n  </thead>\n  <tbody>\n    <tr>\n      <td>:warning:</td>\n      <td data-sticky=\"false\">You've changed some components or directives, but didn't change corresponding<br />\ntests. That's OK as long as you're refactoring existing code. If not, please<br />\nconsider adding/updating tests.</td>\n    </tr>\n  </tbody>\n</table>\n\n## \ud83d\udce6 Patch release ([conventional commits](https://gitlab.com/gitlab-org/gitlab-ui/-/blob/main/doc/contributing/commits.md))\n\n\nThis Merge Request will trigger a _patch release_ of GitLab UI, triggered by commit:\n59bb6b195ce3c0a447a131d87c475554141eb8dc\n\nThis will bump the third part of the version number, e.g. `v1.2.3` -> `v1.2.4`.\n\n\n## Reviewer roulette\n\nChanges that require review have been detected! A merge request is normally\nreviewed by both a reviewer and a maintainer in its primary category and by a\nmaintainer in all other categories.\n\n\n\nTo spread load more evenly across eligible reviewers, Danger has picked a candidate for each\nreview slot. Feel free to\n[override these selections](https://about.gitlab.com/handbook/engineering/projects/#gitlab-ui)\nif you think someone else would be better-suited\nor use the [GitLab Review Workload Dashboard](https://gitlab-org.gitlab.io/gitlab-roulette/?currentProject=gitlab-ui)\nto find other available reviewers.\n\nTo read more on how to use the reviewer roulette, please take a look at the\n[Engineering workflow](https://about.gitlab.com/handbook/engineering/workflow/#basics)\nand [code review guidelines](https://docs.gitlab.com/ee/development/code_review.html).\nPlease consider assigning a reviewer or maintainer who is a\n[domain expert](https://about.gitlab.com/handbook/engineering/projects/#gitlab-ui)\nin the area of the merge request.\n\nOnce you've decided who will review this merge request, mention them as you\nnormally would! Danger does not automatically notify them for you.\n\n| Category | Reviewer | Maintainer |\n| -------- | -------- | ---------- |\n| ~\"frontend\" | `@marina.mosti` [![profile link](https://gitlab-org.gitlab.io/gitlab-roulette/status-png/_user.png){width=12}](https://gitlab.com/marina.mosti) ![current availability](https://gitlab-org.gitlab.io/gitlab-roulette/status-png/marina.mosti.png){width=12} (UTC+1, 10 hours behind author) | `@pburdette` [![profile link](https://gitlab-org.gitlab.io/gitlab-roulette/status-png/_user.png){width=12}](https://gitlab.com/pburdette) ![current availability](https://gitlab-org.gitlab.io/gitlab-roulette/status-png/pburdette.png){width=12} (UTC-5, 16 hours behind author) |\n\n## UX Review\n\n| Component | Reviewer |\n| --------- | -------- |\n| ~\"component:input group\" | [`@chrismicek`](https://gitlab.com/chrismicek) [`@aregnery`](https://gitlab.com/aregnery) [`@jeldergl`](https://gitlab.com/jeldergl) [`@danmh`](https://gitlab.com/danmh) [`@igloude`](https://gitlab.com/igloude) |\n\nIf your Merge Request changes one or more components, please have it reviewed by a Product Designer.\nOne should have been suggested above. Otherwise, or if they are not available, feel free to\nassign to a UX Foundations designer:\n\n * [`@chrismicek`](https://gitlab.com/chrismicek)\n * [`@aregnery`](https://gitlab.com/aregnery)\n * [`@jeldergl`](https://gitlab.com/jeldergl)\n * [`@danmh`](https://gitlab.com/danmh)\n * [`@igloude`](https://gitlab.com/igloude)\n\n\n## Missing spec changes\n\nThe following spec files were expected to have changes based on the changes\nin this Merge Request:\n\n* `src/components/base/form/form_input_group/form_input_group.spec.js`\n\nConsider adding or updating these to ensure new component/directive\nbehaviors are covered by tests.\n\n\n**If needed, you can retry the [\ud83d\udd01 `danger-review` job](https://gitlab.com/gitlab-org/gitlab-ui/-/jobs/8443123777) that generated this comment.**\n\n<p align=\"right\" data-meta=\"generated_by_0db86c\">\n  Generated by :no_entry_sign: <a href=\"https://github.com/danger/danger/\">Danger</a>\n</p>",
+        "author": {
+          "id": 1243277,
+          "username": "ghost1",
+          "public_email": "",
+          "name": "Ghost User",
+          "state": "active",
+          "locked": false,
+          "avatar_url": "https://secure.gravatar.com/avatar/79783106d88279c6c8f94f1f4dec22bdb9f90a8d14c9d6c6628a11430e236cbf?s=80&d=identicon",
+          "web_url": "https://gitlab.com/ghost1"
+        },
+        "created_at": "2024-11-18T02:33:20.128Z",
+        "updated_at": "2024-11-22T04:16:55.385Z",
+        "system": false,
+        "noteable_id": 343586845,
+        "noteable_type": "MergeRequest",
+        "project_id": 7071551,
+        "resolvable": false,
+        "confidential": false,
+        "internal": false,
+        "imported": false,
+        "imported_from": "none",
+        "noteable_iid": 4831,
+        "commands_changes": {}
+      }
+    ]
+  },
+  {
+    "id": "f690cb7f13b2427de5fa8502edbd48663e341b4c",
+    "individual_note": true,
+    "notes": [
+      {
+        "id": 2215132706,
+        "type": null,
+        "body": "added 1 commit\n\n<ul><li>00f60c87 - chore: update snapshots</li></ul>\n\n[Compare with previous version](/gitlab-org/gitlab-ui/-/merge_requests/4831/diffs?diff_id=1184706267&start_sha=59bb6b195ce3c0a447a131d87c475554141eb8dc)",
+        "author": {
+          "id": 1243277,
+          "username": "ghost1",
+          "public_email": "",
+          "name": "Ghost User",
+          "state": "active",
+          "locked": false,
+          "avatar_url": "https://secure.gravatar.com/avatar/79783106d88279c6c8f94f1f4dec22bdb9f90a8d14c9d6c6628a11430e236cbf?s=80&d=identicon",
+          "web_url": "https://gitlab.com/ghost1"
+        },
+        "created_at": "2024-11-18T03:20:53.115Z",
+        "updated_at": "2024-11-18T03:20:53.119Z",
+        "system": true,
+        "noteable_id": 343586845,
+        "noteable_type": "MergeRequest",
+        "project_id": 7071551,
+        "resolvable": false,
+        "confidential": false,
+        "internal": false,
+        "imported": false,
+        "imported_from": "none",
+        "noteable_iid": 4831,
+        "commands_changes": {}
+      }
+    ]
+  },
+  {
+    "id": "f37beb0473a5580bc1c23ee158e6d00b785cbb50",
+    "individual_note": false,
+    "notes": [
+      {
+        "id": 2215132793,
+        "type": "DiscussionNote",
+        "body": "@jeldergl can you please do the ~UX review? Thanks!",
+        "author": {
+          "id": 11214192,
+          "username": "rchanila",
+          "public_email": "rchanila@gitlab.com",
+          "name": "Rahul Chanila",
+          "state": "active",
+          "locked": false,
+          "avatar_url": "https://gitlab.com/uploads/-/system/user/avatar/11214192/avatar.png",
+          "web_url": "https://gitlab.com/rchanila"
+        },
+        "created_at": "2024-11-18T03:21:03.377Z",
+        "updated_at": "2024-11-22T04:15:17.154Z",
+        "system": false,
+        "noteable_id": 343586845,
+        "noteable_type": "MergeRequest",
+        "project_id": 7071551,
+        "resolvable": true,
+        "resolved": true,
+        "resolved_by": {
+          "id": 12410838,
+          "username": "sdejonge",
+          "public_email": "",
+          "name": "Scott de Jonge",
+          "state": "active",
+          "locked": false,
+          "avatar_url": "https://gitlab.com/uploads/-/system/user/avatar/12410838/avatar.png",
+          "web_url": "https://gitlab.com/sdejonge"
+        },
+        "resolved_at": "2024-11-22T04:15:17.154Z",
+        "confidential": false,
+        "internal": false,
+        "imported": false,
+        "imported_from": "none",
+        "noteable_iid": 4831,
+        "commands_changes": {}
+      },
+      {
+        "id": 2216478093,
+        "type": "DiscussionNote",
+        "body": "@rchanila adding ~UX approval based on a review in VoiceOver, NVDA, and JAWS. I think it would be helpful to have @sdejonge review ~frontend from a Foundations perspective too.",
+        "author": {
+          "id": 4017299,
+          "username": "jeldergl",
+          "public_email": "",
+          "name": "Jeremy Elder",
+          "state": "active",
+          "locked": false,
+          "avatar_url": "https://gitlab.com/uploads/-/system/user/avatar/4017299/avatar.png",
+          "web_url": "https://gitlab.com/jeldergl"
+        },
+        "created_at": "2024-11-18T16:46:39.955Z",
+        "updated_at": "2024-11-22T04:15:17.154Z",
+        "system": false,
+        "noteable_id": 343586845,
+        "noteable_type": "MergeRequest",
+        "project_id": 7071551,
+        "resolvable": true,
+        "resolved": true,
+        "resolved_by": {
+          "id": 12410838,
+          "username": "sdejonge",
+          "public_email": "",
+          "name": "Scott de Jonge",
+          "state": "active",
+          "locked": false,
+          "avatar_url": "https://gitlab.com/uploads/-/system/user/avatar/12410838/avatar.png",
+          "web_url": "https://gitlab.com/sdejonge"
+        },
+        "resolved_at": "2024-11-22T04:15:17.154Z",
+        "confidential": false,
+        "internal": false,
+        "imported": false,
+        "imported_from": "none",
+        "noteable_iid": 4831,
+        "commands_changes": {}
+      },
+      {
+        "id": 2216983830,
+        "type": "DiscussionNote",
+        "body": "Thanks @rchanila! Changes look good! Just a small suggestion for consistent description content in Storybook stories. Marking my approval from a foundations perspective.",
+        "author": {
+          "id": 12410838,
+          "username": "sdejonge",
+          "public_email": "",
+          "name": "Scott de Jonge",
+          "state": "active",
+          "locked": false,
+          "avatar_url": "https://gitlab.com/uploads/-/system/user/avatar/12410838/avatar.png",
+          "web_url": "https://gitlab.com/sdejonge"
+        },
+        "created_at": "2024-11-18T23:03:58.567Z",
+        "updated_at": "2024-11-22T04:15:17.154Z",
+        "system": false,
+        "noteable_id": 343586845,
+        "noteable_type": "MergeRequest",
+        "project_id": 7071551,
+        "resolvable": true,
+        "resolved": true,
+        "resolved_by": {
+          "id": 12410838,
+          "username": "sdejonge",
+          "public_email": "",
+          "name": "Scott de Jonge",
+          "state": "active",
+          "locked": false,
+          "avatar_url": "https://gitlab.com/uploads/-/system/user/avatar/12410838/avatar.png",
+          "web_url": "https://gitlab.com/sdejonge"
+        },
+        "resolved_at": "2024-11-22T04:15:17.154Z",
+        "confidential": false,
+        "internal": false,
+        "imported": false,
+        "imported_from": "none",
+        "noteable_iid": 4831,
+        "commands_changes": {}
+      },
+      {
+        "id": 2217513543,
+        "type": "DiscussionNote",
+        "body": "Hey @rchanila approving with a NB comment, and pending the integration failures",
+        "author": {
+          "id": 19402497,
+          "username": "marina.mosti",
+          "public_email": "",
+          "name": "Marina Mosti",
+          "state": "active",
+          "locked": false,
+          "avatar_url": "https://gitlab.com/uploads/-/system/user/avatar/19402497/avatar.png",
+          "web_url": "https://gitlab.com/marina.mosti"
+        },
+        "created_at": "2024-11-19T07:40:52.118Z",
+        "updated_at": "2024-11-22T04:15:17.154Z",
+        "system": false,
+        "noteable_id": 343586845,
+        "noteable_type": "MergeRequest",
+        "project_id": 7071551,
+        "resolvable": true,
+        "resolved": true,
+        "resolved_by": {
+          "id": 12410838,
+          "username": "sdejonge",
+          "public_email": "",
+          "name": "Scott de Jonge",
+          "state": "active",
+          "locked": false,
+          "avatar_url": "https://gitlab.com/uploads/-/system/user/avatar/12410838/avatar.png",
+          "web_url": "https://gitlab.com/sdejonge"
+        },
+        "resolved_at": "2024-11-22T04:15:17.154Z",
+        "confidential": false,
+        "internal": false,
+        "imported": false,
+        "imported_from": "none",
+        "noteable_iid": 4831,
+        "commands_changes": {}
+      },
+      {
+        "id": 2223501215,
+        "type": "DiscussionNote",
+        "body": "@sdejonge The integration branch is now fixed, the remaining failures are snapshot related from  another commit I think. \n\nWe can use the [commits](https://gitlab.com/gitlab-org/gitlab/-/merge_requests/172946/commits) & apply them to the dependency update MR. WDYT?",
+        "author": {
+          "id": 11214192,
+          "username": "rchanila",
+          "public_email": "rchanila@gitlab.com",
+          "name": "Rahul Chanila",
+          "state": "active",
+          "locked": false,
+          "avatar_url": "https://gitlab.com/uploads/-/system/user/avatar/11214192/avatar.png",
+          "web_url": "https://gitlab.com/rchanila"
+        },
+        "created_at": "2024-11-22T03:01:18.465Z",
+        "updated_at": "2024-11-22T04:15:17.154Z",
+        "system": false,
+        "noteable_id": 343586845,
+        "noteable_type": "MergeRequest",
+        "project_id": 7071551,
+        "resolvable": true,
+        "resolved": true,
+        "resolved_by": {
+          "id": 12410838,
+          "username": "sdejonge",
+          "public_email": "",
+          "name": "Scott de Jonge",
+          "state": "active",
+          "locked": false,
+          "avatar_url": "https://gitlab.com/uploads/-/system/user/avatar/12410838/avatar.png",
+          "web_url": "https://gitlab.com/sdejonge"
+        },
+        "resolved_at": "2024-11-22T04:15:17.154Z",
+        "confidential": false,
+        "internal": false,
+        "imported": false,
+        "imported_from": "none",
+        "noteable_iid": 4831,
+        "commands_changes": {}
+      },
+      {
+        "id": 2223548458,
+        "type": "DiscussionNote",
+        "body": "Thanks @rchanila! LGTM \u2705",
+        "author": {
+          "id": 12410838,
+          "username": "sdejonge",
+          "public_email": "",
+          "name": "Scott de Jonge",
+          "state": "active",
+          "locked": false,
+          "avatar_url": "https://gitlab.com/uploads/-/system/user/avatar/12410838/avatar.png",
+          "web_url": "https://gitlab.com/sdejonge"
+        },
+        "created_at": "2024-11-22T04:15:16.121Z",
+        "updated_at": "2024-11-22T04:15:17.154Z",
+        "system": false,
+        "noteable_id": 343586845,
+        "noteable_type": "MergeRequest",
+        "project_id": 7071551,
+        "resolvable": true,
+        "resolved": true,
+        "resolved_by": {
+          "id": 12410838,
+          "username": "sdejonge",
+          "public_email": "",
+          "name": "Scott de Jonge",
+          "state": "active",
+          "locked": false,
+          "avatar_url": "https://gitlab.com/uploads/-/system/user/avatar/12410838/avatar.png",
+          "web_url": "https://gitlab.com/sdejonge"
+        },
+        "resolved_at": "2024-11-22T04:15:17.154Z",
+        "confidential": false,
+        "internal": false,
+        "imported": false,
+        "imported_from": "none",
+        "noteable_iid": 4831,
+        "commands_changes": {}
+      }
+    ]
+  },
+  {
+    "id": "6b8c77840655c157889017bf7059775aff7783d6",
+    "individual_note": true,
+    "notes": [
+      {
+        "id": 2215132807,
+        "type": null,
+        "body": "requested review from @jeldergl",
+        "author": {
+          "id": 11214192,
+          "username": "rchanila",
+          "public_email": "rchanila@gitlab.com",
+          "name": "Rahul Chanila",
+          "state": "active",
+          "locked": false,
+          "avatar_url": "https://gitlab.com/uploads/-/system/user/avatar/11214192/avatar.png",
+          "web_url": "https://gitlab.com/rchanila"
+        },
+        "created_at": "2024-11-18T03:21:04.184Z",
+        "updated_at": "2024-11-18T03:21:04.190Z",
+        "system": true,
+        "noteable_id": 343586845,
+        "noteable_type": "MergeRequest",
+        "project_id": 7071551,
+        "resolvable": false,
+        "confidential": false,
+        "internal": false,
+        "imported": false,
+        "imported_from": "none",
+        "noteable_iid": 4831,
+        "commands_changes": {}
+      }
+    ]
+  },
+  {
+    "id": "baa1b64f8e8d56113605973eca6b6b8183cb71aa",
+    "individual_note": false,
+    "notes": [
+      {
+        "id": 2215133045,
+        "type": "DiscussionNote",
+        "body": "@marina.mosti can you please do the ~frontend review? Thanks!\n\n\nUpdate: There are some failures in [integrations branch for gitlab-org/gitlab](https://gitlab.com/gitlab-org/gitlab/-/merge_requests/172946/pipelines), I'm looking at those.",
+        "author": {
+          "id": 11214192,
+          "username": "rchanila",
+          "public_email": "rchanila@gitlab.com",
+          "name": "Rahul Chanila",
+          "state": "active",
+          "locked": false,
+          "avatar_url": "https://gitlab.com/uploads/-/system/user/avatar/11214192/avatar.png",
+          "web_url": "https://gitlab.com/rchanila"
+        },
+        "created_at": "2024-11-18T03:21:28.317Z",
+        "updated_at": "2024-11-25T12:14:19.151Z",
+        "system": false,
+        "noteable_id": 343586845,
+        "noteable_type": "MergeRequest",
+        "project_id": 7071551,
+        "resolvable": true,
+        "resolved": true,
+        "resolved_by": {
+          "id": 11214192,
+          "username": "rchanila",
+          "public_email": "rchanila@gitlab.com",
+          "name": "Rahul Chanila",
+          "state": "active",
+          "locked": false,
+          "avatar_url": "https://gitlab.com/uploads/-/system/user/avatar/11214192/avatar.png",
+          "web_url": "https://gitlab.com/rchanila"
+        },
+        "resolved_at": "2024-11-25T12:14:19.151Z",
+        "confidential": false,
+        "internal": false,
+        "imported": false,
+        "imported_from": "none",
+        "noteable_iid": 4831,
+        "commands_changes": {}
+      },
+      {
+        "id": 2226113409,
+        "type": "DiscussionNote",
+        "body": "@rchanila I am seeing some seemingly related failures in my own integration MR at https://gitlab.com/gitlab-org/gitlab/-/merge_requests/173277, could they be related to these changes? Failures in [this pipeline](https://gitlab.com/gitlab-org/gitlab/-/pipelines/1556882310) happen in components you changed here :thinking:",
+        "author": {
+          "id": 1607849,
+          "username": "mrincon",
+          "public_email": "mrincon@gitlab.com",
+          "name": "Miguel Rincon",
+          "state": "active",
+          "locked": false,
+          "avatar_url": "https://gitlab.com/uploads/-/system/user/avatar/1607849/avatar.png",
+          "web_url": "https://gitlab.com/mrincon"
+        },
+        "created_at": "2024-11-25T09:11:23.675Z",
+        "updated_at": "2024-11-25T12:14:19.151Z",
+        "system": false,
+        "noteable_id": 343586845,
+        "noteable_type": "MergeRequest",
+        "project_id": 7071551,
+        "resolvable": true,
+        "resolved": true,
+        "resolved_by": {
+          "id": 11214192,
+          "username": "rchanila",
+          "public_email": "rchanila@gitlab.com",
+          "name": "Rahul Chanila",
+          "state": "active",
+          "locked": false,
+          "avatar_url": "https://gitlab.com/uploads/-/system/user/avatar/11214192/avatar.png",
+          "web_url": "https://gitlab.com/rchanila"
+        },
+        "resolved_at": "2024-11-25T12:14:19.151Z",
+        "confidential": false,
+        "internal": false,
+        "imported": false,
+        "imported_from": "none",
+        "noteable_iid": 4831,
+        "commands_changes": {}
+      },
+      {
+        "id": 2226456094,
+        "type": "DiscussionNote",
+        "body": "Yes @mrincon they seem related. I've pushed my changes to [version bump MR](https://gitlab.com/gitlab-org/gitlab/-/merge_requests/171760).",
+        "author": {
+          "id": 11214192,
+          "username": "rchanila",
+          "public_email": "rchanila@gitlab.com",
+          "name": "Rahul Chanila",
+          "state": "active",
+          "locked": false,
+          "avatar_url": "https://gitlab.com/uploads/-/system/user/avatar/11214192/avatar.png",
+          "web_url": "https://gitlab.com/rchanila"
+        },
+        "created_at": "2024-11-25T12:14:18.238Z",
+        "updated_at": "2024-11-25T12:14:19.151Z",
+        "system": false,
+        "noteable_id": 343586845,
+        "noteable_type": "MergeRequest",
+        "project_id": 7071551,
+        "resolvable": true,
+        "resolved": true,
+        "resolved_by": {
+          "id": 11214192,
+          "username": "rchanila",
+          "public_email": "rchanila@gitlab.com",
+          "name": "Rahul Chanila",
+          "state": "active",
+          "locked": false,
+          "avatar_url": "https://gitlab.com/uploads/-/system/user/avatar/11214192/avatar.png",
+          "web_url": "https://gitlab.com/rchanila"
+        },
+        "resolved_at": "2024-11-25T12:14:19.151Z",
+        "confidential": false,
+        "internal": false,
+        "imported": false,
+        "imported_from": "none",
+        "noteable_iid": 4831,
+        "commands_changes": {}
+      }
+    ]
+  },
+  {
+    "id": "8df8585af6b803401928557563b66a144110ca67",
+    "individual_note": true,
+    "notes": [
+      {
+        "id": 2215133049,
+        "type": null,
+        "body": "requested review from @marina.mosti",
+        "author": {
+          "id": 11214192,
+          "username": "rchanila",
+          "public_email": "rchanila@gitlab.com",
+          "name": "Rahul Chanila",
+          "state": "active",
+          "locked": false,
+          "avatar_url": "https://gitlab.com/uploads/-/system/user/avatar/11214192/avatar.png",
+          "web_url": "https://gitlab.com/rchanila"
+        },
+        "created_at": "2024-11-18T03:21:28.744Z",
+        "updated_at": "2024-11-18T03:21:28.750Z",
+        "system": true,
+        "noteable_id": 343586845,
+        "noteable_type": "MergeRequest",
+        "project_id": 7071551,
+        "resolvable": false,
+        "confidential": false,
+        "internal": false,
+        "imported": false,
+        "imported_from": "none",
+        "noteable_iid": 4831,
+        "commands_changes": {}
+      }
+    ]
+  },
+  {
+    "id": "e62fc8578cbe5309081d16af3143906a1798d3c7",
+    "individual_note": true,
+    "notes": [
+      {
+        "id": 2215139016,
+        "type": null,
+        "body": "changed the description",
+        "author": {
+          "id": 11214192,
+          "username": "rchanila",
+          "public_email": "rchanila@gitlab.com",
+          "name": "Rahul Chanila",
+          "state": "active",
+          "locked": false,
+          "avatar_url": "https://gitlab.com/uploads/-/system/user/avatar/11214192/avatar.png",
+          "web_url": "https://gitlab.com/rchanila"
+        },
+        "created_at": "2024-11-18T03:27:45.075Z",
+        "updated_at": "2024-11-18T03:27:45.081Z",
+        "system": true,
+        "noteable_id": 343586845,
+        "noteable_type": "MergeRequest",
+        "project_id": 7071551,
+        "resolvable": false,
+        "confidential": false,
+        "internal": false,
+        "imported": false,
+        "imported_from": "none",
+        "noteable_iid": 4831,
+        "commands_changes": {}
+      }
+    ]
+  },
+  {
+    "id": "b2a87901bb1b128fe6208926b473dee97b1035b0",
+    "individual_note": true,
+    "notes": [
+      {
+        "id": 2215155255,
+        "type": null,
+        "body": "mentioned in merge request gitlab!172537",
+        "author": {
+          "id": 11214192,
+          "username": "rchanila",
+          "public_email": "rchanila@gitlab.com",
+          "name": "Rahul Chanila",
+          "state": "active",
+          "locked": false,
+          "avatar_url": "https://gitlab.com/uploads/-/system/user/avatar/11214192/avatar.png",
+          "web_url": "https://gitlab.com/rchanila"
+        },
+        "created_at": "2024-11-18T03:52:20.784Z",
+        "updated_at": "2024-11-18T03:52:20.805Z",
+        "system": true,
+        "noteable_id": 343586845,
+        "noteable_type": "MergeRequest",
+        "project_id": 7071551,
+        "resolvable": false,
+        "confidential": false,
+        "internal": false,
+        "imported": false,
+        "imported_from": "none",
+        "noteable_iid": 4831,
+        "commands_changes": {}
+      }
+    ]
+  },
+  {
+    "id": "2053f944164a60347fc4475ca1ccb6551b9685b7",
+    "individual_note": true,
+    "notes": [
+      {
+        "id": 2216478110,
+        "type": null,
+        "body": "requested review from @sdejonge",
+        "author": {
+          "id": 4017299,
+          "username": "jeldergl",
+          "public_email": "",
+          "name": "Jeremy Elder",
+          "state": "active",
+          "locked": false,
+          "avatar_url": "https://gitlab.com/uploads/-/system/user/avatar/4017299/avatar.png",
+          "web_url": "https://gitlab.com/jeldergl"
+        },
+        "created_at": "2024-11-18T16:46:40.649Z",
+        "updated_at": "2024-11-18T16:46:40.654Z",
+        "system": true,
+        "noteable_id": 343586845,
+        "noteable_type": "MergeRequest",
+        "project_id": 7071551,
+        "resolvable": false,
+        "confidential": false,
+        "internal": false,
+        "imported": false,
+        "imported_from": "none",
+        "noteable_iid": 4831,
+        "commands_changes": {}
+      }
+    ]
+  },
+  {
+    "id": "671f4f12107e64d9669517768b16eb73b3781022",
+    "individual_note": true,
+    "notes": [
+      {
+        "id": 2216478195,
+        "type": null,
+        "body": "approved this merge request",
+        "author": {
+          "id": 4017299,
+          "username": "jeldergl",
+          "public_email": "",
+          "name": "Jeremy Elder",
+          "state": "active",
+          "locked": false,
+          "avatar_url": "https://gitlab.com/uploads/-/system/user/avatar/4017299/avatar.png",
+          "web_url": "https://gitlab.com/jeldergl"
+        },
+        "created_at": "2024-11-18T16:46:45.029Z",
+        "updated_at": "2024-11-18T16:46:45.050Z",
+        "system": true,
+        "noteable_id": 343586845,
+        "noteable_type": "MergeRequest",
+        "project_id": 7071551,
+        "resolvable": false,
+        "confidential": false,
+        "internal": false,
+        "imported": false,
+        "imported_from": "none",
+        "noteable_iid": 4831,
+        "commands_changes": {}
+      }
+    ]
+  },
+  {
+    "id": "8a70344d9e367c86862c0fe04337fe8d72042f96",
+    "individual_note": false,
+    "notes": [
+      {
+        "id": 2216983814,
+        "type": "DiffNote",
+        "body": "**suggestion:** remove explicitly setting `label` and `description` props to instead rely on defaults provided from `generateProps` so that they are consistent with other stories, i.e. `description` provides some context to it's usage:\n\n> form group description (used as help text).\n\n```suggestion:-3+0\nWithFormInputGroup.args = generateProps();\n```",
+        "author": {
+          "id": 12410838,
+          "username": "sdejonge",
+          "public_email": "",
+          "name": "Scott de Jonge",
+          "state": "active",
+          "locked": false,
+          "avatar_url": "https://gitlab.com/uploads/-/system/user/avatar/12410838/avatar.png",
+          "web_url": "https://gitlab.com/sdejonge"
+        },
+        "created_at": "2024-11-18T23:03:57.671Z",
+        "updated_at": "2024-11-22T04:14:21.860Z",
+        "system": false,
+        "noteable_id": 343586845,
+        "noteable_type": "MergeRequest",
+        "project_id": 7071551,
+        "commit_id": null,
+        "position": {
+          "base_sha": "37304aa301b745f1dec1f5648b04648ea0746294",
+          "start_sha": "37304aa301b745f1dec1f5648b04648ea0746294",
+          "head_sha": "00f60c8754944007c4254e2c322eea6781804189",
+          "old_path": "src/components/base/form/form_group/form_group.stories.js",
+          "new_path": "src/components/base/form/form_group/form_group.stories.js",
+          "position_type": "text",
+          "old_line": null,
+          "new_line": 179,
+          "line_range": {
+            "start": {
+              "line_code": "e2d183ae05994718a06a3715cfcd465dc18c9ca8_161_176",
+              "type": "new",
+              "old_line": null,
+              "new_line": 176
+            },
+            "end": {
+              "line_code": "e2d183ae05994718a06a3715cfcd465dc18c9ca8_161_179",
+              "type": "new",
+              "old_line": null,
+              "new_line": 179
+            }
+          }
+        },
+        "resolvable": true,
+        "resolved": true,
+        "resolved_by": {
+          "id": 12410838,
+          "username": "sdejonge",
+          "public_email": "",
+          "name": "Scott de Jonge",
+          "state": "active",
+          "locked": false,
+          "avatar_url": "https://gitlab.com/uploads/-/system/user/avatar/12410838/avatar.png",
+          "web_url": "https://gitlab.com/sdejonge"
+        },
+        "resolved_at": "2024-11-22T04:14:21.860Z",
+        "suggestions": [
+          {
+            "id": 9084391,
+            "from_line": 176,
+            "to_line": 179,
+            "appliable": false,
+            "applied": false,
+            "from_content": "WithFormInputGroup.args = generateProps({\n  label: 'Label',\n  description: 'description',\n});\n",
+            "to_content": "WithFormInputGroup.args = generateProps();\n"
+          }
+        ],
+        "confidential": false,
+        "internal": false,
+        "imported": false,
+        "imported_from": "none",
+        "noteable_iid": 4831,
+        "commands_changes": {}
+      },
+      {
+        "id": 2217024554,
+        "type": "DiffNote",
+        "body": "changed this line in [version 3 of the diff](/gitlab-org/gitlab-ui/-/merge_requests/4831/diffs?diff_id=1185924633&start_sha=00f60c8754944007c4254e2c322eea6781804189#e2d183ae05994718a06a3715cfcd465dc18c9ca8_179_176)",
+        "author": {
+          "id": 11214192,
+          "username": "rchanila",
+          "public_email": "rchanila@gitlab.com",
+          "name": "Rahul Chanila",
+          "state": "active",
+          "locked": false,
+          "avatar_url": "https://gitlab.com/uploads/-/system/user/avatar/11214192/avatar.png",
+          "web_url": "https://gitlab.com/rchanila"
+        },
+        "created_at": "2024-11-19T00:04:39.864Z",
+        "updated_at": "2024-11-19T00:04:39.864Z",
+        "system": true,
+        "noteable_id": 343586845,
+        "noteable_type": "MergeRequest",
+        "project_id": 7071551,
+        "commit_id": null,
+        "position": {
+          "base_sha": "37304aa301b745f1dec1f5648b04648ea0746294",
+          "start_sha": "37304aa301b745f1dec1f5648b04648ea0746294",
+          "head_sha": "00f60c8754944007c4254e2c322eea6781804189",
+          "old_path": "src/components/base/form/form_group/form_group.stories.js",
+          "new_path": "src/components/base/form/form_group/form_group.stories.js",
+          "position_type": "text",
+          "old_line": null,
+          "new_line": 179,
+          "line_range": {
+            "start": {
+              "line_code": "e2d183ae05994718a06a3715cfcd465dc18c9ca8_161_176",
+              "type": "new",
+              "old_line": null,
+              "new_line": 176
+            },
+            "end": {
+              "line_code": "e2d183ae05994718a06a3715cfcd465dc18c9ca8_161_179",
+              "type": "new",
+              "old_line": null,
+              "new_line": 179
+            }
+          }
+        },
+        "resolvable": false,
+        "suggestions": [],
+        "confidential": false,
+        "internal": false,
+        "imported": false,
+        "imported_from": "none",
+        "noteable_iid": 4831,
+        "commands_changes": {}
+      },
+      {
+        "id": 2217030368,
+        "type": "DiffNote",
+        "body": "Thanks, updated.",
+        "author": {
+          "id": 11214192,
+          "username": "rchanila",
+          "public_email": "rchanila@gitlab.com",
+          "name": "Rahul Chanila",
+          "state": "active",
+          "locked": false,
+          "avatar_url": "https://gitlab.com/uploads/-/system/user/avatar/11214192/avatar.png",
+          "web_url": "https://gitlab.com/rchanila"
+        },
+        "created_at": "2024-11-19T00:09:20.452Z",
+        "updated_at": "2024-11-22T04:14:21.860Z",
+        "system": false,
+        "noteable_id": 343586845,
+        "noteable_type": "MergeRequest",
+        "project_id": 7071551,
+        "commit_id": null,
+        "position": {
+          "base_sha": "37304aa301b745f1dec1f5648b04648ea0746294",
+          "start_sha": "37304aa301b745f1dec1f5648b04648ea0746294",
+          "head_sha": "00f60c8754944007c4254e2c322eea6781804189",
+          "old_path": "src/components/base/form/form_group/form_group.stories.js",
+          "new_path": "src/components/base/form/form_group/form_group.stories.js",
+          "position_type": "text",
+          "old_line": null,
+          "new_line": 179,
+          "line_range": {
+            "start": {
+              "line_code": "e2d183ae05994718a06a3715cfcd465dc18c9ca8_161_176",
+              "type": "new",
+              "old_line": null,
+              "new_line": 176
+            },
+            "end": {
+              "line_code": "e2d183ae05994718a06a3715cfcd465dc18c9ca8_161_179",
+              "type": "new",
+              "old_line": null,
+              "new_line": 179
+            }
+          }
+        },
+        "resolvable": true,
+        "resolved": true,
+        "resolved_by": {
+          "id": 12410838,
+          "username": "sdejonge",
+          "public_email": "",
+          "name": "Scott de Jonge",
+          "state": "active",
+          "locked": false,
+          "avatar_url": "https://gitlab.com/uploads/-/system/user/avatar/12410838/avatar.png",
+          "web_url": "https://gitlab.com/sdejonge"
+        },
+        "resolved_at": "2024-11-22T04:14:21.860Z",
+        "suggestions": [],
+        "confidential": false,
+        "internal": false,
+        "imported": false,
+        "imported_from": "none",
+        "noteable_iid": 4831,
+        "commands_changes": {}
+      }
+    ]
+  },
+  {
+    "id": "3fae1cb17c94a77810d74e809e4a18222820348a",
+    "individual_note": false,
+    "notes": [
+      {
+        "id": 2216983823,
+        "type": "DiffNote",
+        "body": "**praise:** great work on the investigation https://gitlab.com/gitlab-org/gitlab-ui/-/issues/3007#note_2215102350 and fix here! This seems to resolve a few a11y issues in the integration branch where `readonly` https://gitlab.com/gitlab-org/gitlab/-/jobs/8395951309 and `aria-label` https://gitlab.com/gitlab-org/gitlab/-/jobs/8395951312 are being bound to the parent `<div>` in `GlFormInputGroup`.",
+        "author": {
+          "id": 12410838,
+          "username": "sdejonge",
+          "public_email": "",
+          "name": "Scott de Jonge",
+          "state": "active",
+          "locked": false,
+          "avatar_url": "https://gitlab.com/uploads/-/system/user/avatar/12410838/avatar.png",
+          "web_url": "https://gitlab.com/sdejonge"
+        },
+        "created_at": "2024-11-18T23:03:58.095Z",
+        "updated_at": "2024-11-22T04:14:23.421Z",
+        "system": false,
+        "noteable_id": 343586845,
+        "noteable_type": "MergeRequest",
+        "project_id": 7071551,
+        "commit_id": null,
+        "position": {
+          "base_sha": "37304aa301b745f1dec1f5648b04648ea0746294",
+          "start_sha": "a055605734d9e08c6c313fa47c8f6e9c6f5907b5",
+          "head_sha": "6fe649db0d74b1149a8e0bba9e12bc5000ae1984",
+          "old_path": "src/components/base/form/form_input_group/form_input_group.vue",
+          "new_path": "src/components/base/form/form_input_group/form_input_group.vue",
+          "position_type": "text",
+          "old_line": null,
+          "new_line": 21,
+          "line_range": {
+            "start": {
+              "line_code": "73e4819e8e17a5892bd8b83c3c0461e335a66cdf_21_21",
+              "type": "new",
+              "old_line": null,
+              "new_line": 21
+            },
+            "end": {
+              "line_code": "73e4819e8e17a5892bd8b83c3c0461e335a66cdf_21_21",
+              "type": "new",
+              "old_line": null,
+              "new_line": 21
+            }
+          }
+        },
+        "resolvable": true,
+        "resolved": true,
+        "resolved_by": {
+          "id": 12410838,
+          "username": "sdejonge",
+          "public_email": "",
+          "name": "Scott de Jonge",
+          "state": "active",
+          "locked": false,
+          "avatar_url": "https://gitlab.com/uploads/-/system/user/avatar/12410838/avatar.png",
+          "web_url": "https://gitlab.com/sdejonge"
+        },
+        "resolved_at": "2024-11-22T04:14:23.421Z",
+        "suggestions": [],
+        "confidential": false,
+        "internal": false,
+        "imported": false,
+        "imported_from": "none",
+        "noteable_iid": 4831,
+        "commands_changes": {}
+      },
+      {
+        "id": 2217512267,
+        "type": "DiffNote",
+        "body": "more praise: Echoing the above, plus thank you for taking the time to dig into my comment regarding this and finding a fix",
+        "author": {
+          "id": 19402497,
+          "username": "marina.mosti",
+          "public_email": "",
+          "name": "Marina Mosti",
+          "state": "active",
+          "locked": false,
+          "avatar_url": "https://gitlab.com/uploads/-/system/user/avatar/19402497/avatar.png",
+          "web_url": "https://gitlab.com/marina.mosti"
+        },
+        "created_at": "2024-11-19T07:40:15.494Z",
+        "updated_at": "2024-11-22T04:14:23.421Z",
+        "system": false,
+        "noteable_id": 343586845,
+        "noteable_type": "MergeRequest",
+        "project_id": 7071551,
+        "commit_id": null,
+        "position": {
+          "base_sha": "37304aa301b745f1dec1f5648b04648ea0746294",
+          "start_sha": "a055605734d9e08c6c313fa47c8f6e9c6f5907b5",
+          "head_sha": "6fe649db0d74b1149a8e0bba9e12bc5000ae1984",
+          "old_path": "src/components/base/form/form_input_group/form_input_group.vue",
+          "new_path": "src/components/base/form/form_input_group/form_input_group.vue",
+          "position_type": "text",
+          "old_line": null,
+          "new_line": 21,
+          "line_range": {
+            "start": {
+              "line_code": "73e4819e8e17a5892bd8b83c3c0461e335a66cdf_21_21",
+              "type": "new",
+              "old_line": null,
+              "new_line": 21
+            },
+            "end": {
+              "line_code": "73e4819e8e17a5892bd8b83c3c0461e335a66cdf_21_21",
+              "type": "new",
+              "old_line": null,
+              "new_line": 21
+            }
+          }
+        },
+        "resolvable": true,
+        "resolved": true,
+        "resolved_by": {
+          "id": 12410838,
+          "username": "sdejonge",
+          "public_email": "",
+          "name": "Scott de Jonge",
+          "state": "active",
+          "locked": false,
+          "avatar_url": "https://gitlab.com/uploads/-/system/user/avatar/12410838/avatar.png",
+          "web_url": "https://gitlab.com/sdejonge"
+        },
+        "resolved_at": "2024-11-22T04:14:23.421Z",
+        "suggestions": [],
+        "confidential": false,
+        "internal": false,
+        "imported": false,
+        "imported_from": "none",
+        "noteable_iid": 4831,
+        "commands_changes": {}
+      }
+    ]
+  },
+  {
+    "id": "44524da67f40b13f5e618b5b02fbc0e2f5a7b59c",
+    "individual_note": true,
+    "notes": [
+      {
+        "id": 2216983827,
+        "type": null,
+        "body": "approved this merge request",
+        "author": {
+          "id": 12410838,
+          "username": "sdejonge",
+          "public_email": "",
+          "name": "Scott de Jonge",
+          "state": "active",
+          "locked": false,
+          "avatar_url": "https://gitlab.com/uploads/-/system/user/avatar/12410838/avatar.png",
+          "web_url": "https://gitlab.com/sdejonge"
+        },
+        "created_at": "2024-11-18T23:03:58.505Z",
+        "updated_at": "2024-11-18T23:03:58.518Z",
+        "system": true,
+        "noteable_id": 343586845,
+        "noteable_type": "MergeRequest",
+        "project_id": 7071551,
+        "resolvable": false,
+        "confidential": false,
+        "internal": false,
+        "imported": false,
+        "imported_from": "none",
+        "noteable_iid": 4831,
+        "commands_changes": {}
+      }
+    ]
+  },
+  {
+    "id": "06ff1b7c3d94e00f609a2455c7b87fba8e66a19c",
+    "individual_note": true,
+    "notes": [
+      {
+        "id": 2217024563,
+        "type": null,
+        "body": "added 1 commit\n\n<ul><li>7820f0e7 - refactor: form group story props</li></ul>\n\n[Compare with previous version](/gitlab-org/gitlab-ui/-/merge_requests/4831/diffs?diff_id=1185924633&start_sha=00f60c8754944007c4254e2c322eea6781804189)",
+        "author": {
+          "id": 11214192,
+          "username": "rchanila",
+          "public_email": "rchanila@gitlab.com",
+          "name": "Rahul Chanila",
+          "state": "active",
+          "locked": false,
+          "avatar_url": "https://gitlab.com/uploads/-/system/user/avatar/11214192/avatar.png",
+          "web_url": "https://gitlab.com/rchanila"
+        },
+        "created_at": "2024-11-19T00:04:40.603Z",
+        "updated_at": "2024-11-19T00:04:40.608Z",
+        "system": true,
+        "noteable_id": 343586845,
+        "noteable_type": "MergeRequest",
+        "project_id": 7071551,
+        "resolvable": false,
+        "confidential": false,
+        "internal": false,
+        "imported": false,
+        "imported_from": "none",
+        "noteable_iid": 4831,
+        "commands_changes": {}
+      }
+    ]
+  },
+  {
+    "id": "02095d84c66af2652313e8ecec3b4989ff8c0991",
+    "individual_note": true,
+    "notes": [
+      {
+        "id": 2217040215,
+        "type": null,
+        "body": "added 1 commit\n\n<ul><li>6fe649db - chore: update snapshots</li></ul>\n\n[Compare with previous version](/gitlab-org/gitlab-ui/-/merge_requests/4831/diffs?diff_id=1185934444&start_sha=7820f0e76236d6b4391f3f30d0d58c9b9ea670cf)",
+        "author": {
+          "id": 1243277,
+          "username": "ghost1",
+          "public_email": "",
+          "name": "Ghost User",
+          "state": "active",
+          "locked": false,
+          "avatar_url": "https://secure.gravatar.com/avatar/79783106d88279c6c8f94f1f4dec22bdb9f90a8d14c9d6c6628a11430e236cbf?s=80&d=identicon",
+          "web_url": "https://gitlab.com/ghost1"
+        },
+        "created_at": "2024-11-19T00:26:16.285Z",
+        "updated_at": "2024-11-19T00:26:16.289Z",
+        "system": true,
+        "noteable_id": 343586845,
+        "noteable_type": "MergeRequest",
+        "project_id": 7071551,
+        "resolvable": false,
+        "confidential": false,
+        "internal": false,
+        "imported": false,
+        "imported_from": "none",
+        "noteable_iid": 4831,
+        "commands_changes": {}
+      }
+    ]
+  },
+  {
+    "id": "22e881d8e2ce29a2df0f7c78f69acb2e7a0fca26",
+    "individual_note": false,
+    "notes": [
+      {
+        "id": 2217512308,
+        "type": "DiffNote",
+        "body": "suggestion NB: I like the storybook story solution for this, but I am a little concerned that we are not also adding the `append` `GlInputGroupText` and testing it. If you have the time, can you also do this? I think it'll give us peace of mind to know that they are both correctly read for the user",
+        "author": {
+          "id": 19402497,
+          "username": "marina.mosti",
+          "public_email": "",
+          "name": "Marina Mosti",
+          "state": "active",
+          "locked": false,
+          "avatar_url": "https://gitlab.com/uploads/-/system/user/avatar/19402497/avatar.png",
+          "web_url": "https://gitlab.com/marina.mosti"
+        },
+        "created_at": "2024-11-19T07:40:16.503Z",
+        "updated_at": "2024-11-22T04:14:26.231Z",
+        "system": false,
+        "noteable_id": 343586845,
+        "noteable_type": "MergeRequest",
+        "project_id": 7071551,
+        "commit_id": null,
+        "position": {
+          "base_sha": "37304aa301b745f1dec1f5648b04648ea0746294",
+          "start_sha": "a055605734d9e08c6c313fa47c8f6e9c6f5907b5",
+          "head_sha": "6fe649db0d74b1149a8e0bba9e12bc5000ae1984",
+          "old_path": "src/components/base/form/form_group/form_group.stories.js",
+          "new_path": "src/components/base/form/form_group/form_group.stories.js",
+          "position_type": "text",
+          "old_line": null,
+          "new_line": 170,
+          "line_range": {
+            "start": {
+              "line_code": "e2d183ae05994718a06a3715cfcd465dc18c9ca8_161_163",
+              "type": "new",
+              "old_line": null,
+              "new_line": 163
+            },
+            "end": {
+              "line_code": "e2d183ae05994718a06a3715cfcd465dc18c9ca8_161_170",
+              "type": "new",
+              "old_line": null,
+              "new_line": 170
+            }
+          }
+        },
+        "resolvable": true,
+        "resolved": true,
+        "resolved_by": {
+          "id": 12410838,
+          "username": "sdejonge",
+          "public_email": "",
+          "name": "Scott de Jonge",
+          "state": "active",
+          "locked": false,
+          "avatar_url": "https://gitlab.com/uploads/-/system/user/avatar/12410838/avatar.png",
+          "web_url": "https://gitlab.com/sdejonge"
+        },
+        "resolved_at": "2024-11-22T04:14:26.231Z",
+        "suggestions": [],
+        "confidential": false,
+        "internal": false,
+        "imported": false,
+        "imported_from": "none",
+        "noteable_iid": 4831,
+        "commands_changes": {}
+      },
+      {
+        "id": 2223501206,
+        "type": "DiffNote",
+        "body": "I've tried to focus on fixing the description here. \n\nI did not add the append variant since we know there is a :bug:. Since this needs some more [investigation](https://gitlab.com/gitlab-org/gitlab/-/merge_requests/172537#note_2212522208), maybe I can open a new issue for the append text not being announced?\n\nThoughts? @marina.mosti",
+        "author": {
+          "id": 11214192,
+          "username": "rchanila",
+          "public_email": "rchanila@gitlab.com",
+          "name": "Rahul Chanila",
+          "state": "active",
+          "locked": false,
+          "avatar_url": "https://gitlab.com/uploads/-/system/user/avatar/11214192/avatar.png",
+          "web_url": "https://gitlab.com/rchanila"
+        },
+        "created_at": "2024-11-22T03:01:17.490Z",
+        "updated_at": "2024-11-22T04:59:12.940Z",
+        "system": false,
+        "noteable_id": 343586845,
+        "noteable_type": "MergeRequest",
+        "project_id": 7071551,
+        "commit_id": null,
+        "position": {
+          "base_sha": "37304aa301b745f1dec1f5648b04648ea0746294",
+          "start_sha": "a055605734d9e08c6c313fa47c8f6e9c6f5907b5",
+          "head_sha": "6fe649db0d74b1149a8e0bba9e12bc5000ae1984",
+          "old_path": "src/components/base/form/form_group/form_group.stories.js",
+          "new_path": "src/components/base/form/form_group/form_group.stories.js",
+          "position_type": "text",
+          "old_line": null,
+          "new_line": 170,
+          "line_range": {
+            "start": {
+              "line_code": "e2d183ae05994718a06a3715cfcd465dc18c9ca8_161_163",
+              "type": "new",
+              "old_line": null,
+              "new_line": 163
+            },
+            "end": {
+              "line_code": "e2d183ae05994718a06a3715cfcd465dc18c9ca8_161_170",
+              "type": "new",
+              "old_line": null,
+              "new_line": 170
+            }
+          }
+        },
+        "resolvable": true,
+        "resolved": true,
+        "resolved_by": {
+          "id": 12410838,
+          "username": "sdejonge",
+          "public_email": "",
+          "name": "Scott de Jonge",
+          "state": "active",
+          "locked": false,
+          "avatar_url": "https://gitlab.com/uploads/-/system/user/avatar/12410838/avatar.png",
+          "web_url": "https://gitlab.com/sdejonge"
+        },
+        "resolved_at": "2024-11-22T04:14:26.231Z",
+        "suggestions": [],
+        "confidential": false,
+        "internal": false,
+        "imported": false,
+        "imported_from": "none",
+        "noteable_iid": 4831,
+        "commands_changes": {}
+      },
+      {
+        "id": 2223811069,
+        "type": "DiffNote",
+        "body": "Sounds good to me @rchanila thank you",
+        "author": {
+          "id": 19402497,
+          "username": "marina.mosti",
+          "public_email": "",
+          "name": "Marina Mosti",
+          "state": "active",
+          "locked": false,
+          "avatar_url": "https://gitlab.com/uploads/-/system/user/avatar/19402497/avatar.png",
+          "web_url": "https://gitlab.com/marina.mosti"
+        },
+        "created_at": "2024-11-22T08:47:06.731Z",
+        "updated_at": "2024-11-22T08:47:06.601Z",
+        "system": false,
+        "noteable_id": 343586845,
+        "noteable_type": "MergeRequest",
+        "project_id": 7071551,
+        "commit_id": null,
+        "position": {
+          "base_sha": "37304aa301b745f1dec1f5648b04648ea0746294",
+          "start_sha": "a055605734d9e08c6c313fa47c8f6e9c6f5907b5",
+          "head_sha": "6fe649db0d74b1149a8e0bba9e12bc5000ae1984",
+          "old_path": "src/components/base/form/form_group/form_group.stories.js",
+          "new_path": "src/components/base/form/form_group/form_group.stories.js",
+          "position_type": "text",
+          "old_line": null,
+          "new_line": 170,
+          "line_range": {
+            "start": {
+              "line_code": "e2d183ae05994718a06a3715cfcd465dc18c9ca8_161_163",
+              "type": "new",
+              "old_line": null,
+              "new_line": 163
+            },
+            "end": {
+              "line_code": "e2d183ae05994718a06a3715cfcd465dc18c9ca8_161_170",
+              "type": "new",
+              "old_line": null,
+              "new_line": 170
+            }
+          }
+        },
+        "resolvable": true,
+        "resolved": true,
+        "resolved_by": {
+          "id": 19402497,
+          "username": "marina.mosti",
+          "public_email": "",
+          "name": "Marina Mosti",
+          "state": "active",
+          "locked": false,
+          "avatar_url": "https://gitlab.com/uploads/-/system/user/avatar/19402497/avatar.png",
+          "web_url": "https://gitlab.com/marina.mosti"
+        },
+        "resolved_at": "2024-11-22T08:47:06.601Z",
+        "suggestions": [],
+        "confidential": false,
+        "internal": false,
+        "imported": false,
+        "imported_from": "none",
+        "noteable_iid": 4831,
+        "commands_changes": {}
+      },
+      {
+        "id": 2227506101,
+        "type": "DiffNote",
+        "body": "@jeldergl @marina.mosti I've created https://gitlab.com/gitlab-org/gitlab-ui/-/issues/3015+",
+        "author": {
+          "id": 11214192,
+          "username": "rchanila",
+          "public_email": "rchanila@gitlab.com",
+          "name": "Rahul Chanila",
+          "state": "active",
+          "locked": false,
+          "avatar_url": "https://gitlab.com/uploads/-/system/user/avatar/11214192/avatar.png",
+          "web_url": "https://gitlab.com/rchanila"
+        },
+        "created_at": "2024-11-26T00:04:12.615Z",
+        "updated_at": "2024-11-27T17:28:30.744Z",
+        "system": false,
+        "noteable_id": 343586845,
+        "noteable_type": "MergeRequest",
+        "project_id": 7071551,
+        "commit_id": null,
+        "position": {
+          "base_sha": "37304aa301b745f1dec1f5648b04648ea0746294",
+          "start_sha": "a055605734d9e08c6c313fa47c8f6e9c6f5907b5",
+          "head_sha": "6fe649db0d74b1149a8e0bba9e12bc5000ae1984",
+          "old_path": "src/components/base/form/form_group/form_group.stories.js",
+          "new_path": "src/components/base/form/form_group/form_group.stories.js",
+          "position_type": "text",
+          "old_line": null,
+          "new_line": 170,
+          "line_range": {
+            "start": {
+              "line_code": "e2d183ae05994718a06a3715cfcd465dc18c9ca8_161_163",
+              "type": "new",
+              "old_line": null,
+              "new_line": 163
+            },
+            "end": {
+              "line_code": "e2d183ae05994718a06a3715cfcd465dc18c9ca8_161_170",
+              "type": "new",
+              "old_line": null,
+              "new_line": 170
+            }
+          }
+        },
+        "resolvable": true,
+        "resolved": true,
+        "resolved_by": {
+          "id": 11214192,
+          "username": "rchanila",
+          "public_email": "rchanila@gitlab.com",
+          "name": "Rahul Chanila",
+          "state": "active",
+          "locked": false,
+          "avatar_url": "https://gitlab.com/uploads/-/system/user/avatar/11214192/avatar.png",
+          "web_url": "https://gitlab.com/rchanila"
+        },
+        "resolved_at": "2024-11-26T00:04:12.484Z",
+        "suggestions": [],
+        "confidential": false,
+        "internal": false,
+        "imported": false,
+        "imported_from": "none",
+        "noteable_iid": 4831,
+        "commands_changes": {}
+      }
+    ]
+  },
+  {
+    "id": "f7198651e3e5fbe2c8cc2f945926bbafccb5a0b7",
+    "individual_note": true,
+    "notes": [
+      {
+        "id": 2217512329,
+        "type": null,
+        "body": "approved this merge request",
+        "author": {
+          "id": 19402497,
+          "username": "marina.mosti",
+          "public_email": "",
+          "name": "Marina Mosti",
+          "state": "active",
+          "locked": false,
+          "avatar_url": "https://gitlab.com/uploads/-/system/user/avatar/19402497/avatar.png",
+          "web_url": "https://gitlab.com/marina.mosti"
+        },
+        "created_at": "2024-11-19T07:40:17.073Z",
+        "updated_at": "2024-11-19T07:40:17.094Z",
+        "system": true,
+        "noteable_id": 343586845,
+        "noteable_type": "MergeRequest",
+        "project_id": 7071551,
+        "resolvable": false,
+        "confidential": false,
+        "internal": false,
+        "imported": false,
+        "imported_from": "none",
+        "noteable_iid": 4831,
+        "commands_changes": {}
+      }
+    ]
+  },
+  {
+    "id": "f4cc295dc23f6b394999ccdc30fea56284717bf2",
+    "individual_note": true,
+    "notes": [
+      {
+        "id": 2219243171,
+        "type": null,
+        "body": "mentioned in issue gitlab#470925",
+        "author": {
+          "id": 11214192,
+          "username": "rchanila",
+          "public_email": "rchanila@gitlab.com",
+          "name": "Rahul Chanila",
+          "state": "active",
+          "locked": false,
+          "avatar_url": "https://gitlab.com/uploads/-/system/user/avatar/11214192/avatar.png",
+          "web_url": "https://gitlab.com/rchanila"
+        },
+        "created_at": "2024-11-20T00:08:23.434Z",
+        "updated_at": "2024-11-20T00:08:23.448Z",
+        "system": true,
+        "noteable_id": 343586845,
+        "noteable_type": "MergeRequest",
+        "project_id": 7071551,
+        "resolvable": false,
+        "confidential": false,
+        "internal": false,
+        "imported": false,
+        "imported_from": "none",
+        "noteable_iid": 4831,
+        "commands_changes": {}
+      }
+    ]
+  },
+  {
+    "id": "8d790de99f867793967a2439cc38c1177c6724f0",
+    "individual_note": true,
+    "notes": [
+      {
+        "id": 2223548464,
+        "type": null,
+        "body": "resolved all threads",
+        "author": {
+          "id": 12410838,
+          "username": "sdejonge",
+          "public_email": "",
+          "name": "Scott de Jonge",
+          "state": "active",
+          "locked": false,
+          "avatar_url": "https://gitlab.com/uploads/-/system/user/avatar/12410838/avatar.png",
+          "web_url": "https://gitlab.com/sdejonge"
+        },
+        "created_at": "2024-11-22T04:15:17.189Z",
+        "updated_at": "2024-11-22T04:15:17.198Z",
+        "system": true,
+        "noteable_id": 343586845,
+        "noteable_type": "MergeRequest",
+        "project_id": 7071551,
+        "resolvable": false,
+        "confidential": false,
+        "internal": false,
+        "imported": false,
+        "imported_from": "none",
+        "noteable_iid": 4831,
+        "commands_changes": {}
+      }
+    ]
+  },
+  {
+    "id": "1c20015f0c7de2953b0d60c590ff4fb9bf9c346f",
+    "individual_note": true,
+    "notes": [
+      {
+        "id": 2223548487,
+        "type": null,
+        "body": "started a [merge train](https://gitlab.com/gitlab-org/gitlab-ui/-/merge_trains)",
+        "author": {
+          "id": 12410838,
+          "username": "sdejonge",
+          "public_email": "",
+          "name": "Scott de Jonge",
+          "state": "active",
+          "locked": false,
+          "avatar_url": "https://gitlab.com/uploads/-/system/user/avatar/12410838/avatar.png",
+          "web_url": "https://gitlab.com/sdejonge"
+        },
+        "created_at": "2024-11-22T04:15:20.940Z",
+        "updated_at": "2024-11-22T04:15:20.944Z",
+        "system": true,
+        "noteable_id": 343586845,
+        "noteable_type": "MergeRequest",
+        "project_id": 7071551,
+        "resolvable": false,
+        "confidential": false,
+        "internal": false,
+        "imported": false,
+        "imported_from": "none",
+        "noteable_iid": 4831,
+        "commands_changes": {}
+      }
+    ]
+  },
+  {
+    "id": "ec79794f951ed2f99b001474e8285e64135806f2",
+    "individual_note": true,
+    "notes": [
+      {
+        "id": 2223557764,
+        "type": null,
+        "body": "mentioned in commit c208051c60a5ee6d572f9e31973b5f4dc5b1121c",
+        "author": {
+          "id": 12410838,
+          "username": "sdejonge",
+          "public_email": "",
+          "name": "Scott de Jonge",
+          "state": "active",
+          "locked": false,
+          "avatar_url": "https://gitlab.com/uploads/-/system/user/avatar/12410838/avatar.png",
+          "web_url": "https://gitlab.com/sdejonge"
+        },
+        "created_at": "2024-11-22T04:26:30.533Z",
+        "updated_at": "2024-11-22T04:26:30.540Z",
+        "system": true,
+        "noteable_id": 343586845,
+        "noteable_type": "MergeRequest",
+        "project_id": 7071551,
+        "resolvable": false,
+        "confidential": false,
+        "internal": false,
+        "imported": false,
+        "imported_from": "none",
+        "noteable_iid": 4831,
+        "commands_changes": {}
+      }
+    ]
+  },
+  {
+    "id": "c22b362ffbf8b43806952579616b486b15ebc1f7",
+    "individual_note": true,
+    "notes": [
+      {
+        "id": 2225355077,
+        "type": null,
+        "body": "mentioned in merge request !4836",
+        "author": {
+          "id": 1607849,
+          "username": "mrincon",
+          "public_email": "mrincon@gitlab.com",
+          "name": "Miguel Rincon",
+          "state": "active",
+          "locked": false,
+          "avatar_url": "https://gitlab.com/uploads/-/system/user/avatar/1607849/avatar.png",
+          "web_url": "https://gitlab.com/mrincon"
+        },
+        "created_at": "2024-11-23T15:28:00.960Z",
+        "updated_at": "2024-11-23T15:28:00.966Z",
+        "system": true,
+        "noteable_id": 343586845,
+        "noteable_type": "MergeRequest",
+        "project_id": 7071551,
+        "resolvable": false,
+        "confidential": false,
+        "internal": false,
+        "imported": false,
+        "imported_from": "none",
+        "noteable_iid": 4831,
+        "commands_changes": {}
+      }
+    ]
+  },
+  {
+    "id": "390fa96afd2a332373675bf83f5f7e07e04888b0",
+    "individual_note": true,
+    "notes": [
+      {
+        "id": 2226456118,
+        "type": null,
+        "body": "resolved all threads",
+        "author": {
+          "id": 11214192,
+          "username": "rchanila",
+          "public_email": "rchanila@gitlab.com",
+          "name": "Rahul Chanila",
+          "state": "active",
+          "locked": false,
+          "avatar_url": "https://gitlab.com/uploads/-/system/user/avatar/11214192/avatar.png",
+          "web_url": "https://gitlab.com/rchanila"
+        },
+        "created_at": "2024-11-25T12:14:19.184Z",
+        "updated_at": "2024-11-25T12:14:19.191Z",
+        "system": true,
+        "noteable_id": 343586845,
+        "noteable_type": "MergeRequest",
+        "project_id": 7071551,
+        "resolvable": false,
+        "confidential": false,
+        "internal": false,
+        "imported": false,
+        "imported_from": "none",
+        "noteable_iid": 4831,
+        "commands_changes": {}
+      }
+    ]
+  }
+]

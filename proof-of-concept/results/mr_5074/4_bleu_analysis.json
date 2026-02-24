@@ -1,0 +1,42 @@
+[
+  {
+    "pair": "Human #2 vs. Agent #4",
+    "judge_verdict": "partial_match",
+    "human_text": "**suggestion (non-blocking):** we could simplify these three assertions into one:\n\n`expect(wrapper.classes()).toEqual(['nav', 'nav-pills'])`;\n\nSuggestion applies to all specs in this file",
+    "agent_text": "`expect(wrapper.classes().length).toBe(1)` (and the equivalent `.toBe(2)` / `.toBe(3)` assertions in every other test) creates brittle tests: any future addition of a utility class anywhere will break every one of these tests, even tests that are logically unrelated to the change. A more resilient approach is `expect(wrapper.classes()).toEqual(['nav'])` for the single-class case, or dropping the length assertion entirely and relying only on `.toContain()` checks for the classes you care about.",
+    "bleu4_raw": 0.1105013505888395,
+    "bleu4_smoothed": 0.1105013505888395,
+    "precisions": {
+      "p1": 0.21238938053097342,
+      "p2": 0.10714285714285714,
+      "p3": 0.09009009009009009,
+      "p4": 0.07272727272727272
+    },
+    "ref_token_count": 47,
+    "hyp_token_count": 113
+  },
+  {
+    "pair": "Human #0 vs. best BLEU agent #4",
+    "judge_verdict": "no_match",
+    "judge_matched_agent": null,
+    "best_bleu_agent": 4,
+    "bleu4_raw": 1.8675470483365182e-78,
+    "bleu4_smoothed": 0.026551390647216972
+  },
+  {
+    "pair": "Human #1 vs. best BLEU agent #5",
+    "judge_verdict": "no_match",
+    "judge_matched_agent": null,
+    "best_bleu_agent": 5,
+    "bleu4_raw": 5.609571844608773e-155,
+    "bleu4_smoothed": 0.02507378338946741
+  },
+  {
+    "pair": "Human #2 vs. best BLEU agent #4",
+    "judge_verdict": "partial_match",
+    "judge_matched_agent": 4,
+    "best_bleu_agent": 4,
+    "bleu4_raw": 0.1105013505888395,
+    "bleu4_smoothed": 0.1105013505888395
+  }
+]

@@ -1,0 +1,69 @@
+## Human Reviewer Comments
+
+### Human Comment 0 [src/components/base/nav/nav.spec.js:38] (resolved)
+Category: inline
+Author: peterhegman
+Body: **suggestion (non-blocking):** I find the BSV specs to be quite repetitive and making assertions that are unrelated to the actual description of the spec. For example I don't know if we need to have `expect(wrapper.element.tagName).toBe('UL');` in every single spec, only the ones related to the `tag` prop.
+
+### Human Comment 1 [src/components/base/nav/nav.spec.js:43] (resolved)
+Category: inline
+Author: peterhegman
+Body: **nitpick:** we shouldn't need to put `wrapper.destroy()` in our specs
+
+### Human Comment 2 [src/components/base/nav/nav.spec.js:56] (resolved)
+Category: inline
+Author: peterhegman
+Body: **suggestion (non-blocking):** we could simplify these three assertions into one:
+
+`expect(wrapper.classes()).toEqual(['nav', 'nav-pills'])`;
+
+Suggestion applies to all specs in this file
+
+---
+
+## AI Reviewer Comments
+
+### Agent Comment 0 (inline) [src/components/base/nav/nav.vue:6]
+Body: The JSDoc says the valid values are `'start' (or 'left'), 'center', 'end' (or 'right')`, implying `start`/`end` are the primary values and `left`/`right` are aliases. But the actual code (line 44-45) does the opposite: `left`/`right` are the mapped inputs and `start`/`end` pass through as-is via the fallback. Meanwhile, `nav.md` and `nav.stories.js` both document only `left`, `center`, `right` as valid values. These three sources disagree about the supported API. The JSDoc comment should be corrected to match the other sources (e.g., `'left', 'center', or 'right'`).
+
+### Agent Comment 1 (inline) [src/components/base/nav/nav.vue:8]
+Body: The `align` prop accepts any string without validation. Other string-enum props in this codebase (e.g., `align` in `pagination.vue`, `variant` in `badge.vue`, `category` in `button.vue`) follow the pattern of exporting an options constant and adding a `validator: (value) => Object.keys(alignOptions).includes(value)`. Without a validator, passing an invalid value like `align="middle"` silently produces a broken class name (e.g., `justify-content-middle`) with no console warning to the developer.
+
+### Agent Comment 2 (inline) [src/components/base/nav/nav.vue:53]
+Body: When both `tabs` and `pills` are `true`, `pills` is silently suppressed by the `&& !this.tabs` guard. The documentation (nav.md line 13) correctly notes they are mutually exclusive, but the component gives no developer warning. Consider adding a `created()` hook that does `if (this.tabs && this.pills) { console.warn('[GlNav] tabs and pills props are mutually exclusive.') }`, consistent with how other mutually exclusive prop combinations are handled in Vue component libraries.
+
+### Agent Comment 3 (inline) [src/components/base/nav/nav.vue:58]
+Body: `[this.justifyContent]: this.align` uses the `align` string value as the class-binding boolean. This works because an empty string is falsy and a non-empty string is truthy, but it is unconventional and will confuse readers. Additionally, when `align` is `''`, `justifyContent()` returns `''`, so the object gets the key `''` (an empty class name) paired with a falsy value — harmless but a code smell. Prefer `[this.justifyContent]: Boolean(this.align)` to make the intent explicit.
+
+### Agent Comment 4 (inline) [src/components/base/nav/nav.spec.js:10]
+Body: `expect(wrapper.classes().length).toBe(1)` (and the equivalent `.toBe(2)` / `.toBe(3)` assertions in every other test) creates brittle tests: any future addition of a utility class anywhere will break every one of these tests, even tests that are logically unrelated to the change. A more resilient approach is `expect(wrapper.classes()).toEqual(['nav'])` for the single-class case, or dropping the length assertion entirely and relying only on `.toContain()` checks for the classes you care about.
+
+### Agent Comment 5 (inline) [src/components/base/nav/nav.spec.js:94]
+Body: Typo in the test description: "applies fill style **style** when fill set" — "style" is duplicated.
+
+### Agent Comment 6 (inline) [src/components/base/nav/nav.spec.js:110]
+Body: The alignment test only exercises `align: 'center'`, which passes through the mapping untouched (`alignMapping['center']` is `undefined`, so the fallback `|| this.align` returns `'center'`). The non-trivial mapping logic — `'left'` → `justify-content-start` and `'right'` → `justify-content-end` — is completely untested. A regression in `alignMapping` (e.g., a typo in `'start'` or `'end'`) would not be caught by this suite. Add cases for `align: 'left'` (expecting `justify-content-start`) and `align: 'right'` (expecting `justify-content-end`).
+
+### Agent Comment 7 (inline) [src/components/base/nav/nav.spec.js:177]
+Body: There is no test for the case where both `tabs: true` and `pills: true` are set simultaneously. Given that the `classes()` computed property silently suppresses `nav-pills` and `card-header-pills` in that scenario, explicitly testing the behaviour documents the intent and guards against accidental changes to the priority logic.
+
+### Agent Comment 8 (inline) [src/components/base/nav/nav.md:156]
+Body: Typo: `<p>pWith supporting text...` should be `<p>With supporting text...` — there is a stray `p` before `With`.
+
+### Agent Comment 9 (inline) [src/components/base/nav/nav.stories.js:7]
+Body: `generateProps` (and consequently `Default.args` on line 47) omits the `cardHeader` and `tag` props. The story template on lines 32-38 also does not bind them. This means neither prop is exposed as an interactive Storybook control in the Default story, even though they are fully supported by the component. Either extend `generateProps` and the template to cover them, or add a dedicated story (e.g., `CardHeader`) that demonstrates the `cardHeader` behaviour, since it has distinct visual output.
+
+### Agent Comment 10 (inline) [src/components/base/nav/nav.stories.js:65]
+Body: The `options` array `['left', 'center', 'right']` is consistent with `nav.md` but inconsistent with the prop's JSDoc comment in `nav.vue` (which lists `'start'` and `'end'` as valid inputs). Once the JSDoc is corrected (see comment in `nav.vue`), verify these options still reflect the full intended public API.
+
+### Agent Comment 11 (general)
+Body: The migration cleanly replicates BNav's class-generation behaviour in readable Vue Options API style. The `justifyContent` computed property correctly translates Bootstrap 4's `left`/`right` aliases to the flexbox `start`/`end` values, and the `classes` computed is a straightforward 1-to-1 replacement of the original functional component's logic. No regressions in the class output are evident.
+
+### Agent Comment 12 (general)
+Body: The test suite switched from `shallowMount` to `mount`, which is appropriate here since `GlNav` no longer wraps a child component — it renders a native element directly. However, every test is marked `async` despite containing no `await` expressions. This is harmless but misleading; the `async` keyword should be removed from test callbacks that have no asynchronous operations.
+
+### Agent Comment 13 (general)
+Body: The removal of `inheritAttrs: false` (which was present in the old implementation to forward `$attrs` to `BNav`) is correct for the new implementation. With `<component :is="tag">` as the root, Vue's default attribute inheritance will apply extra attributes directly to the rendered element, which is the right behaviour for a native-element wrapper. No action needed, but worth calling out explicitly in the PR description for reviewers unfamiliar with why the previous component had `inheritAttrs: false`.
+
+### Agent Comment 14 (general)
+Body: `GlNavItem` still wraps `BNavItem` from the vendor bootstrap-vue tree. This MR therefore achieves a partial migration: `GlNav` is now BVue-free but any page that uses `<gl-nav-item>` still pulls in the vendor dependency. Consider noting this in the PR description or opening a follow-up issue, so the work is not considered complete and the `BNavItem` dependency is not overlooked.
