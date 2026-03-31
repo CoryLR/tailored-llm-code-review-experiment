@@ -1,0 +1,11 @@
+[
+  {
+    "body": "_\u26a0\ufe0f Potential issue_ | _\ud83d\udfe1 Minor_\n\n**Fix the closing tag in the fallback error markup.**\n\nLine 88 opens `<ul>` twice, so the injected fallback HTML is invalid. The second tag should be `</ul>`.\n\n<details>\n<summary>Suggested fix</summary>\n\n```diff\n-                  )}<ul>${docs.map((doc) => `<li><a href='${doc}' target='_blank'>${doc}</a></li>`).join('')}<ul></p>`;\n+                  )}<ul>${docs.map((doc) => `<li><a href='${doc}' target='_blank'>${doc}</a></li>`).join('')}</ul></p>`;\n```\n</details>\n\n<!-- suggestion_start -->\n\n<details>\n<summary>\ud83d\udcdd Committable suggestion</summary>\n\n> \u203c\ufe0f **IMPORTANT**\n> Carefully review the code before committing. Ensure that it accurately replaces the highlighted code, contains no missing lines, and has no issues with indentation. Thoroughly test & benchmark the code to ensure it meets the requirements.\n\n```suggestion\n                document.getElementById('storybook-root').innerHTML =\n                  `<p style=\"color: red; max-width: 70ch\">${message.replaceAll(\n                    '\\n',\n                    '<br/>'\n                  )}<ul>${docs.map((doc) => `<li><a href='${doc}' target='_blank'>${doc}</a></li>`).join('')}</ul></p>`;\n```\n\n</details>\n\n<!-- suggestion_end -->\n\n<details>\n<summary>\ud83e\udd16 Prompt for AI Agents</summary>\n\n```\nVerify each finding against the current code and only fix it if needed.\n\nIn `@code/builders/builder-vite/input/iframe.html` around lines 84 - 88, The\ninjected fallback HTML assigned to\ndocument.getElementById('storybook-root').innerHTML contains a mismatched tag:\nthe list opens with <ul> twice; update the second opening <ul> at the end of the\ntemplate string to a closing </ul> so the markup produced by\nmessage.replaceAll(...) and docs.map(...) results in a valid <ul>...</ul> list.\n```\n\n</details>\n\n<!-- fingerprinting:phantom:medusa:grasshopper -->\n\n<!-- This is an auto-generated comment by CodeRabbit -->\n\n\u2705 Addressed in commit 2aaffe8",
+    "author": "coderabbitai",
+    "file_path": "code/builders/builder-vite/input/iframe.html",
+    "line_number": null,
+    "is_resolved": true,
+    "is_outdated": true,
+    "category": "inline"
+  }
+]

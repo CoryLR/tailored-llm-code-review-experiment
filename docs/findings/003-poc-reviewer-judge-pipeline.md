@@ -1,4 +1,4 @@
-# 003: Proof of Concept Reviewer + Judge Pipeline
+# Finding 003: Proof of Concept Reviewer + Judge Pipeline
 
 Feb 22, 2026. Scripts: `proof-of-concept/poc_1_prepare.py`, `poc_2_review.py`, `poc_3_judge.py`
 

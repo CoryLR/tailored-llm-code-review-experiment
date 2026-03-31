@@ -29,10 +29,11 @@ import httpx
 from dotenv import load_dotenv
 
 REPO_ROOT = Path(__file__).resolve().parent.parent
+SCRIPT_DIR = Path(__file__).resolve().parent
 load_dotenv(REPO_ROOT / ".env")
 
 GITLAB_TOKEN = os.environ.get("GITLAB_TOKEN", "")
-DATA_DIR = REPO_ROOT / "data" / "test2_survey_squash_rates_and_comments"
+DATA_DIR = SCRIPT_DIR / "data" / "test2_survey_squash_rates_and_comments"
 
 # Rate limiting
 AUTHENTICATED_DELAY = 1.0    # gitlab.com: 300 req/min limit

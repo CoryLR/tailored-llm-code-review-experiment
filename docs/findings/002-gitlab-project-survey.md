@@ -1,4 +1,4 @@
-# 002: GitLab Project Survey
+# Finding 002: GitLab Project Survey
 
 Feb 22, 2026. Script: `exploratory-tests/test2_survey_squash_rates_and_comments.py`
 

@@ -1,0 +1,170 @@
+{
+  "tuning_prs": [
+    33998,
+    34086,
+    34116,
+    34245,
+    34305
+  ],
+  "test_prs": [
+    33841,
+    34283,
+    34314
+  ],
+  "prepared_revisions": [
+    {
+      "pr_number": 34116,
+      "head_sha": "6bda49b828bf399a32cba4621e164a0f123c8bea",
+      "base_sha": "aba4a1b62538ba03ead8430d739ad741c35ed805",
+      "diff_lines": 440,
+      "human_comment_count": 1,
+      "role": "tuning"
+    },
+    {
+      "pr_number": 34086,
+      "head_sha": "0d2c2ea7d75d3a7825d24feaed4c2eef57c72d7d",
+      "base_sha": "8dff441f584a1724a40d9cf8c8db6cce3ba231c2",
+      "diff_lines": 90,
+      "human_comment_count": 1,
+      "role": "tuning"
+    },
+    {
+      "pr_number": 34086,
+      "head_sha": "6e99fc3add663b4d66bb47db7790bfc0859c2631",
+      "base_sha": "8dff441f584a1724a40d9cf8c8db6cce3ba231c2",
+      "diff_lines": 144,
+      "human_comment_count": 1,
+      "role": "tuning"
+    },
+    {
+      "pr_number": 34086,
+      "head_sha": "4d664605d2679f3970ba69520e46d6024673e808",
+      "base_sha": "2121254105b5d20331b811ec080b17354e02b2f1",
+      "diff_lines": 140,
+      "human_comment_count": 1,
+      "role": "tuning"
+    },
+    {
+      "pr_number": 33998,
+      "head_sha": "7383be324e0068057399588ee550f1e4decc6a48",
+      "base_sha": "533dcc08df7a9f229f2f8824e2a42cadf84bf1fc",
+      "diff_lines": 106,
+      "human_comment_count": 1,
+      "role": "tuning"
+    },
+    {
+      "pr_number": 33998,
+      "head_sha": "f1cf7c86a802facbc451b3609cb3b2a9aba8eb53",
+      "base_sha": "1ba2d0721a9b5e50dcb3974bae7f40d10d71c043",
+      "diff_lines": 151,
+      "human_comment_count": 1,
+      "role": "tuning"
+    },
+    {
+      "pr_number": 33998,
+      "head_sha": "2ba5df42d1a12c93c63d5981c07519b3ffde0ea1",
+      "base_sha": "2121254105b5d20331b811ec080b17354e02b2f1",
+      "diff_lines": 125,
+      "human_comment_count": 1,
+      "role": "tuning"
+    },
+    {
+      "pr_number": 34245,
+      "head_sha": "2ebbb3276ee7d001203a18ad2d9cecb60c461684",
+      "base_sha": "87733f1a77f5a0cdb7889ec30eaeedbfb3acf491",
+      "diff_lines": 670,
+      "human_comment_count": 2,
+      "role": "tuning"
+    },
+    {
+      "pr_number": 34245,
+      "head_sha": "b1f9ec91bd557d7c19a37421ae2cd179da15a4a7",
+      "base_sha": "87733f1a77f5a0cdb7889ec30eaeedbfb3acf491",
+      "diff_lines": 670,
+      "human_comment_count": 1,
+      "role": "tuning"
+    },
+    {
+      "pr_number": 34245,
+      "head_sha": "2aaffe8ff76e36a8a8829c9c004ece3c98b4b46c",
+      "base_sha": "87733f1a77f5a0cdb7889ec30eaeedbfb3acf491",
+      "diff_lines": 670,
+      "human_comment_count": 1,
+      "role": "tuning"
+    },
+    {
+      "pr_number": 34245,
+      "head_sha": "04f63b23291e9420a51e5c9c60b95a86476ae4c3",
+      "base_sha": "87733f1a77f5a0cdb7889ec30eaeedbfb3acf491",
+      "diff_lines": 680,
+      "human_comment_count": 1,
+      "role": "tuning"
+    },
+    {
+      "pr_number": 34245,
+      "head_sha": "a512303c5a0d94761045b64aca5526fc7f3cf456",
+      "base_sha": "acf3e68fd15c95e173d3dceee4cb0187954376ee",
+      "diff_lines": 1165,
+      "human_comment_count": 1,
+      "role": "tuning"
+    },
+    {
+      "pr_number": 34305,
+      "head_sha": "40a470ee497cc231e42ea34a01b8955e7d0916a1",
+      "base_sha": "09a3460d197b07e4f8201a4ba21f846eb3416fcc",
+      "diff_lines": 334,
+      "human_comment_count": 1,
+      "role": "tuning"
+    },
+    {
+      "pr_number": 34305,
+      "head_sha": "5f2595642256c4bf8eef58a015cd2c8dac5beac9",
+      "base_sha": "09a3460d197b07e4f8201a4ba21f846eb3416fcc",
+      "diff_lines": 817,
+      "human_comment_count": 1,
+      "role": "tuning"
+    },
+    {
+      "pr_number": 34305,
+      "head_sha": "49b23fd053d8197e83b2bad02c3f364048717c9e",
+      "base_sha": "09a3460d197b07e4f8201a4ba21f846eb3416fcc",
+      "diff_lines": 799,
+      "human_comment_count": 1,
+      "role": "tuning"
+    },
+    {
+      "pr_number": 34314,
+      "head_sha": "5f923097b26dad128b153473b20d8d7d1f6e0632",
+      "base_sha": "09a3460d197b07e4f8201a4ba21f846eb3416fcc",
+      "diff_lines": 73,
+      "human_comment_count": 1,
+      "role": "test"
+    },
+    {
+      "pr_number": 34283,
+      "head_sha": "f1256e98deeb842f6be7520b330562f4516bc509",
+      "base_sha": "a8048f56b174cd26da7e309d996bf1b8d50c5349",
+      "diff_lines": 786,
+      "human_comment_count": 3,
+      "role": "test"
+    },
+    {
+      "pr_number": 34283,
+      "head_sha": "e73920dd2f3f5f8535bb410858284fe20669b721",
+      "base_sha": "c25004ac1b7d88c5f57f5e17abc1e96ada8ed95a",
+      "diff_lines": 529,
+      "human_comment_count": 1,
+      "role": "test"
+    },
+    {
+      "pr_number": 33841,
+      "head_sha": "b17f5c619735fe8f9dca99b97a389bfa4b1c0069",
+      "base_sha": "f242e765ea014b427a7e374676ab7c8c0b427116",
+      "diff_lines": 68,
+      "human_comment_count": 6,
+      "role": "test"
+    }
+  ],
+  "total_tuning_comments": 16,
+  "total_test_comments": 11
+}

@@ -1,0 +1,11 @@
+[
+  {
+    "body": "_\u26a0\ufe0f Potential issue_ | _\ud83d\udfe0 Major_\n\n**Make the reset action configurable instead of always-on for inline canvases.**\n\nThis wires `onResetStory` for every inline Docs canvas, so there is no global, per-component, or per-story opt-out even though that configurability is part of the linked requirement. Please gate the button on a docs parameter/block prop before surfacing it.\n\n<details>\n<summary>\ud83e\udd16 Prompt for AI Agents</summary>\n\n```\nVerify each finding against the current code and only fix it if needed.\n\nIn `@code/addons/docs/src/blocks/blocks/Canvas.tsx` around lines 100 - 102, The\ninline Canvas currently always wires onResetStory (inline ? handleResetStory :\nundefined) which forces a reset button for every inline Docs canvas; change this\nto check a configurable prop/parameter (e.g., a block prop like allowReset or a\ndocs parameter like docs.disableReset) so the handler is only passed when inline\n&& !disableReset (or inline && allowReset). Update the Canvas component where\nonResetStory is assigned and ensure the Story usage (Story ...\nresetKey={resetKey}) remains unchanged; document/read the prop from props or\nprops.meta so consumers can opt out per-story, per-component, or globally.\n```\n\n</details>\n\n<!-- fingerprinting:phantom:poseidon:grasshopper -->\n\n<!-- This is an auto-generated comment by CodeRabbit -->\n\n\u2705 Addressed in commit 0d2c2ea",
+    "author": "coderabbitai",
+    "file_path": "code/addons/docs/src/blocks/blocks/Canvas.tsx",
+    "line_number": null,
+    "is_resolved": true,
+    "is_outdated": true,
+    "category": "inline"
+  }
+]

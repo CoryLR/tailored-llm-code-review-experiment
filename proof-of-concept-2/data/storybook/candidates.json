@@ -1,0 +1,750 @@
+[
+  {
+    "pr_number": 34116,
+    "title": "Vue: Make globals reactive in decorators",
+    "author": "Sidnioulz",
+    "merged_at": "2026-03-17T15:44:00Z",
+    "merge_commit_sha": "662b52fb1b0fc6413d6e982ab0271c6fcad8e89b",
+    "final_branch_commit": "089e2b710b0aaca1e7533d3250f1498db5579181",
+    "total_threads": 4,
+    "skipped_bot": 0,
+    "skipped_author": 0,
+    "skipped_no_commit": 0,
+    "revisions": [
+      {
+        "commit_sha": "089e2b710b0aaca1e7533d3250f1498db5579181",
+        "comment_count": 3,
+        "reachable": true,
+        "is_final_commit": true,
+        "usable": false,
+        "comments": [
+          {
+            "file_path": "code/renderers/vue3/src/render.ts",
+            "line_number": 158,
+            "author": "coderabbitai",
+            "body_preview": "_\u26a0\ufe0f Potential issue_ | _\ud83d\udfe0 Major_\n\n**Don't skip the delete pass when `nextArgs` i",
+            "is_resolved": false,
+            "is_outdated": false
+          },
+          {
+            "file_path": "docs/_snippets/decorator-with-reactive-globals.md",
+            "line_number": 19,
+            "author": "coderabbitai",
+            "body_preview": "_\u26a0\ufe0f Potential issue_ | _\ud83d\udfe0 Major_\n\n<details>\n<summary>\ud83e\udde9 Analysis chain</summary>\n",
+            "is_resolved": true,
+            "is_outdated": false
+          },
+          {
+            "file_path": "docs/_snippets/decorator-with-updateArgs.md",
+            "line_number": 28,
+            "author": "coderabbitai",
+            "body_preview": "_\u26a0\ufe0f Potential issue_ | _\ud83d\udfe0 Major_\n\n<details>\n<summary>\ud83e\udde9 Analysis chain</summary>\n",
+            "is_resolved": true,
+            "is_outdated": false
+          }
+        ]
+      },
+      {
+        "commit_sha": "6bda49b828bf399a32cba4621e164a0f123c8bea",
+        "comment_count": 1,
+        "reachable": true,
+        "is_final_commit": false,
+        "usable": true,
+        "comments": [
+          {
+            "file_path": "code/e2e-tests/framework-vue3.spec.ts",
+            "line_number": null,
+            "author": "yannbf",
+            "body_preview": "```suggestion\n  test.skip(templateName !== 'vue3-vite/default-ts', 'Only run the",
+            "is_resolved": true,
+            "is_outdated": true
+          }
+        ]
+      }
+    ],
+    "total_usable_comments": 1
+  },
+  {
+    "pr_number": 34086,
+    "title": "Addon-Docs: Add Reset story button to re-render stories in docs",
+    "author": "6810779s",
+    "merged_at": "2026-03-24T13:00:47Z",
+    "merge_commit_sha": "77d706fd0a5615bb4aae4bc1d94de794c8e49e74",
+    "final_branch_commit": "da4e76a9d2d5355b6719ae4f57de726ff4695b4c",
+    "total_threads": 6,
+    "skipped_bot": 0,
+    "skipped_author": 0,
+    "skipped_no_commit": 0,
+    "revisions": [
+      {
+        "commit_sha": "e4e69c9c0b42ecb952950a3b5869c9be3e01fe65",
+        "comment_count": 2,
+        "reachable": false,
+        "is_final_commit": false,
+        "usable": false,
+        "comments": [
+          {
+            "file_path": "code/addons/docs/src/blocks/components/Preview.tsx",
+            "line_number": null,
+            "author": "Sidnioulz",
+            "body_preview": "We'll want this button to work like https://github.com/storybookjs/storybook/blo",
+            "is_resolved": true,
+            "is_outdated": true
+          },
+          {
+            "file_path": "code/addons/docs/src/blocks/components/Preview.tsx",
+            "line_number": null,
+            "author": "Sidnioulz",
+            "body_preview": "I didn't catch this on the first review but your button goes into the actions ba",
+            "is_resolved": true,
+            "is_outdated": true
+          }
+        ]
+      },
+      {
+        "commit_sha": "0d2c2ea7d75d3a7825d24feaed4c2eef57c72d7d",
+        "comment_count": 1,
+        "reachable": true,
+        "is_final_commit": false,
+        "usable": true,
+        "comments": [
+          {
+            "file_path": "code/addons/docs/src/blocks/blocks/Canvas.tsx",
+            "line_number": null,
+            "author": "coderabbitai",
+            "body_preview": "_\u26a0\ufe0f Potential issue_ | _\ud83d\udfe0 Major_\n\n**Avoid triggering two reset render paths for ",
+            "is_resolved": true,
+            "is_outdated": true
+          }
+        ]
+      },
+      {
+        "commit_sha": "6e99fc3add663b4d66bb47db7790bfc0859c2631",
+        "comment_count": 1,
+        "reachable": true,
+        "is_final_commit": false,
+        "usable": true,
+        "comments": [
+          {
+            "file_path": "code/addons/docs/src/blocks/blocks/Canvas.tsx",
+            "line_number": null,
+            "author": "coderabbitai",
+            "body_preview": "_\u26a0\ufe0f Potential issue_ | _\ud83d\udfe0 Major_\n\n**Make the reset action configurable instead o",
+            "is_resolved": true,
+            "is_outdated": true
+          }
+        ]
+      },
+      {
+        "commit_sha": "64a45cf9726cbffed821db6aeb630d1eab67a816",
+        "comment_count": 1,
+        "reachable": false,
+        "is_final_commit": false,
+        "usable": false,
+        "comments": [
+          {
+            "file_path": "code/addons/docs/src/blocks/components/Preview.tsx",
+            "line_number": null,
+            "author": "Sidnioulz",
+            "body_preview": "We only use Emotion within the Storybook UI, so this classname is not necessary.",
+            "is_resolved": true,
+            "is_outdated": true
+          }
+        ]
+      },
+      {
+        "commit_sha": "4d664605d2679f3970ba69520e46d6024673e808",
+        "comment_count": 1,
+        "reachable": true,
+        "is_final_commit": false,
+        "usable": true,
+        "comments": [
+          {
+            "file_path": "code/addons/docs/src/blocks/components/Preview.tsx",
+            "line_number": null,
+            "author": "Sidnioulz",
+            "body_preview": "```suggestion\n        {...{ withSource, withToolbar }}\n```\n\nI wouldn't change th",
+            "is_resolved": true,
+            "is_outdated": true
+          }
+        ]
+      }
+    ],
+    "total_usable_comments": 3
+  },
+  {
+    "pr_number": 33998,
+    "title": "Controls: Add maxPresetColors option to ColorControl",
+    "author": "mixelburg",
+    "merged_at": "2026-03-24T13:02:03Z",
+    "merge_commit_sha": "acf3e68fd15c95e173d3dceee4cb0187954376ee",
+    "final_branch_commit": "32c985a386710512f7174ea1cb315ffc25beac1e",
+    "total_threads": 6,
+    "skipped_bot": 0,
+    "skipped_author": 0,
+    "skipped_no_commit": 0,
+    "revisions": [
+      {
+        "commit_sha": "04577ebf28c9d1c094e4d799377119f8ae5abb65",
+        "comment_count": 2,
+        "reachable": false,
+        "is_final_commit": false,
+        "usable": false,
+        "comments": [
+          {
+            "file_path": "code/core/src/actions/containers/ActionLogger/index.tsx",
+            "line_number": null,
+            "author": "coderabbitai",
+            "body_preview": "_\u26a0\ufe0f Potential issue_ | _\ud83d\udfe1 Minor_\n\n**Normalize `expandLevel` before storing it in",
+            "is_resolved": false,
+            "is_outdated": true
+          },
+          {
+            "file_path": "code/core/src/actions/components/ActionLogger/index.tsx",
+            "line_number": 33,
+            "author": "Sidnioulz",
+            "body_preview": "@mixelburg I think you might have mixed up two branches here. This appears unrel",
+            "is_resolved": true,
+            "is_outdated": true
+          }
+        ]
+      },
+      {
+        "commit_sha": "7383be324e0068057399588ee550f1e4decc6a48",
+        "comment_count": 1,
+        "reachable": true,
+        "is_final_commit": false,
+        "usable": true,
+        "comments": [
+          {
+            "file_path": "code/addons/docs/src/blocks/controls/Color.tsx",
+            "line_number": null,
+            "author": "coderabbitai",
+            "body_preview": "_\u26a0\ufe0f Potential issue_ | _\ud83d\udfe1 Minor_\n\n**Guard `maxPresetColors` against invalid valu",
+            "is_resolved": true,
+            "is_outdated": true
+          }
+        ]
+      },
+      {
+        "commit_sha": "32c985a386710512f7174ea1cb315ffc25beac1e",
+        "comment_count": 1,
+        "reachable": true,
+        "is_final_commit": true,
+        "usable": false,
+        "comments": [
+          {
+            "file_path": "code/addons/docs/src/blocks/controls/Color.stories.tsx",
+            "line_number": 102,
+            "author": "Sidnioulz",
+            "body_preview": "Those stories would be more useful if you added `startOpen: true`, so they get c",
+            "is_resolved": true,
+            "is_outdated": false
+          }
+        ]
+      },
+      {
+        "commit_sha": "f1cf7c86a802facbc451b3609cb3b2a9aba8eb53",
+        "comment_count": 1,
+        "reachable": true,
+        "is_final_commit": false,
+        "usable": true,
+        "comments": [
+          {
+            "file_path": "code/frameworks/svelte-vite/package.json",
+            "line_number": 70,
+            "author": "coderabbitai",
+            "body_preview": "_\u26a0\ufe0f Potential issue_ | _\ud83d\udfe1 Minor_\n\n<details>\n<summary>\ud83e\udde9 Analysis chain</summary>\n",
+            "is_resolved": false,
+            "is_outdated": true
+          }
+        ]
+      },
+      {
+        "commit_sha": "2ba5df42d1a12c93c63d5981c07519b3ffde0ea1",
+        "comment_count": 1,
+        "reachable": true,
+        "is_final_commit": false,
+        "usable": true,
+        "comments": [
+          {
+            "file_path": "code/addons/docs/src/blocks/controls/Color.stories.tsx",
+            "line_number": 113,
+            "author": "Sidnioulz",
+            "body_preview": "```suggestion\n    presetColors: Array.from({ length: 40 }, (_, i) => {\n      con",
+            "is_resolved": true,
+            "is_outdated": true
+          }
+        ]
+      }
+    ],
+    "total_usable_comments": 3
+  },
+  {
+    "pr_number": 34245,
+    "title": "Cleanup: Unify oxlint at root and add more file to format",
+    "author": "huang-julien",
+    "merged_at": "2026-03-24T15:03:38Z",
+    "merge_commit_sha": "b31240c2c8c7a1e2ba6b93fcce14ae12b1891b6f",
+    "final_branch_commit": "c9ad52a00bd427d76d891eece237e2edaf678f06",
+    "total_threads": 7,
+    "skipped_bot": 0,
+    "skipped_author": 0,
+    "skipped_no_commit": 0,
+    "revisions": [
+      {
+        "commit_sha": "2ebbb3276ee7d001203a18ad2d9cecb60c461684",
+        "comment_count": 2,
+        "reachable": true,
+        "is_final_commit": false,
+        "usable": true,
+        "comments": [
+          {
+            "file_path": "package.json",
+            "line_number": null,
+            "author": "kasperpeulen",
+            "body_preview": "I think yarn fmt:write should just also fmt docs",
+            "is_resolved": true,
+            "is_outdated": true
+          },
+          {
+            "file_path": "scripts/package.json",
+            "line_number": null,
+            "author": "kasperpeulen",
+            "body_preview": "I think those seperate commands are not really needed anymore",
+            "is_resolved": true,
+            "is_outdated": true
+          }
+        ]
+      },
+      {
+        "commit_sha": "b1f9ec91bd557d7c19a37421ae2cd179da15a4a7",
+        "comment_count": 1,
+        "reachable": true,
+        "is_final_commit": false,
+        "usable": true,
+        "comments": [
+          {
+            "file_path": "code/builders/builder-vite/input/iframe.html",
+            "line_number": null,
+            "author": "coderabbitai",
+            "body_preview": "_\u26a0\ufe0f Potential issue_ | _\ud83d\udfe1 Minor_\n\n**Fix the closing tag in the fallback error ma",
+            "is_resolved": true,
+            "is_outdated": true
+          }
+        ]
+      },
+      {
+        "commit_sha": "2aaffe8ff76e36a8a8829c9c004ece3c98b4b46c",
+        "comment_count": 1,
+        "reachable": true,
+        "is_final_commit": false,
+        "usable": true,
+        "comments": [
+          {
+            "file_path": "scripts/project.json",
+            "line_number": null,
+            "author": "coderabbitai",
+            "body_preview": "_\u26a0\ufe0f Potential issue_ | _\ud83d\udfe0 Major_\n\n<details>\n<summary>\ud83e\udde9 Analysis chain</summary>\n",
+            "is_resolved": true,
+            "is_outdated": true
+          }
+        ]
+      },
+      {
+        "commit_sha": "04f63b23291e9420a51e5c9c60b95a86476ae4c3",
+        "comment_count": 1,
+        "reachable": true,
+        "is_final_commit": false,
+        "usable": true,
+        "comments": [
+          {
+            "file_path": ".vscode/settings.json",
+            "line_number": null,
+            "author": "AriPerkkio",
+            "body_preview": "```diff\n{\n-  \"[javascript]\": {\n+  \"[javascript][javascriptreact][typescript][typ",
+            "is_resolved": true,
+            "is_outdated": true
+          }
+        ]
+      },
+      {
+        "commit_sha": "c9ad52a00bd427d76d891eece237e2edaf678f06",
+        "comment_count": 1,
+        "reachable": true,
+        "is_final_commit": true,
+        "usable": false,
+        "comments": [
+          {
+            "file_path": "package.json",
+            "line_number": 25,
+            "author": "kasperpeulen",
+            "body_preview": "I thought this must be in prepare:\nhttps://typicode.github.io/husky/get-started.",
+            "is_resolved": true,
+            "is_outdated": false
+          }
+        ]
+      },
+      {
+        "commit_sha": "a512303c5a0d94761045b64aca5526fc7f3cf456",
+        "comment_count": 1,
+        "reachable": true,
+        "is_final_commit": false,
+        "usable": true,
+        "comments": [
+          {
+            "file_path": "scripts/ci/common-jobs.ts",
+            "line_number": null,
+            "author": "kasperpeulen",
+            "body_preview": "does this depend on compile, otherwise we can do it earlier! Maybe just rename p",
+            "is_resolved": true,
+            "is_outdated": true
+          }
+        ]
+      }
+    ],
+    "total_usable_comments": 6
+  },
+  {
+    "pr_number": 34305,
+    "title": "StatusValue: Add 'status-value:<new|modified|affected>'",
+    "author": "valentinpalkovic",
+    "merged_at": "2026-03-25T13:14:33Z",
+    "merge_commit_sha": "3f91f48ddcd1bb7cb7ee42a8b22229599317b796",
+    "final_branch_commit": "0b1442a14b6b73770d8349a307e1eb051e82b46d",
+    "total_threads": 6,
+    "skipped_bot": 0,
+    "skipped_author": 1,
+    "skipped_no_commit": 0,
+    "revisions": [
+      {
+        "commit_sha": "0b1442a14b6b73770d8349a307e1eb051e82b46d",
+        "comment_count": 2,
+        "reachable": true,
+        "is_final_commit": true,
+        "usable": false,
+        "comments": [
+          {
+            "file_path": "code/addons/vitest/src/use-test-provider-state.ts",
+            "line_number": 29,
+            "author": "coderabbitai",
+            "body_preview": "_\u26a0\ufe0f Potential issue_ | _\ud83d\udfe0 Major_\n\n**Avoid narrowing + casting here; it can break",
+            "is_resolved": true,
+            "is_outdated": false
+          },
+          {
+            "file_path": "code/core/src/manager/components/sidebar/StatusButton.tsx",
+            "line_number": 23,
+            "author": "coderabbitai",
+            "body_preview": "_\u26a0\ufe0f Potential issue_ | _\ud83d\udfe0 Major_\n\n**Use distinct semantic colors for `new`, `mod",
+            "is_resolved": true,
+            "is_outdated": false
+          }
+        ]
+      },
+      {
+        "commit_sha": "40a470ee497cc231e42ea34a01b8955e7d0916a1",
+        "comment_count": 1,
+        "reachable": true,
+        "is_final_commit": false,
+        "usable": true,
+        "comments": [
+          {
+            "file_path": "code/core/src/manager/utils/status.tsx",
+            "line_number": null,
+            "author": "coderabbitai",
+            "body_preview": "_\u26a0\ufe0f Potential issue_ | _\ud83d\udfe0 Major_\n\n**Fix `statusPriority` order for change-detect",
+            "is_resolved": true,
+            "is_outdated": true
+          }
+        ]
+      },
+      {
+        "commit_sha": "5f2595642256c4bf8eef58a015cd2c8dac5beac9",
+        "comment_count": 1,
+        "reachable": true,
+        "is_final_commit": false,
+        "usable": true,
+        "comments": [
+          {
+            "file_path": "code/core/src/types/modules/core-common.ts",
+            "line_number": null,
+            "author": "coderabbitai",
+            "body_preview": "_\u26a0\ufe0f Potential issue_ | _\ud83d\udfe0 Major_\n\n<details>\n<summary>\ud83e\udde9 Analysis chain</summary>\n",
+            "is_resolved": true,
+            "is_outdated": true
+          }
+        ]
+      },
+      {
+        "commit_sha": "49b23fd053d8197e83b2bad02c3f364048717c9e",
+        "comment_count": 1,
+        "reachable": true,
+        "is_final_commit": false,
+        "usable": true,
+        "comments": [
+          {
+            "file_path": "code/core/src/manager/utils/status.test.ts",
+            "line_number": null,
+            "author": "ghengeveld",
+            "body_preview": "This doesn't seem right.",
+            "is_resolved": false,
+            "is_outdated": true
+          }
+        ]
+      }
+    ],
+    "total_usable_comments": 3
+  },
+  {
+    "pr_number": 34314,
+    "title": "Core: Add changeDetection feature flag",
+    "author": "valentinpalkovic",
+    "merged_at": "2026-03-25T14:43:26Z",
+    "merge_commit_sha": "f65c67a56e7b0aca1da01904bc1b385284d25f92",
+    "final_branch_commit": "7f4b44e3d2fbec4ee01641510791d2a51d6502d8",
+    "total_threads": 2,
+    "skipped_bot": 0,
+    "skipped_author": 1,
+    "skipped_no_commit": 0,
+    "revisions": [
+      {
+        "commit_sha": "5f923097b26dad128b153473b20d8d7d1f6e0632",
+        "comment_count": 1,
+        "reachable": true,
+        "is_final_commit": false,
+        "usable": true,
+        "comments": [
+          {
+            "file_path": "code/core/src/core-server/presets/common-preset.ts",
+            "line_number": null,
+            "author": "ghengeveld",
+            "body_preview": "I think this should be sorted alphabetically.",
+            "is_resolved": true,
+            "is_outdated": true
+          }
+        ]
+      }
+    ],
+    "total_usable_comments": 1
+  },
+  {
+    "pr_number": 34283,
+    "title": "Manager: URL-based tag filter state + filter-aware initial story selection",
+    "author": "valentinpalkovic",
+    "merged_at": "2026-03-26T10:49:10Z",
+    "merge_commit_sha": "f4e4a5351d055f6b90986ad88e5f92135cb7022f",
+    "final_branch_commit": "17b4191002628383b3159923d2c3bae4f660dfe4",
+    "total_threads": 12,
+    "skipped_bot": 0,
+    "skipped_author": 0,
+    "skipped_no_commit": 0,
+    "revisions": [
+      {
+        "commit_sha": "17b4191002628383b3159923d2c3bae4f660dfe4",
+        "comment_count": 7,
+        "reachable": true,
+        "is_final_commit": true,
+        "usable": false,
+        "comments": [
+          {
+            "file_path": "code/core/src/manager-api/modules/stories.ts",
+            "line_number": 972,
+            "author": "coderabbitai",
+            "body_preview": "_\u26a0\ufe0f Potential issue_ | _\ud83d\udfe0 Major_\n\n**Use the matched entry type for the filtered ",
+            "is_resolved": true,
+            "is_outdated": false
+          },
+          {
+            "file_path": "code/core/src/manager-api/modules/stories.ts",
+            "line_number": 1180,
+            "author": "coderabbitai",
+            "body_preview": "_\u26a0\ufe0f Potential issue_ | _\ud83d\udfe0 Major_\n\n**Legacy localStorage can still override these",
+            "is_resolved": true,
+            "is_outdated": false
+          },
+          {
+            "file_path": "code/core/src/manager-api/tests/url.test.js",
+            "line_number": 143,
+            "author": "coderabbitai",
+            "body_preview": "_\u26a0\ufe0f Potential issue_ | _\ud83d\udfe0 Major_\n\n**Initialize the store with the module state b",
+            "is_resolved": true,
+            "is_outdated": false
+          },
+          {
+            "file_path": "code/core/src/manager-api/tests/store.test.js",
+            "line_number": 30,
+            "author": "coderabbitai",
+            "body_preview": "_\ud83d\udee0\ufe0f Refactor suggestion_ | _\ud83d\udfe0 Major_\n\n<details>\n<summary>\ud83e\udde9 Analysis chain</summa",
+            "is_resolved": true,
+            "is_outdated": false
+          },
+          {
+            "file_path": "code/core/src/manager-api/modules/stories.ts",
+            "line_number": 441,
+            "author": "ghengeveld",
+            "body_preview": "We have `navigateTo` in url.ts which is very similar. Should we reuse/share that",
+            "is_resolved": true,
+            "is_outdated": false
+          },
+          {
+            "file_path": "code/core/src/manager-api/modules/tags.ts",
+            "line_number": 7,
+            "author": "ghengeveld",
+            "body_preview": "Didn't we drop this approach for changed items?",
+            "is_resolved": true,
+            "is_outdated": false
+          },
+          {
+            "file_path": "code/core/src/manager-api/store.ts",
+            "line_number": 80,
+            "author": "ghengeveld",
+            "body_preview": "Should we have a TODO to eventually remove this migration logic?",
+            "is_resolved": true,
+            "is_outdated": false
+          }
+        ]
+      },
+      {
+        "commit_sha": "f1256e98deeb842f6be7520b330562f4516bc509",
+        "comment_count": 3,
+        "reachable": true,
+        "is_final_commit": false,
+        "usable": true,
+        "comments": [
+          {
+            "file_path": "code/core/src/manager-api/modules/url.ts",
+            "line_number": null,
+            "author": "ghengeveld",
+            "body_preview": "Why aren't we reusing this in navigateWithQueryParams?",
+            "is_resolved": true,
+            "is_outdated": true
+          },
+          {
+            "file_path": "code/core/src/manager-api/tests/tags.test.js",
+            "line_number": null,
+            "author": "ghengeveld",
+            "body_preview": "I think _changed doesn't belong here.",
+            "is_resolved": true,
+            "is_outdated": true
+          },
+          {
+            "file_path": "code/core/src/manager-api/tests/tags.test.js",
+            "line_number": null,
+            "author": "ghengeveld",
+            "body_preview": "Should these be sorted maybe?",
+            "is_resolved": true,
+            "is_outdated": true
+          }
+        ]
+      },
+      {
+        "commit_sha": "e73920dd2f3f5f8535bb410858284fe20669b721",
+        "comment_count": 1,
+        "reachable": true,
+        "is_final_commit": false,
+        "usable": true,
+        "comments": [
+          {
+            "file_path": "code/core/src/manager-api/modules/tags.ts",
+            "line_number": null,
+            "author": "coderabbitai",
+            "body_preview": "_\u26a0\ufe0f Potential issue_ | _\ud83d\udfe0 Major_\n\n**Preserve an explicit empty tag selection.**\n",
+            "is_resolved": true,
+            "is_outdated": true
+          }
+        ]
+      },
+      {
+        "commit_sha": "0d52e76e4c4f88f79cc54c913d99bbe8d63c4915",
+        "comment_count": 1,
+        "reachable": false,
+        "is_final_commit": false,
+        "usable": false,
+        "comments": [
+          {
+            "file_path": "code/core/src/manager-api/store.ts",
+            "line_number": null,
+            "author": "coderabbitai",
+            "body_preview": "_\u26a0\ufe0f Potential issue_ | _\ud83d\udfe1 Minor_\n\n**Migration reads storage before cleanup, so t",
+            "is_resolved": true,
+            "is_outdated": true
+          }
+        ]
+      }
+    ],
+    "total_usable_comments": 4
+  },
+  {
+    "pr_number": 33841,
+    "title": "Docs: Add troubleshooting for react-docgen-typescript in monorepos",
+    "author": "kasperpeulen",
+    "merged_at": "2026-03-27T18:19:47Z",
+    "merge_commit_sha": "0efef13757c4233d95bd7facf01a7f14b75f04d8",
+    "final_branch_commit": "d1497ddfdbf50d3c499b4175f655067b4b39ae39",
+    "total_threads": 6,
+    "skipped_bot": 0,
+    "skipped_author": 0,
+    "skipped_no_commit": 0,
+    "revisions": [
+      {
+        "commit_sha": "b17f5c619735fe8f9dca99b97a389bfa4b1c0069",
+        "comment_count": 6,
+        "reachable": true,
+        "is_final_commit": false,
+        "usable": true,
+        "comments": [
+          {
+            "file_path": "docs/_snippets/storybook-main-rdt-monorepo-include.md",
+            "line_number": null,
+            "author": "kylegach",
+            "body_preview": "```suggestion\n// Replace your-framework with the framework you are using, e.g. r",
+            "is_resolved": true,
+            "is_outdated": true
+          },
+          {
+            "file_path": "docs/_snippets/storybook-main-rdt-monorepo-include.md",
+            "line_number": null,
+            "author": "kylegach",
+            "body_preview": "```suggestion\n      // \ud83d\udc47 Add your workspace package source files so they're incl",
+            "is_resolved": true,
+            "is_outdated": true
+          },
+          {
+            "file_path": "docs/_snippets/storybook-main-rdt-monorepo-include.md",
+            "line_number": null,
+            "author": "kylegach",
+            "body_preview": "```suggestion\n      // \ud83d\udc47 Add your workspace package source files so they're incl",
+            "is_resolved": true,
+            "is_outdated": true
+          },
+          {
+            "file_path": "docs/configure/integration/typescript.mdx",
+            "line_number": null,
+            "author": "kylegach",
+            "body_preview": "```suggestion\n  ### Inherited args are missing for components from workspace pac",
+            "is_resolved": true,
+            "is_outdated": true
+          },
+          {
+            "file_path": "docs/configure/integration/typescript.mdx",
+            "line_number": null,
+            "author": "kylegach",
+            "body_preview": "```suggestion\n  If you're using `react-docgen-typescript` in a monorepo with npm",
+            "is_resolved": true,
+            "is_outdated": true
+          },
+          {
+            "file_path": "docs/configure/integration/typescript.mdx",
+            "line_number": null,
+            "author": "kylegach",
+            "body_preview": "```suggestion\n  Adjust the path (`../../packages/ui/src/**/*.tsx`) to match your",
+            "is_resolved": true,
+            "is_outdated": true
+          }
+        ]
+      }
+    ],
+    "total_usable_comments": 6
+  }
+]

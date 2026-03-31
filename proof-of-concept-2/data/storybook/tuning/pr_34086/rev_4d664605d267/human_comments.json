@@ -1,0 +1,11 @@
+[
+  {
+    "body": "```suggestion\n        {...{ withSource, withToolbar }}\n```\n\nI wouldn't change the condition here, because you'll virtually always have a reload story handler. We want to ensure that users can disable the toolbar in this block.",
+    "author": "Sidnioulz",
+    "file_path": "code/addons/docs/src/blocks/components/Preview.tsx",
+    "line_number": null,
+    "is_resolved": true,
+    "is_outdated": true,
+    "category": "inline"
+  }
+]

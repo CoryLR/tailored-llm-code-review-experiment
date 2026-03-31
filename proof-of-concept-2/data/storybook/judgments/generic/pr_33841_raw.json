@@ -1,0 +1,45 @@
+{
+  "type": "result",
+  "subtype": "success",
+  "is_error": false,
+  "duration_ms": 37708,
+  "duration_api_ms": 37699,
+  "num_turns": 1,
+  "result": "Looking at each human comment and AI comment carefully:\n\n**Human Comments Analysis:**\n\n- **Human Comments 0-2**: Minor text/formatting suggestions (framework example text, adding \ud83d\udc47 emoji to comments)\n- **Human Comment 3**: Heading text adjustment\n- **Human Comment 4**: Rewording an explanation paragraph\n- **Human Comment 5**: Requesting clarification about `tsconfigPath` context\n\n**AI Comments Analysis:**\n\n- **Agent Comment 0**: About Vite builder specificity in the section scope\n- **Agent Comment 1**: About `.tsx`-only pattern missing `.ts` files\n- **Agent Comment 2**: About the comment not explaining that the first `include` entry preserves defaults\n\nNone of the AI comments address the same concerns as the human comments. The human feedback is almost entirely editorial (wording, emoji, heading text, and a clarification question about `tsconfigPath`), while the AI focuses on technical accuracy and completeness concerns.\n\nAgent Comment 2 touches the same file/line area as Human Comments 1 & 2, but the substance is completely different: the humans want to add a \ud83d\udc47 emoji prefix, while the AI wants to explain the purpose of the first array entry.\n\n===FINAL_JUDGE_OUTPUT_BEGIN===\n```json\n{\n  \"matches\": [\n    {\n      \"human_comment_index\": 0,\n      \"human_type\": \"inline\",\n      \"human_file\": \"docs/_snippets/storybook-main-rdt-monorepo-include.md\",\n      \"human_line\": null,\n      \"human_summary\": \"Minor wording suggestion to clarify framework replacement text\",\n      \"verdict\": \"no_match\",\n      \"matched_agent_comment_index\": null,\n      \"explanation\": \"No AI comment addresses this editorial wording suggestion about framework examples.\"\n    },\n    {\n      \"human_comment_index\": 1,\n      \"human_type\": \"inline\",\n      \"human_file\": \"docs/_snippets/storybook-main-rdt-monorepo-include.md\",\n      \"human_line\": null,\n      \"human_summary\": \"Add \ud83d\udc47 emoji prefix to comment about workspace package source files\",\n      \"verdict\": \"no_match\",\n      \"matched_agent_comment_index\": null,\n      \"explanation\": \"Agent Comment 2 is on the same comment area but raises a completely different concern (explaining the first include entry preserves defaults). The human just wants the \ud83d\udc47 emoji added.\"\n    },\n    {\n      \"human_comment_index\": 2,\n      \"human_type\": \"inline\",\n      \"human_file\": \"docs/_snippets/storybook-main-rdt-monorepo-include.md\",\n      \"human_line\": null,\n      \"human_summary\": \"Add \ud83d\udc47 emoji prefix to comment (second instance)\",\n      \"verdict\": \"no_match\",\n      \"matched_agent_comment_index\": null,\n      \"explanation\": \"Same editorial suggestion as Comment 1; no AI comment matches this.\"\n    },\n    {\n      \"human_comment_index\": 3,\n      \"human_type\": \"inline\",\n      \"human_file\": \"docs/configure/integration/typescript.mdx\",\n      \"human_line\": null,\n      \"human_summary\": \"Adjust section heading text to 'Inherited args are missing for components from workspace packages'\",\n      \"verdict\": \"no_match\",\n      \"matched_agent_comment_index\": null,\n      \"explanation\": \"Agent Comment 0 discusses the heading/section scope (Vite specificity) but the human's concern is purely about the heading wording, not builder specificity.\"\n    },\n    {\n      \"human_comment_index\": 4,\n      \"human_type\": \"inline\",\n      \"human_file\": \"docs/configure/integration/typescript.mdx\",\n      \"human_line\": null,\n      \"human_summary\": \"Reword explanation paragraph about react-docgen-typescript in monorepo with workspaces\",\n      \"verdict\": \"no_match\",\n      \"matched_agent_comment_index\": null,\n      \"explanation\": \"No AI comment addresses the specific rewording of this explanation paragraph.\"\n    },\n    {\n      \"human_comment_index\": 5,\n      \"human_type\": \"inline\",\n      \"human_file\": \"docs/configure/integration/typescript.mdx\",\n      \"human_line\": null,\n      \"human_summary\": \"Reword path explanation and request clarification about tsconfigPath context\",\n      \"verdict\": \"no_match\",\n      \"matched_agent_comment_index\": null,\n      \"explanation\": \"No AI comment addresses the tsconfigPath clarification or the suggested rewording.\"\n    }\n  ],\n  \"novel_agent_comments\": [\n    {\n      \"agent_comment_index\": 0,\n      \"assessment\": \"true_positive\",\n      \"explanation\": \"Pointing out that the section applies to all React users but the issue may be Vite-builder specific is a valid observation that could prevent user confusion. A reasonable documentation concern.\"\n    },\n    {\n      \"agent_comment_index\": 1,\n      \"assessment\": \"true_positive\",\n      \"explanation\": \"Noting that the glob pattern only covers .tsx and not .ts files is a genuinely useful observation. Workspace packages with type-only .ts files would be missed, making the fix incomplete for some users.\"\n    },\n    {\n      \"agent_comment_index\": 2,\n      \"assessment\": \"true_positive\",\n      \"explanation\": \"Explaining that providing an include array replaces the default and that omitting the first entry would break local file processing is a valuable insight that could prevent user errors when adapting the snippet.\"\n    }\n  ],\n  \"summary\": {\n    \"total_human_comments\": 6,\n    \"full_matches\": 0,\n    \"partial_matches\": 0,\n    \"no_matches\": 6,\n    \"novel_agent_comments\": 3,\n    \"recall_at_full\": 0.0,\n    \"recall_at_partial\": 0.0\n  }\n}\n```",
+  "stop_reason": "end_turn",
+  "session_id": "e2c2a779-0136-41b9-9ee7-58ca7be8cf3a",
+  "total_cost_usd": 0.066635,
+  "usage": {
+    "input_tokens": 1977,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 2270,
+    "server_tool_use": {
+      "web_search_requests": 0,
+      "web_fetch_requests": 0
+    },
+    "service_tier": "standard",
+    "cache_creation": {
+      "ephemeral_1h_input_tokens": 0,
+      "ephemeral_5m_input_tokens": 0
+    },
+    "inference_geo": "",
+    "iterations": [],
+    "speed": "standard"
+  },
+  "modelUsage": {
+    "claude-opus-4-6": {
+      "inputTokens": 1977,
+      "outputTokens": 2270,
+      "cacheReadInputTokens": 0,
+      "cacheCreationInputTokens": 0,
+      "webSearchRequests": 0,
+      "costUSD": 0.066635,
+      "contextWindow": 200000,
+      "maxOutputTokens": 64000
+    }
+  },
+  "permission_denials": [],
+  "fast_mode_state": "off",
+  "uuid": "db032a32-4fa4-4992-901a-6faf4dda8913"
+}

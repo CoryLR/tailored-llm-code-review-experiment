@@ -1,0 +1,11 @@
+[
+  {
+    "body": "_\u26a0\ufe0f Potential issue_ | _\ud83d\udfe0 Major_\n\n**Avoid triggering two reset render paths for one click.**\n\n`RESET_STORY_ARGS` already drives an args update and rerender/remount in `code/core/src/preview-api/modules/preview-web/Preview.tsx:344-410`. Incrementing `resetKey` here adds a second render cycle from Docs, so `usesMount` stories can replay mount/play twice and other stories get an extra rerender on top of the args reset. This should be a single reset+remount path rather than emitting `RESET_STORY_ARGS` and forcing a separate local remount.\n\n<details>\n<summary>\ud83e\udd16 Prompt for AI Agents</summary>\n\n```\nVerify each finding against the current code and only fix it if needed.\n\nIn `@code/addons/docs/src/blocks/blocks/Canvas.tsx` around lines 86 - 89, The\nhandler currently emits RESET_STORY_ARGS and also bumps local resetKey\n(setResetKey), causing two remounts; remove the local remount path by deleting\nthe setResetKey((prev) => prev + 1) call (and remove/reset the resetKey state if\npresent) so handleResetStory only calls\ndocsContext.channel.emit(RESET_STORY_ARGS, { storyId: story.id }); update the\nhandleResetStory dependency array to only include docsContext.channel and\nstory.id and remove any references to setResetKey/resetKey elsewhere in this\ncomponent.\n```\n\n</details>\n\n<!-- fingerprinting:phantom:poseidon:grasshopper -->\n\n<!-- This is an auto-generated comment by CodeRabbit -->\n\n\u2705 Addressed in commit 0d2c2ea",
+    "author": "coderabbitai",
+    "file_path": "code/addons/docs/src/blocks/blocks/Canvas.tsx",
+    "line_number": null,
+    "is_resolved": true,
+    "is_outdated": true,
+    "category": "inline"
+  }
+]

@@ -1,0 +1,55 @@
+{
+  "type": "result",
+  "subtype": "success",
+  "is_error": false,
+  "duration_ms": 112875,
+  "duration_api_ms": 110651,
+  "num_turns": 4,
+  "result": "Based on my exploration, I have enough context to complete the review. The key findings are:\n\n1. The docs say `Default: \\`true\\`` but both the preset code and JSDoc say `false`.\n2. A TODO comment is left in the type definition.\n3. No consuming code reads `global.FEATURES?.changeDetection` anywhere in the codebase.\n\n===FINAL_REVIEW_OUTPUT_BEGIN===\n```json\n{\n  \"inline_comments\": [\n    {\n      \"file_path\": \"docs/api/main-config/main-config-features.mdx\",\n      \"line_number\": 146,\n      \"category\": \"Code Defect\",\n      \"importance\": \"major\",\n      \"comment\": \"The documented default is `true`, but the actual default set in `common-preset.ts` is `false`, and the JSDoc in `core-common.ts` also declares `@default false`. This contradiction will mislead users who rely on the documentation. Change `Default: \\\\`true\\\\`` to `Default: \\\\`false\\\\``.\"\n    },\n    {\n      \"file_path\": \"code/core/src/types/modules/core-common.ts\",\n      \"line_number\": 541,\n      \"category\": \"Maintainability and Readability\",\n      \"importance\": \"minor\",\n      \"comment\": \"The inline `TODO: Turn to true before 10.4 release` comment is easy to overlook and has no tracking reference. Consider replacing it with a link to a GitHub issue (e.g., `TODO(#<issue-number>): Enable by default before 10.4 release`) so it is discoverable and actionable, following the pattern used by other temporary flags like `legacyDecoratorFileOrder`.\"\n    }\n  ],\n  \"general_comments\": [\n    {\n      \"category\": \"Code Defect\",\n      \"importance\": \"major\",\n      \"comment\": \"The `changeDetection` flag is declared and given a default value, but no code in this diff (or found elsewhere in the codebase) actually reads `global.FEATURES?.changeDetection`. Every other feature flag in `common-preset.ts` (e.g., `componentsManifest`, `sidebarOnboardingChecklist`) has corresponding consuming code that gates real behavior behind the flag. Without a consumer, this flag is inert and enables nothing. If the consuming code is in a separate PR, that should be noted; otherwise the flag addition is incomplete.\"\n    }\n  ]\n}\n```",
+  "stop_reason": "end_turn",
+  "session_id": "241267c6-7835-40df-a43a-b64ea7667c21",
+  "total_cost_usd": 0.24025965000000002,
+  "usage": {
+    "input_tokens": 7,
+    "cache_creation_input_tokens": 8023,
+    "cache_read_input_tokens": 48471,
+    "output_tokens": 3314,
+    "server_tool_use": {
+      "web_search_requests": 0,
+      "web_fetch_requests": 0
+    },
+    "service_tier": "standard",
+    "cache_creation": {
+      "ephemeral_1h_input_tokens": 8023,
+      "ephemeral_5m_input_tokens": 0
+    },
+    "inference_geo": "",
+    "iterations": [],
+    "speed": "standard"
+  },
+  "modelUsage": {
+    "claude-sonnet-4-6": {
+      "inputTokens": 7,
+      "outputTokens": 3314,
+      "cacheReadInputTokens": 48471,
+      "cacheCreationInputTokens": 8023,
+      "webSearchRequests": 0,
+      "costUSD": 0.09435855,
+      "contextWindow": 200000,
+      "maxOutputTokens": 32000
+    },
+    "claude-haiku-4-5-20251001": {
+      "inputTokens": 95,
+      "outputTokens": 4766,
+      "cacheReadInputTokens": 578661,
+      "cacheCreationInputTokens": 51288,
+      "webSearchRequests": 0,
+      "costUSD": 0.1459011,
+      "contextWindow": 200000,
+      "maxOutputTokens": 32000
+    }
+  },
+  "permission_denials": [],
+  "fast_mode_state": "off",
+  "uuid": "00930d8b-fae8-4209-978d-37029a60c341"
+}

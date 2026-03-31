@@ -1,0 +1,11 @@
+[
+  {
+    "body": "```suggestion\n  test.skip(templateName !== 'vue3-vite/default-ts', 'Only run these tests on Vue 3');\n```",
+    "author": "yannbf",
+    "file_path": "code/e2e-tests/framework-vue3.spec.ts",
+    "line_number": null,
+    "is_resolved": true,
+    "is_outdated": true,
+    "category": "inline"
+  }
+]

@@ -1,0 +1,29 @@
+[
+  {
+    "body": "Why aren't we reusing this in navigateWithQueryParams?",
+    "author": "ghengeveld",
+    "file_path": "code/core/src/manager-api/modules/url.ts",
+    "line_number": null,
+    "is_resolved": true,
+    "is_outdated": true,
+    "category": "inline"
+  },
+  {
+    "body": "I think _changed doesn't belong here.",
+    "author": "ghengeveld",
+    "file_path": "code/core/src/manager-api/tests/tags.test.js",
+    "line_number": null,
+    "is_resolved": true,
+    "is_outdated": true,
+    "category": "inline"
+  },
+  {
+    "body": "Should these be sorted maybe?",
+    "author": "ghengeveld",
+    "file_path": "code/core/src/manager-api/tests/tags.test.js",
+    "line_number": null,
+    "is_resolved": true,
+    "is_outdated": true,
+    "category": "inline"
+  }
+]

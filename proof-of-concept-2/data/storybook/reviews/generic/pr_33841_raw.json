@@ -1,0 +1,55 @@
+{
+  "type": "result",
+  "subtype": "success",
+  "is_error": false,
+  "duration_ms": 341081,
+  "duration_api_ms": 246470,
+  "num_turns": 23,
+  "result": "===FINAL_REVIEW_OUTPUT_BEGIN===\n```json\n{\n  \"inline_comments\": [\n    {\n      \"file_path\": \"docs/configure/integration/typescript.mdx\",\n      \"line_number\": 117,\n      \"category\": \"Maintainability and Readability\",\n      \"importance\": \"minor\",\n      \"comment\": \"The explanation correctly names 'the underlying Vite plugin,' but the surrounding `<IfRenderer renderer=\\\"react\\\">` block applies to all React users regardless of builder. The existing docs (table row for `reactDocgenTypescriptOptions`) explicitly note it 'configures the react-docgen-typescript-plugin per builder,' so Webpack users with the same symptom will also land here and be confused. The section heading (or opening sentence) should call out that this issue is specific to the Vite builder, e.g., '...workspace packages (Vite builder)' or a parenthetical clarification in the opening sentence.\"\n    },\n    {\n      \"file_path\": \"docs/_snippets/storybook-main-rdt-monorepo-include.md\",\n      \"line_number\": 12,\n      \"category\": \"Code Defect\",\n      \"importance\": \"minor\",\n      \"comment\": \"The workspace pattern `../../packages/ui/src/**/*.tsx` only covers `.tsx` files. Many workspace packages export shared type definitions from plain `.ts` files (e.g., `types.ts`, `Button.types.ts`, or an entire types-only package with no JSX). Those files won't be included in the TypeScript program, leaving the fix incomplete for those setups. Consider documenting a combined pattern such as `'../../packages/ui/src/**/*.{ts,tsx}'` or noting that users should add a separate `.ts` pattern if their shared package has non-JSX type files.\"\n    },\n    {\n      \"file_path\": \"docs/_snippets/storybook-main-rdt-monorepo-include.md\",\n      \"line_number\": 11,\n      \"category\": \"Maintainability and Readability\",\n      \"importance\": \"minor\",\n      \"comment\": \"The comment '// Add your workspace package source files so they're included in the TS program' does not explain that the first element `'**/**.tsx'` is required to preserve the plugin's default file coverage. Providing an `include` array replaces the default entirely \u2014 a user who adapts this snippet and omits the first entry would unknowingly stop Storybook from processing all their local `.tsx` files. The comment should make this explicit, e.g.: '// The first entry preserves the default (all local .tsx files); the second adds your workspace package files.'\"\n    }\n  ],\n  \"general_comments\": []\n}\n```",
+  "stop_reason": "end_turn",
+  "session_id": "f2eee93e-8849-4b77-a457-d38d79d614ef",
+  "total_cost_usd": 0.4993092,
+  "usage": {
+    "input_tokens": 143,
+    "cache_creation_input_tokens": 20241,
+    "cache_read_input_tokens": 270371,
+    "output_tokens": 8878,
+    "server_tool_use": {
+      "web_search_requests": 0,
+      "web_fetch_requests": 0
+    },
+    "service_tier": "standard",
+    "cache_creation": {
+      "ephemeral_1h_input_tokens": 20241,
+      "ephemeral_5m_input_tokens": 0
+    },
+    "inference_geo": "",
+    "iterations": [],
+    "speed": "standard"
+  },
+  "modelUsage": {
+    "claude-sonnet-4-6": {
+      "inputTokens": 143,
+      "outputTokens": 8878,
+      "cacheReadInputTokens": 270371,
+      "cacheCreationInputTokens": 20241,
+      "webSearchRequests": 0,
+      "costUSD": 0.29061404999999996,
+      "contextWindow": 200000,
+      "maxOutputTokens": 32000
+    },
+    "claude-haiku-4-5-20251001": {
+      "inputTokens": 34290,
+      "outputTokens": 5747,
+      "cacheReadInputTokens": 759939,
+      "cacheCreationInputTokens": 47741,
+      "webSearchRequests": 1,
+      "costUSD": 0.20869515000000002,
+      "contextWindow": 200000,
+      "maxOutputTokens": 32000
+    }
+  },
+  "permission_denials": [],
+  "fast_mode_state": "off",
+  "uuid": "ef7b2064-9eed-4160-96ad-f3a382a34021"
+}

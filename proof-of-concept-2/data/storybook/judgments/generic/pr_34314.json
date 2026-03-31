@@ -1,0 +1,40 @@
+{
+  "matches": [
+    {
+      "human_comment_index": 0,
+      "human_type": "inline",
+      "human_file": null,
+      "human_line": null,
+      "human_summary": "Feature flags should be sorted alphabetically",
+      "verdict": "no_match",
+      "matched_agent_comment_index": null,
+      "explanation": "None of the AI comments address alphabetical ordering. The AI focused on default value mismatches, TODO tracking, and unused flag concerns, but completely missed the sorting/ordering issue."
+    }
+  ],
+  "novel_agent_comments": [
+    {
+      "agent_comment_index": 0,
+      "assessment": "true_positive",
+      "explanation": "Identifying a mismatch between documented default value (true) and actual code default (false) is a genuinely useful finding that could mislead users."
+    },
+    {
+      "agent_comment_index": 1,
+      "assessment": "true_positive",
+      "explanation": "Suggesting a tracking reference for a TODO comment is a minor but reasonable maintainability suggestion that a real reviewer might appreciate."
+    },
+    {
+      "agent_comment_index": 2,
+      "assessment": "false_positive",
+      "explanation": "Feature flags are commonly added ahead of their consuming code, which may land in a separate PR. Flagging this as a defect without knowing the broader context is speculative and would likely be noise in a real review."
+    }
+  ],
+  "summary": {
+    "total_human_comments": 1,
+    "full_matches": 0,
+    "partial_matches": 0,
+    "no_matches": 1,
+    "novel_agent_comments": 3,
+    "recall_at_full": 0.0,
+    "recall_at_partial": 0.0
+  }
+}

@@ -1,0 +1,20 @@
+[
+  {
+    "body": "I think yarn fmt:write should just also fmt docs",
+    "author": "kasperpeulen",
+    "file_path": "package.json",
+    "line_number": null,
+    "is_resolved": true,
+    "is_outdated": true,
+    "category": "inline"
+  },
+  {
+    "body": "I think those seperate commands are not really needed anymore",
+    "author": "kasperpeulen",
+    "file_path": "scripts/package.json",
+    "line_number": null,
+    "is_resolved": true,
+    "is_outdated": true,
+    "category": "inline"
+  }
+]

@@ -1,0 +1,90 @@
+{
+  "matches": [
+    {
+      "human_comment_index": 0,
+      "human_type": "inline",
+      "human_file": null,
+      "human_line": null,
+      "human_summary": "Wording suggestion for framework comment",
+      "verdict": "no_match",
+      "matched_agent_comment_index": null,
+      "explanation": "No AI comment addresses this minor wording change about framework examples."
+    },
+    {
+      "human_comment_index": 1,
+      "human_type": "inline",
+      "human_file": null,
+      "human_line": null,
+      "human_summary": "Add emoji prefix to inline code comment",
+      "verdict": "no_match",
+      "matched_agent_comment_index": null,
+      "explanation": "No AI comment addresses the emoji/wording style of this inline comment. Agent Comment 1 is about the same snippet but raises a completely different concern (documenting the default glob)."
+    },
+    {
+      "human_comment_index": 2,
+      "human_type": "inline",
+      "human_file": null,
+      "human_line": null,
+      "human_summary": "Add emoji prefix to inline code comment (second location)",
+      "verdict": "no_match",
+      "matched_agent_comment_index": null,
+      "explanation": "Same as Comment 1 \u2014 no AI comment addresses this formatting suggestion."
+    },
+    {
+      "human_comment_index": 3,
+      "human_type": "inline",
+      "human_file": null,
+      "human_line": null,
+      "human_summary": "Adjust section heading text",
+      "verdict": "no_match",
+      "matched_agent_comment_index": null,
+      "explanation": "No AI comment suggests changing the heading text to 'Inherited args are missing for components from workspace packages'."
+    },
+    {
+      "human_comment_index": 4,
+      "human_type": "inline",
+      "human_file": null,
+      "human_line": null,
+      "human_summary": "Reword opening explanation paragraph",
+      "verdict": "no_match",
+      "matched_agent_comment_index": null,
+      "explanation": "Agent Comment 2 touches on scoping to Vite, which is tangentially related, but the human comment is about general prose clarity (mentioning workspace packages, inherited args like MUI's ButtonProps), not about Vite-scoping. Different core concerns."
+    },
+    {
+      "human_comment_index": 5,
+      "human_type": "inline",
+      "human_file": null,
+      "human_line": null,
+      "human_summary": "Clarify prose about tsconfigPath behavior and ask for more context",
+      "verdict": "no_match",
+      "matched_agent_comment_index": null,
+      "explanation": "Human asks to clarify why tsconfigPath doesn't affect file inclusion. Agent Comment 0 warns about include replacing the default glob. These are related to the same feature area but address distinct concerns: root-cause explanation vs. side-effect warning."
+    }
+  ],
+  "novel_agent_comments": [
+    {
+      "agent_comment_index": 0,
+      "assessment": "true_positive",
+      "explanation": "Flagging that `include` replaces the default glob is a genuine and important technical concern. Users could silently break prop inference for their own components if they only add the workspace path. This is a valuable finding that the human reviewers didn't explicitly call out."
+    },
+    {
+      "agent_comment_index": 1,
+      "assessment": "true_positive",
+      "explanation": "Suggesting that the `**/**.tsx` entry in the code snippet should be documented as the default that must be preserved is a useful readability improvement, complementing Agent Comment 0's concern."
+    },
+    {
+      "agent_comment_index": 2,
+      "assessment": "true_positive",
+      "explanation": "Pointing out that the section isn't scoped to Vite when the underlying fix is Vite-specific is a valid accuracy concern. Webpack users could be misled. This is a reasonable documentation quality finding."
+    }
+  ],
+  "summary": {
+    "total_human_comments": 6,
+    "full_matches": 0,
+    "partial_matches": 0,
+    "no_matches": 6,
+    "novel_agent_comments": 3,
+    "recall_at_full": 0.0,
+    "recall_at_partial": 0.0
+  }
+}

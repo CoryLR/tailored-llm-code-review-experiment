@@ -19,13 +19,14 @@ from dotenv import load_dotenv
 import os
 
 REPO_ROOT = Path(__file__).resolve().parent.parent
+SCRIPT_DIR = Path(__file__).resolve().parent
 load_dotenv(REPO_ROOT / ".env")
 
 GITLAB_TOKEN = os.environ["GITLAB_TOKEN"]
 PROJECT_ID = 278964  # gitlab-org/gitlab
 BASE_URL = "https://gitlab.com/api/v4"
 DELAY = 0.5  # seconds between API calls
-DATA_DIR = REPO_ROOT / "data" / "test1_validate_api_fields"
+DATA_DIR = SCRIPT_DIR / "data" / "test1_validate_api_fields"
 
 api_call_count = 0
 

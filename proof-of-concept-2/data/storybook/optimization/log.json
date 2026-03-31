@@ -1,0 +1,316 @@
+[
+  {
+    "step": 1,
+    "pr_number": 34116,
+    "comments_analyzed": 1,
+    "generalizable_count": 1,
+    "rules_after": 1,
+    "changes_summary": "Added one new rule under 'Code Defect' reflecting the project convention that STORYBOOK_TEMPLATE_NAME-based test skips must use exact string equality rather than substring matching, preventing tests from running on unintended framework template variants.",
+    "analysis": [
+      {
+        "human_comment_index": 0,
+        "human_comment_summary": "Reviewer changed test.skip condition from loose substring match (!templateName?.includes('vue3')) to exact template name equality (templateName !== 'vue3-vite/default-ts').",
+        "is_generalizable": true,
+        "reasoning": "The Storybook project uses a STORYBOOK_TEMPLATE_NAME environment variable with well-defined values like 'vue3-vite/default-ts'. Using .includes() for partial matching can accidentally enable tests across unintended template variants. The project convention is to match the exact template identifier string. This pattern would recur in any new framework-specific e2e test file.",
+        "action": "add_rule",
+        "rule_category": "Code Defect",
+        "rule_text": "In e2e tests that conditionally skip based on `STORYBOOK_TEMPLATE_NAME`, always use exact equality (e.g., `templateName !== 'vue3-vite/default-ts'`) rather than loose substring matching (e.g., `!templateName?.includes('vue3')`), to avoid unintentionally running tests against unintended template variants."
+      }
+    ],
+    "updated_rules": [
+      {
+        "category": "Code Defect",
+        "rule": "In e2e tests that conditionally skip based on `STORYBOOK_TEMPLATE_NAME`, always use exact equality (e.g., `templateName !== 'vue3-vite/default-ts'`) rather than loose substring matching (e.g., `!templateName?.includes('vue3')`), to avoid unintentionally running tests against unintended template variants."
+      }
+    ],
+    "cost_usd": 0.043659,
+    "duration_ms": 21583
+  },
+  {
+    "step": 2,
+    "pr_number": 34086,
+    "comments_analyzed": 3,
+    "generalizable_count": 3,
+    "rules_after": 3,
+    "changes_summary": "Added two new rules. (1) A 'Code Defect' rule capturing the Storybook-specific hazard of combining a channel event that already triggers a remount with a local React state increment for the same purpose \u2014 producing double render cycles. (2) A 'Maintainability and Readability' rule capturing the project convention that new behaviors in Docs block components must be configurable/opt-out and must not inadvertently override existing configuration conditions. Comment 2 was subsumed by the rule derived from Comment 1 (same configurability pattern) and marked no_change.",
+    "analysis": [
+      {
+        "human_comment_index": 0,
+        "human_comment_summary": "Emitting RESET_STORY_ARGS (which already drives a remount in the preview API) AND incrementing a local resetKey state causes two render/remount cycles, potentially replaying play/mount hooks twice.",
+        "is_generalizable": true,
+        "reasoning": "This reflects a recurring risk specific to this project: Storybook channel events like RESET_STORY_ARGS, FORCE_REMOUNT, etc. already trigger lifecycle effects in the preview API. Any Docs block code that additionally increments local React state to drive the same lifecycle change will double-trigger it. This pattern could recur whenever developers add story-reset-style features to Docs.",
+        "action": "add_rule",
+        "rule_category": "Code Defect",
+        "rule_text": "When a Storybook channel event (e.g., `RESET_STORY_ARGS`, `FORCE_REMOUNT`) already drives a re-render or remount through the preview API, do not also update local React state (e.g., a `resetKey` counter) to trigger the same lifecycle change \u2014 doing so creates duplicate render cycles that can cause `play`/mount hooks to execute more than once."
+      },
+      {
+        "human_comment_index": 1,
+        "human_comment_summary": "Don't change the condition that gates the action bar on withToolbar \u2014 users rely on that existing opt-out and it must not be bypassed when adding new features.",
+        "is_generalizable": true,
+        "reasoning": "This is a project-level convention: existing props/parameters that allow users to disable parts of the Docs UI (e.g., withToolbar, withSource) must not be inadvertently bypassed or weakened when new features are added. This same issue could arise in any future extension of the Preview/Canvas action bar.",
+        "action": "add_rule",
+        "rule_category": "Maintainability and Readability",
+        "rule_text": "When adding new UI actions or behaviors to Docs block components (e.g., buttons in the `Preview` action bar), gate them behind a configurable prop or docs parameter so they can be disabled per-story, per-component, or globally; never bypass or weaken existing configuration conditions (e.g., `withToolbar`, `withSource`) that users rely on to control the UI."
+      },
+      {
+        "human_comment_index": 2,
+        "human_comment_summary": "The reset button should not be always-on for all inline canvases; it must be opt-out configurable via a docs parameter or block prop.",
+        "is_generalizable": true,
+        "reasoning": "Same pattern as Comment 1 \u2014 new features in Docs blocks must be configurable rather than unconditionally enabled. This is a project-wide design requirement for Docs block extensibility.",
+        "action": "no_change",
+        "rule_category": null,
+        "rule_text": null
+      }
+    ],
+    "updated_rules": [
+      {
+        "category": "Code Defect",
+        "rule": "In e2e tests that conditionally skip based on `STORYBOOK_TEMPLATE_NAME`, always use exact equality (e.g., `templateName !== 'vue3-vite/default-ts'`) rather than loose substring matching (e.g., `!templateName?.includes('vue3')`), to avoid unintentionally running tests against unintended template variants."
+      },
+      {
+        "category": "Code Defect",
+        "rule": "When a Storybook channel event (e.g., `RESET_STORY_ARGS`, `FORCE_REMOUNT`) already drives a re-render or remount through the preview API, do not also update local React state (e.g., a `resetKey` counter) to trigger the same lifecycle change \u2014 doing so creates duplicate render cycles that can cause `play`/mount hooks to execute more than once."
+      },
+      {
+        "category": "Maintainability and Readability",
+        "rule": "When adding new UI actions or behaviors to Docs block components (e.g., buttons in the `Preview` action bar), gate them behind a configurable prop or docs parameter so they can be disabled per-story, per-component, or globally; never bypass or weaken existing configuration conditions (e.g., `withToolbar`, `withSource`) that users rely on to control the UI."
+      }
+    ],
+    "cost_usd": 0.056502750000000004,
+    "duration_ms": 46222
+  },
+  {
+    "step": 3,
+    "pr_number": 33998,
+    "comments_analyzed": 3,
+    "generalizable_count": 2,
+    "rules_after": 5,
+    "changes_summary": "Added two new rules: (1) a Code Defect rule requiring validation of user-supplied numeric control options before slice/limit operations, derived from the reviewer's correction of the missing guard on `maxPresetColors`; (2) a PR Hygiene rule requiring out-of-scope changes (such as dependency bumps) to be documented or split, derived from the reviewer's flag on the unrelated svelte-vite peer-dependency change. Comment 0 was skipped as non-generalizable story-content feedback.",
+    "analysis": [
+      {
+        "human_comment_index": 0,
+        "human_comment_summary": "Nit suggesting the WithUnlimitedPresetColors story be updated to show it stops at the default value rather than demonstrating unlimited.",
+        "is_generalizable": false,
+        "reasoning": "This is feedback about the illustrative content of a single specific story in this MR. It does not reflect a recurring project convention or defect pattern.",
+        "action": "no_change",
+        "rule_category": null,
+        "rule_text": null
+      },
+      {
+        "human_comment_index": 1,
+        "human_comment_summary": "Guard maxPresetColors against invalid values (negatives, non-integers) before using it in a slice operation; fall back to the documented default (27) instead of producing undefined behavior.",
+        "is_generalizable": true,
+        "reasoning": "Storybook has many numeric control configuration options (limits, counts, sizes) that are user-supplied. The pattern of failing to validate such inputs before using them in array/slice operations will recur. This is a project-specific defect pattern, not just generic advice.",
+        "action": "add_rule",
+        "rule_category": "Code Defect",
+        "rule_text": "When implementing numeric configuration options for Storybook controls (e.g., limits, counts, sizes), always validate user-supplied values against invalid inputs (negative numbers, non-integers, NaN) before using them in slice or limit operations; fall back to the documented default rather than passing the raw value directly."
+      },
+      {
+        "human_comment_index": 2,
+        "human_comment_summary": "A peer-dependency version bump in svelte-vite/package.json is out of scope for this ColorControl feature PR; reviewer requests either documentation in the PR description or extraction into a separate PR.",
+        "is_generalizable": true,
+        "reasoning": "The reviewer expects PRs to stay within their stated scope, and requires that any out-of-scope changes (especially to package manifests or dependency ranges) be explicitly documented in the PR description or split into a separate PR. This is a recurring project-level PR hygiene convention.",
+        "action": "add_rule",
+        "rule_category": "PR Hygiene",
+        "rule_text": "If a PR includes changes outside its stated scope (e.g., a dependency version bump alongside a feature change), flag this and require either explicit documentation of the out-of-scope change in the PR description or extraction into a separate focused PR."
+      }
+    ],
+    "updated_rules": [
+      {
+        "category": "Code Defect",
+        "rule": "In e2e tests that conditionally skip based on `STORYBOOK_TEMPLATE_NAME`, always use exact equality (e.g., `templateName !== 'vue3-vite/default-ts'`) rather than loose substring matching (e.g., `!templateName?.includes('vue3')`), to avoid unintentionally running tests against unintended template variants."
+      },
+      {
+        "category": "Code Defect",
+        "rule": "When a Storybook channel event (e.g., `RESET_STORY_ARGS`, `FORCE_REMOUNT`) already drives a re-render or remount through the preview API, do not also update local React state (e.g., a `resetKey` counter) to trigger the same lifecycle change \u2014 doing so creates duplicate render cycles that can cause `play`/mount hooks to execute more than once."
+      },
+      {
+        "category": "Code Defect",
+        "rule": "When implementing numeric configuration options for Storybook controls (e.g., limits, counts, sizes), always validate user-supplied values against invalid inputs (negative numbers, non-integers, NaN) before using them in slice or limit operations; fall back to the documented default rather than passing the raw value directly."
+      },
+      {
+        "category": "Maintainability and Readability",
+        "rule": "When adding new UI actions or behaviors to Docs block components (e.g., buttons in the `Preview` action bar), gate them behind a configurable prop or docs parameter so they can be disabled per-story, per-component, or globally; never bypass or weaken existing configuration conditions (e.g., `withToolbar`, `withSource`) that users rely on to control the UI."
+      },
+      {
+        "category": "PR Hygiene",
+        "rule": "If a PR includes changes outside its stated scope (e.g., a dependency version bump alongside a feature change), flag this and require either explicit documentation of the out-of-scope change in the PR description or extraction into a separate focused PR."
+      }
+    ],
+    "cost_usd": 0.05912400000000001,
+    "duration_ms": 46592
+  },
+  {
+    "step": 4,
+    "pr_number": 34245,
+    "comments_analyzed": 6,
+    "generalizable_count": 2,
+    "rules_after": 7,
+    "changes_summary": "Added two new rules based on generalizable patterns observed in reviewer comments: (1) a Code Defect rule about Nx task cache `inputs` needing to cover the full scope of the task's command (from the automated cache-narrowness finding on `pretty-docs`); (2) a Maintainability rule about keeping Nx task `dependsOn` minimal, specifically that formatting/linting tasks should not declare unnecessary dependencies on `compile` (from the human reviewer's question about pipeline ordering). All five existing rules are retained unchanged.",
+    "analysis": [
+      {
+        "human_comment_index": 0,
+        "human_comment_summary": "Shows the consolidated VS Code settings diff collapsing separate per-language formatter keys into a single combined key.",
+        "is_generalizable": false,
+        "reasoning": "This is a VS Code settings consolidation specific to this PR's changes. There is no reviewer critique; it just shows the diff. Not a recurring project pattern.",
+        "action": "no_change",
+        "rule_category": null,
+        "rule_text": null
+      },
+      {
+        "human_comment_index": 1,
+        "human_comment_summary": "Flags that the `pretty-docs` Nx task declares narrowly scoped inputs (docs/**/*) but its command runs the root formatter over the whole repo, causing incorrect cache reuse when non-docs files change.",
+        "is_generalizable": true,
+        "reasoning": "This project uses Nx with distributed caching heavily. Declaring task inputs narrower than what the task's command actually processes is a recurring misconfiguration that silently causes stale cache hits across any PR that adds or modifies Nx task targets. This pattern will recur.",
+        "action": "add_rule",
+        "rule_category": "Code Defect",
+        "rule_text": "When adding or modifying Nx task targets that use caching, verify that the declared `inputs` cover all files the task's command actually processes. If the command runs at `{workspaceRoot}` (e.g., a root-level formatter), but `inputs` are scoped to a subdirectory (e.g., `docs/**/*`), the cache will reuse stale results when untracked files change."
+      },
+      {
+        "human_comment_index": 2,
+        "human_comment_summary": "Reviewer suggests `yarn fmt:write` should also format docs.",
+        "is_generalizable": false,
+        "reasoning": "One-off suggestion about the scope of this PR's new `fmt:write` script. Not a pattern that would recur as a general review rule.",
+        "action": "no_change",
+        "rule_category": null,
+        "rule_text": null
+      },
+      {
+        "human_comment_index": 3,
+        "human_comment_summary": "Reviewer says the separate commands introduced are not needed anymore.",
+        "is_generalizable": false,
+        "reasoning": "Vague cleanup comment specific to scripts introduced in this PR. Not a generalizable pattern.",
+        "action": "no_change",
+        "rule_category": null,
+        "rule_text": null
+      },
+      {
+        "human_comment_index": 4,
+        "human_comment_summary": "Reviewer questions whether the docs-formatting task unnecessarily depends on `compile`, which would delay it in CI, and suggests renaming it.",
+        "is_generalizable": true,
+        "reasoning": "In this monorepo, Nx task `dependsOn` declarations gate when tasks can run on CI agents. A formatting or linting task that unnecessarily declares `dependsOn: compile` blocks it from running in parallel with or before compilation, wasting pipeline time. This concern will recur any time a new non-compilation task is added.",
+        "action": "add_rule",
+        "rule_category": "Maintainability and Readability",
+        "rule_text": "When adding or modifying Nx task targets, verify that `dependsOn` lists only tasks that are genuinely required. Formatting, linting, and documentation tasks generally should not declare a dependency on `compile` unless they consume compiled artifacts; unnecessary dependencies serialize CI steps and increase wall-clock pipeline time."
+      },
+      {
+        "human_comment_index": 5,
+        "human_comment_summary": "Automated comment flagging a `<ul>` opened twice instead of `<ul>...</ul>` in an HTML template string. Already fixed in the PR.",
+        "is_generalizable": false,
+        "reasoning": "Generic HTML validity bug in a template string, already caught and fixed. Not specific enough to this project to warrant a dedicated rule beyond standard code defect review.",
+        "action": "no_change",
+        "rule_category": null,
+        "rule_text": null
+      }
+    ],
+    "updated_rules": [
+      {
+        "category": "Code Defect",
+        "rule": "In e2e tests that conditionally skip based on `STORYBOOK_TEMPLATE_NAME`, always use exact equality (e.g., `templateName !== 'vue3-vite/default-ts'`) rather than loose substring matching (e.g., `!templateName?.includes('vue3')`), to avoid unintentionally running tests against unintended template variants."
+      },
+      {
+        "category": "Code Defect",
+        "rule": "When a Storybook channel event (e.g., `RESET_STORY_ARGS`, `FORCE_REMOUNT`) already drives a re-render or remount through the preview API, do not also update local React state (e.g., a `resetKey` counter) to trigger the same lifecycle change \u2014 doing so creates duplicate render cycles that can cause `play`/mount hooks to execute more than once."
+      },
+      {
+        "category": "Code Defect",
+        "rule": "When implementing numeric configuration options for Storybook controls (e.g., limits, counts, sizes), always validate user-supplied values against invalid inputs (negative numbers, non-integers, NaN) before using them in slice or limit operations; fall back to the documented default rather than passing the raw value directly."
+      },
+      {
+        "category": "Code Defect",
+        "rule": "When adding or modifying Nx task targets that use caching, verify that the declared `inputs` cover all files the task's command actually processes. If the command runs at `{workspaceRoot}` (e.g., a root-level formatter), but `inputs` are scoped to a subdirectory (e.g., `docs/**/*`), the cache will reuse stale results when untracked files change."
+      },
+      {
+        "category": "Maintainability and Readability",
+        "rule": "When adding new UI actions or behaviors to Docs block components (e.g., buttons in the `Preview` action bar), gate them behind a configurable prop or docs parameter so they can be disabled per-story, per-component, or globally; never bypass or weaken existing configuration conditions (e.g., `withToolbar`, `withSource`) that users rely on to control the UI."
+      },
+      {
+        "category": "Maintainability and Readability",
+        "rule": "When adding or modifying Nx task targets, verify that `dependsOn` lists only tasks that are genuinely required. Formatting, linting, and documentation tasks generally should not declare a dependency on `compile` unless they consume compiled artifacts; unnecessary dependencies serialize CI steps and increase wall-clock pipeline time."
+      },
+      {
+        "category": "PR Hygiene",
+        "rule": "If a PR includes changes outside its stated scope (e.g., a dependency version bump alongside a feature change), flag this and require either explicit documentation of the out-of-scope change in the PR description or extraction into a separate focused PR."
+      }
+    ],
+    "cost_usd": 0.1113015,
+    "duration_ms": 82926
+  },
+  {
+    "step": 5,
+    "pr_number": 34305,
+    "comments_analyzed": 3,
+    "generalizable_count": 2,
+    "rules_after": 9,
+    "changes_summary": "Added two new Code Defect rules. (1) Priority-array ordering: extracted from Comment 0, which caught that newly inserted StatusValue entries were placed at the wrong index in statusPriority, silently inverting their relative ranks \u2014 a recurring risk whenever new status values are added. (2) JSDoc @default vs runtime preset mismatch: extracted from Comment 2, which identified a project-specific pattern where feature-flag types in core-common.ts carry @default annotations that can diverge from the actual defaults set in common-preset.ts, misleading users about opt-in vs opt-out behaviour. Comment 1 was too vague and context-specific to yield an independent rule.",
+    "analysis": [
+      {
+        "human_comment_index": 0,
+        "human_comment_summary": "The statusPriority array has the new change-detection values in the wrong order: 'new' appears after 'affected', inverting their relative ranks. Intended order is success < new < modified < affected < warning.",
+        "is_generalizable": true,
+        "reasoning": "Ordered priority arrays (like statusPriority) are a recurring data structure in this project. Any future StatusValue addition carries the same risk: placing the entry at the wrong index silently inverts its precedence relative to neighbours without any compiler or runtime error. A rule prompting reviewers to cross-check insertion index against documented precedence will catch this class of bug on future PRs.",
+        "action": "add_rule",
+        "rule_category": "Code Defect",
+        "rule_text": "When inserting new `StatusValue` variants (or any enum-like values) into an ordered priority/ranking array (e.g., `statusPriority`), verify that each new entry is placed at the index that reflects its documented relative precedence. A misplaced entry silently inverts its rank relative to adjacent values without any compile-time or runtime error."
+      },
+      {
+        "human_comment_index": 1,
+        "human_comment_summary": "Vague inline comment 'This doesn't seem right.' with no specific code location or explanation.",
+        "is_generalizable": false,
+        "reasoning": "Without a code pointer or rationale this is almost certainly a reaction to the same priority-order bug already captured in Comment 0. No independent generalizable pattern can be extracted.",
+        "action": "no_change",
+        "rule_category": null,
+        "rule_text": null
+      },
+      {
+        "human_comment_index": 2,
+        "human_comment_summary": "A JSDoc '@default true' annotation was added to a feature flag in core-common.ts, but the actual runtime preset (common-preset.ts) does not include the flag. Because consumption sites use optional chaining, the effective default is false/undefined, making the documented default wrong.",
+        "is_generalizable": true,
+        "reasoning": "Storybook has a recurring project-specific pattern: feature-flag types are declared in core-common.ts with JSDoc, while their runtime defaults are set separately in the features preset in common-preset.ts. This split makes it easy to document a wrong default. The pattern will recur every time a new feature flag is added, making this a high-value project-specific rule.",
+        "action": "add_rule",
+        "rule_category": "Code Defect",
+        "rule_text": "When adding optional feature flags to the Storybook `features` type in `core-common.ts`, verify that any `@default` JSDoc annotation matches the actual runtime value set in the features preset (`common-preset.ts`). If the preset omits the flag, consumption sites using optional chaining treat it as `false`/`undefined`, making a `@default true` annotation incorrect and misleading to users."
+      }
+    ],
+    "updated_rules": [
+      {
+        "category": "Code Defect",
+        "rule": "In e2e tests that conditionally skip based on `STORYBOOK_TEMPLATE_NAME`, always use exact equality (e.g., `templateName !== 'vue3-vite/default-ts'`) rather than loose substring matching (e.g., `!templateName?.includes('vue3')`), to avoid unintentionally running tests against unintended template variants."
+      },
+      {
+        "category": "Code Defect",
+        "rule": "When a Storybook channel event (e.g., `RESET_STORY_ARGS`, `FORCE_REMOUNT`) already drives a re-render or remount through the preview API, do not also update local React state (e.g., a `resetKey` counter) to trigger the same lifecycle change \u2014 doing so creates duplicate render cycles that can cause `play`/mount hooks to execute more than once."
+      },
+      {
+        "category": "Code Defect",
+        "rule": "When implementing numeric configuration options for Storybook controls (e.g., limits, counts, sizes), always validate user-supplied values against invalid inputs (negative numbers, non-integers, NaN) before using them in slice or limit operations; fall back to the documented default rather than passing the raw value directly."
+      },
+      {
+        "category": "Code Defect",
+        "rule": "When adding or modifying Nx task targets that use caching, verify that the declared `inputs` cover all files the task's command actually processes. If the command runs at `{workspaceRoot}` (e.g., a root-level formatter), but `inputs` are scoped to a subdirectory (e.g., `docs/**/*`), the cache will reuse stale results when untracked files change."
+      },
+      {
+        "category": "Code Defect",
+        "rule": "When inserting new `StatusValue` variants (or any enum-like values) into an ordered priority/ranking array (e.g., `statusPriority`), verify that each new entry is placed at the index that reflects its documented relative precedence. A misplaced entry silently inverts its rank relative to adjacent values without any compile-time or runtime error."
+      },
+      {
+        "category": "Code Defect",
+        "rule": "When adding optional feature flags to the Storybook `features` type in `core-common.ts`, verify that any `@default` JSDoc annotation matches the actual runtime value set in the features preset (`common-preset.ts`). If the preset omits the flag, consumption sites using optional chaining treat it as `false`/`undefined`, making a `@default true` annotation incorrect and misleading to users."
+      },
+      {
+        "category": "Maintainability and Readability",
+        "rule": "When adding new UI actions or behaviors to Docs block components (e.g., buttons in the `Preview` action bar), gate them behind a configurable prop or docs parameter so they can be disabled per-story, per-component, or globally; never bypass or weaken existing configuration conditions (e.g., `withToolbar`, `withSource`) that users rely on to control the UI."
+      },
+      {
+        "category": "Maintainability and Readability",
+        "rule": "When adding or modifying Nx task targets, verify that `dependsOn` lists only tasks that are genuinely required. Formatting, linting, and documentation tasks generally should not declare a dependency on `compile` unless they consume compiled artifacts; unnecessary dependencies serialize CI steps and increase wall-clock pipeline time."
+      },
+      {
+        "category": "PR Hygiene",
+        "rule": "If a PR includes changes outside its stated scope (e.g., a dependency version bump alongside a feature change), flag this and require either explicit documentation of the out-of-scope change in the PR description or extraction into a separate focused PR."
+      }
+    ],
+    "cost_usd": 0.0916665,
+    "duration_ms": 64790
+  }
+]

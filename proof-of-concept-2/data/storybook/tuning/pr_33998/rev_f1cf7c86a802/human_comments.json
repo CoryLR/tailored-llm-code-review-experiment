@@ -1,0 +1,11 @@
+[
+  {
+    "body": "_\u26a0\ufe0f Potential issue_ | _\ud83d\udfe1 Minor_\n\n<details>\n<summary>\ud83e\udde9 Analysis chain</summary>\n\n\ud83c\udfc1 Script executed:\n\n```shell\n#!/bin/bash\n# Check if `@sveltejs/vite-plugin-svelte` version 7.x exists\ncurl -s \"https://registry.npmjs.org/@sveltejs/vite-plugin-svelte\" | jq '.versions | keys | map(select(startswith(\"7.\"))) | sort | .[-5:]'\n```\n\nRepository: storybookjs/storybook\n\nLength of output: 114\n\n---\n\n\n\n</details>\n\n**Document or split the peerDependency change.**\n\nThis `package.json` change is outside the stated PR scope. According to the comments summary, the PR should contain \"only the three ColorControl files,\" but this extends `@sveltejs/vite-plugin-svelte` peer compatibility to v7. While the version exists and the change is valid, either document it in the PR description (explaining the \"accidental downgrade\" fix mentioned in the commit) or split it into a separate PR for clarity.\n\n<details>\n<summary>\ud83e\udd16 Prompt for AI Agents</summary>\n\n```\nVerify each finding against the current code and only fix it if needed.\n\nIn `@code/frameworks/svelte-vite/package.json` at line 70, The change broadened\nthe peerDependency for \"@sveltejs/vite-plugin-svelte\" in package.json (the\ndependency string on that package) which is outside this PR's stated scope;\nupdate the PR by either adding a clear note in the PR description documenting\nthis peerDependency change and the \"accidental downgrade\" fix, or remove the\nchange from this branch and put the updated \"@sveltejs/vite-plugin-svelte\" peer\nrange into a separate focused PR so only the three ColorControl files remain in\nthis PR.\n```\n\n</details>\n\n<!-- fingerprinting:phantom:poseidon:ocelot -->\n\n<!-- This is an auto-generated comment by CodeRabbit -->",
+    "author": "coderabbitai",
+    "file_path": "code/frameworks/svelte-vite/package.json",
+    "line_number": 70,
+    "is_resolved": false,
+    "is_outdated": true,
+    "category": "inline"
+  }
+]

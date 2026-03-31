@@ -1,5 +1,11 @@
 # Experiment data (large JSON files from API scraping)
-data/
+exploratory-tests/data/
+
+# PoC #2: append-system-prompt backup (replace mode chosen; kept locally for reference)
+proof-of-concept-2/data/storybook-backup-append-system-prompt/
+
+# PoC #2: reviewer prompts with embedded diffs (regenerable via 2_prepare.py)
+proof-of-concept-2/data/**/reviewer_prompt.txt
 
 # Cloned subject project repos (large, used as input data)
 subject-repos/

@@ -1,0 +1,11 @@
+[
+  {
+    "body": "does this depend on compile, otherwise we can do it earlier! Maybe just rename pretty-docs to fmt",
+    "author": "kasperpeulen",
+    "file_path": "scripts/ci/common-jobs.ts",
+    "line_number": null,
+    "is_resolved": true,
+    "is_outdated": true,
+    "category": "inline"
+  }
+]

@@ -1,0 +1,26 @@
+{
+  "inline_comments": [
+    {
+      "file_path": "docs/configure/integration/typescript.mdx",
+      "line_number": 119,
+      "category": "Code Defect",
+      "importance": "major",
+      "comment": "The instruction 'add your workspace package source files to the `include` option' is incomplete and potentially misleading. Setting `reactDocgenTypescriptOptions.include` replaces the plugin's default glob entirely \u2014 it does not append to it. Users who follow only the prose and write `include: ['../../packages/ui/src/**/*.tsx']` (without also restoring the default `**/**.tsx`) will silently break prop inference for all components in their own project. The prose must explicitly warn that the default glob must be re-declared when `include` is customised. For example: 'Because setting `include` replaces the plugin default (`**/**.tsx`), you must also re-add that pattern to avoid losing prop inference for your own project's components.'"
+    },
+    {
+      "file_path": "docs/_snippets/storybook-main-rdt-monorepo-include.md",
+      "line_number": 12,
+      "category": "Maintainability and Readability",
+      "importance": "minor",
+      "comment": "The inline comment `// Add your workspace package source files so they're included in the TS program` only explains the workspace-path entry, leaving the purpose of `'**/**.tsx'` entirely undocumented. Since this is the critical gotcha in the fix \u2014 omitting this default glob silently destroys all prop inference for the app \u2014 the comment should clarify that `**/**.tsx` is the plugin's default that must be preserved. For example: `// '**/**.tsx' re-adds the plugin default (required because setting include replaces it)`."
+    },
+    {
+      "file_path": "docs/configure/integration/typescript.mdx",
+      "line_number": 117,
+      "category": "Maintainability and Readability",
+      "importance": "minor",
+      "comment": "The root-cause explanation correctly names 'the underlying Vite plugin', but the section title and the opening sentence are not scoped to Vite. Webpack-based React projects also use `react-docgen-typescript` and can exhibit missing inherited props for entirely different reasons. Users on Webpack will hit this heading, read through the fix, and may apply it incorrectly or be misled about their actual issue. The section title or opening sentence should qualify the scope, e.g. 'If you're using `react-docgen-typescript` with a Vite-based framework in a monorepo\u2026'."
+    }
+  ],
+  "general_comments": []
+}

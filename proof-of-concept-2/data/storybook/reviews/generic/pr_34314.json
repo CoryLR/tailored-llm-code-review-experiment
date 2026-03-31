@@ -1,0 +1,25 @@
+{
+  "inline_comments": [
+    {
+      "file_path": "docs/api/main-config/main-config-features.mdx",
+      "line_number": 146,
+      "category": "Code Defect",
+      "importance": "major",
+      "comment": "The documented default is `true`, but the actual default set in `common-preset.ts` is `false`, and the JSDoc in `core-common.ts` also declares `@default false`. This contradiction will mislead users who rely on the documentation. Change `Default: \\`true\\`` to `Default: \\`false\\``."
+    },
+    {
+      "file_path": "code/core/src/types/modules/core-common.ts",
+      "line_number": 541,
+      "category": "Maintainability and Readability",
+      "importance": "minor",
+      "comment": "The inline `TODO: Turn to true before 10.4 release` comment is easy to overlook and has no tracking reference. Consider replacing it with a link to a GitHub issue (e.g., `TODO(#<issue-number>): Enable by default before 10.4 release`) so it is discoverable and actionable, following the pattern used by other temporary flags like `legacyDecoratorFileOrder`."
+    }
+  ],
+  "general_comments": [
+    {
+      "category": "Code Defect",
+      "importance": "major",
+      "comment": "The `changeDetection` flag is declared and given a default value, but no code in this diff (or found elsewhere in the codebase) actually reads `global.FEATURES?.changeDetection`. Every other feature flag in `common-preset.ts` (e.g., `componentsManifest`, `sidebarOnboardingChecklist`) has corresponding consuming code that gates real behavior behind the flag. Without a consumer, this flag is inert and enables nothing. If the consuming code is in a separate PR, that should be noted; otherwise the flag addition is incomplete."
+    }
+  ]
+}

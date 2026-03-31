@@ -1,0 +1,11 @@
+[
+  {
+    "body": "```diff\n{\n-  \"[javascript]\": {\n+  \"[javascript][javascriptreact][typescript][typescriptreact][json][jsonc]\": {\n    \"editor.defaultFormatter\": \"oxc.oxc-vscode\",\n    \"editor.formatOnSave\": true\n  },\n-  \"[javascriptreact]\": {\n-    \"editor.defaultFormatter\": \"oxc.oxc-vscode\",\n-    \"editor.formatOnSave\": true\n-  },\n-  \"[typescript]\": {\n-    \"editor.defaultFormatter\": \"oxc.oxc-vscode\",\n-    \"editor.formatOnSave\": true\n-  },\n-  \"[typescriptreact]\": {\n-    \"editor.defaultFormatter\": \"oxc.oxc-vscode\",\n-    \"editor.formatOnSave\": true\n-  },\n-  \"[json]\": {\n-    \"editor.defaultFormatter\": \"oxc.oxc-vscode\",\n-    \"editor.formatOnSave\": true\n-  },\n-  \"[jsonc]\": {\n-    \"editor.defaultFormatter\": \"oxc.oxc-vscode\",\n-    \"editor.formatOnSave\": true\n-  }\n}\n```",
+    "author": "AriPerkkio",
+    "file_path": ".vscode/settings.json",
+    "line_number": null,
+    "is_resolved": true,
+    "is_outdated": true,
+    "category": "inline"
+  }
+]

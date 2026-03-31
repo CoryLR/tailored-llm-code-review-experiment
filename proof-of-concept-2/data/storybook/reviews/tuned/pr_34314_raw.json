@@ -1,0 +1,55 @@
+{
+  "type": "result",
+  "subtype": "success",
+  "is_error": false,
+  "duration_ms": 84635,
+  "duration_api_ms": 84370,
+  "num_turns": 2,
+  "result": "===FINAL_REVIEW_OUTPUT_BEGIN===\n```json\n{\n  \"inline_comments\": [\n    {\n      \"file_path\": \"docs/api/main-config/main-config-features.mdx\",\n      \"line_number\": 145,\n      \"category\": \"Code Defect\",\n      \"importance\": \"major\",\n      \"comment\": \"The documented default (`true`) contradicts the actual runtime value. The preset in `common-preset.ts` explicitly sets `changeDetection: false`, and the JSDoc annotation in `core-common.ts` also says `@default false`. A user reading the docs will expect the feature to be on by default, but it is in fact off. Change this to `Default: \\\\`false\\\\``.\"\n    }\n  ],\n  \"general_comments\": []\n}\n```",
+  "stop_reason": "end_turn",
+  "session_id": "edde0416-ebe7-49cd-b9bb-ecd16cbe256c",
+  "total_cost_usd": 0.15197585000000002,
+  "usage": {
+    "input_tokens": 5,
+    "cache_creation_input_tokens": 6528,
+    "cache_read_input_tokens": 21356,
+    "output_tokens": 3064,
+    "server_tool_use": {
+      "web_search_requests": 0,
+      "web_fetch_requests": 0
+    },
+    "service_tier": "standard",
+    "cache_creation": {
+      "ephemeral_1h_input_tokens": 6528,
+      "ephemeral_5m_input_tokens": 0
+    },
+    "inference_geo": "",
+    "iterations": [],
+    "speed": "standard"
+  },
+  "modelUsage": {
+    "claude-sonnet-4-6": {
+      "inputTokens": 5,
+      "outputTokens": 3064,
+      "cacheReadInputTokens": 21356,
+      "cacheCreationInputTokens": 6528,
+      "webSearchRequests": 0,
+      "costUSD": 0.07686180000000001,
+      "contextWindow": 200000,
+      "maxOutputTokens": 32000
+    },
+    "claude-haiku-4-5-20251001": {
+      "inputTokens": 51,
+      "outputTokens": 3873,
+      "cacheReadInputTokens": 149293,
+      "cacheCreationInputTokens": 32615,
+      "webSearchRequests": 0,
+      "costUSD": 0.07511405,
+      "contextWindow": 200000,
+      "maxOutputTokens": 32000
+    }
+  },
+  "permission_denials": [],
+  "fast_mode_state": "off",
+  "uuid": "b47a8d75-8548-4182-a2d4-edb9c45b6181"
+}

@@ -1,0 +1,45 @@
+{
+  "type": "result",
+  "subtype": "success",
+  "is_error": false,
+  "duration_ms": 12927,
+  "duration_api_ms": 12920,
+  "num_turns": 1,
+  "result": "Looking at the human and AI comments:\n\n**Human Comment 0** is about alphabetical sorting of items (likely config options or features in the documentation/code).\n\n**AI Comment 0** is about an incorrect default value documented for `changeDetection` (says `true` but should be `false` based on the code).\n\nThese address completely different concerns \u2014 no match.\n\nFor the novel AI comment: flagging a documentation default that contradicts the actual code behavior is a genuinely useful finding, assuming the analysis of the code is accurate.\n\n===FINAL_JUDGE_OUTPUT_BEGIN===\n```json\n{\n  \"matches\": [\n    {\n      \"human_comment_index\": 0,\n      \"human_type\": \"inline\",\n      \"human_file\": null,\n      \"human_line\": null,\n      \"human_summary\": \"Items should be sorted alphabetically\",\n      \"verdict\": \"no_match\",\n      \"matched_agent_comment_index\": null,\n      \"explanation\": \"The human comment is about alphabetical sorting of items, while the only AI comment is about an incorrect default value in documentation. Completely different concerns.\"\n    }\n  ],\n  \"novel_agent_comments\": [\n    {\n      \"agent_comment_index\": 0,\n      \"assessment\": \"true_positive\",\n      \"explanation\": \"Flagging a documentation default value that contradicts the actual runtime default in code is a genuinely useful finding. If the code sets changeDetection: false but docs say Default: true, that is a real documentation bug that would confuse users.\"\n    }\n  ],\n  \"summary\": {\n    \"total_human_comments\": 1,\n    \"full_matches\": 0,\n    \"partial_matches\": 0,\n    \"no_matches\": 1,\n    \"novel_agent_comments\": 1,\n    \"recall_at_full\": 0.0,\n    \"recall_at_partial\": 0.0\n  }\n}\n```",
+  "stop_reason": "end_turn",
+  "session_id": "4f879cb0-c701-40d3-b052-c38023088e0e",
+  "total_cost_usd": 0.024,
+  "usage": {
+    "input_tokens": 1205,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "output_tokens": 719,
+    "server_tool_use": {
+      "web_search_requests": 0,
+      "web_fetch_requests": 0
+    },
+    "service_tier": "standard",
+    "cache_creation": {
+      "ephemeral_1h_input_tokens": 0,
+      "ephemeral_5m_input_tokens": 0
+    },
+    "inference_geo": "",
+    "iterations": [],
+    "speed": "standard"
+  },
+  "modelUsage": {
+    "claude-opus-4-6": {
+      "inputTokens": 1205,
+      "outputTokens": 719,
+      "cacheReadInputTokens": 0,
+      "cacheCreationInputTokens": 0,
+      "webSearchRequests": 0,
+      "costUSD": 0.024,
+      "contextWindow": 200000,
+      "maxOutputTokens": 64000
+    }
+  },
+  "permission_denials": [],
+  "fast_mode_state": "off",
+  "uuid": "3d82a55d-4075-410c-8dd4-0b4903795c98"
+}

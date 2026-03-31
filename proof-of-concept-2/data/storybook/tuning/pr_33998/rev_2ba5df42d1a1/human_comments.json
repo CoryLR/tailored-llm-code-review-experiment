@@ -1,0 +1,11 @@
+[
+  {
+    "body": "```suggestion\n    presetColors: Array.from({ length: 40 }, (_, i) => {\n      const hue = Math.round((i / 40) * 360);\n      return { color: `hsl(${hue}, 70%, 50%)`, title: `Color ${i + 1}` };\n    }),\n```\n\nnit: Let's demonstrate it stops at the default value",
+    "author": "Sidnioulz",
+    "file_path": "code/addons/docs/src/blocks/controls/Color.stories.tsx",
+    "line_number": 113,
+    "is_resolved": true,
+    "is_outdated": true,
+    "category": "inline"
+  }
+]

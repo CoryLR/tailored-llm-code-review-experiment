@@ -1,0 +1,55 @@
+{
+  "type": "result",
+  "subtype": "success",
+  "is_error": false,
+  "duration_ms": 153911,
+  "duration_api_ms": 153026,
+  "num_turns": 12,
+  "result": "Now I have enough context to produce the review. Let me analyze the diff carefully.\n\n**Key findings:**\n\n1. **Snippet line 12** \u2014 `include: ['**/**.tsx', '../../packages/ui/src/**/*.tsx']`: The `**/**.tsx` entry is critical: it is the plugin's default glob, and because setting `include` **replaces** the default entirely, omitting it would silently break prop inference for all of the project's own components. Neither the inline comment nor the surrounding prose warns the reader of this. A user who reads the prose (\"add your workspace package source files to the `include` option\") and adapts only the workspace-specific path will inadvertently clobber the default and lose all prop generation locally.\n\n2. **typescript.mdx line 117** \u2014 The body correctly explains \"the underlying Vite plugin\u2026\" but the section title (`### Inherited props are missing for components from workspace packages`) and opening sentence make no mention of Vite. Webpack-based React projects also use `react-docgen-typescript` and can surface the same symptom for different reasons; users on Webpack will hit this heading and potentially apply a fix that doesn't address their actual root cause.\n\n===FINAL_REVIEW_OUTPUT_BEGIN===\n```json\n{\n  \"inline_comments\": [\n    {\n      \"file_path\": \"docs/configure/integration/typescript.mdx\",\n      \"line_number\": 119,\n      \"category\": \"Code Defect\",\n      \"importance\": \"major\",\n      \"comment\": \"The instruction 'add your workspace package source files to the `include` option' is incomplete and potentially misleading. Setting `reactDocgenTypescriptOptions.include` replaces the plugin's default glob entirely \u2014 it does not append to it. Users who follow only the prose and write `include: ['../../packages/ui/src/**/*.tsx']` (without also restoring the default `**/**.tsx`) will silently break prop inference for all components in their own project. The prose must explicitly warn that the default glob must be re-declared when `include` is customised. For example: 'Because setting `include` replaces the plugin default (`**/**.tsx`), you must also re-add that pattern to avoid losing prop inference for your own project's components.'\"\n    },\n    {\n      \"file_path\": \"docs/_snippets/storybook-main-rdt-monorepo-include.md\",\n      \"line_number\": 12,\n      \"category\": \"Maintainability and Readability\",\n      \"importance\": \"minor\",\n      \"comment\": \"The inline comment `// Add your workspace package source files so they're included in the TS program` only explains the workspace-path entry, leaving the purpose of `'**/**.tsx'` entirely undocumented. Since this is the critical gotcha in the fix \u2014 omitting this default glob silently destroys all prop inference for the app \u2014 the comment should clarify that `**/**.tsx` is the plugin's default that must be preserved. For example: `// '**/**.tsx' re-adds the plugin default (required because setting include replaces it)`.\"\n    },\n    {\n      \"file_path\": \"docs/configure/integration/typescript.mdx\",\n      \"line_number\": 117,\n      \"category\": \"Maintainability and Readability\",\n      \"importance\": \"minor\",\n      \"comment\": \"The root-cause explanation correctly names 'the underlying Vite plugin', but the section title and the opening sentence are not scoped to Vite. Webpack-based React projects also use `react-docgen-typescript` and can exhibit missing inherited props for entirely different reasons. Users on Webpack will hit this heading, read through the fix, and may apply it incorrectly or be misled about their actual issue. The section title or opening sentence should qualify the scope, e.g. 'If you're using `react-docgen-typescript` with a Vite-based framework in a monorepo\u2026'.\"\n    }\n  ],\n  \"general_comments\": []\n}\n```",
+  "stop_reason": "end_turn",
+  "session_id": "77d6c8fa-949a-47c8-8ca8-1eba4214b8d1",
+  "total_cost_usd": 0.24119564999999998,
+  "usage": {
+    "input_tokens": 10,
+    "cache_creation_input_tokens": 14290,
+    "cache_read_input_tokens": 121068,
+    "output_tokens": 5712,
+    "server_tool_use": {
+      "web_search_requests": 0,
+      "web_fetch_requests": 0
+    },
+    "service_tier": "standard",
+    "cache_creation": {
+      "ephemeral_1h_input_tokens": 14290,
+      "ephemeral_5m_input_tokens": 0
+    },
+    "inference_geo": "",
+    "iterations": [],
+    "speed": "standard"
+  },
+  "modelUsage": {
+    "claude-sonnet-4-6": {
+      "inputTokens": 10,
+      "outputTokens": 5712,
+      "cacheReadInputTokens": 121068,
+      "cacheCreationInputTokens": 14290,
+      "webSearchRequests": 0,
+      "costUSD": 0.1756179,
+      "contextWindow": 200000,
+      "maxOutputTokens": 32000
+    },
+    "claude-haiku-4-5-20251001": {
+      "inputTokens": 67,
+      "outputTokens": 4301,
+      "cacheReadInputTokens": 217120,
+      "cacheCreationInputTokens": 17835,
+      "webSearchRequests": 0,
+      "costUSD": 0.06557774999999999,
+      "contextWindow": 200000,
+      "maxOutputTokens": 32000
+    }
+  },
+  "permission_denials": [],
+  "fast_mode_state": "off",
+  "uuid": "a5305cd9-a3ec-4582-b83b-e82b12f94c65"
+}

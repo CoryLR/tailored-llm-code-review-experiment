@@ -1,0 +1,11 @@
+[
+  {
+    "body": "_\u26a0\ufe0f Potential issue_ | _\ud83d\udfe0 Major_\n\n**Preserve an explicit empty tag selection.**\n\n`parseTagsParam('')` already means \u201cno filters\u201d, but returning `undefined` here turns that into \u201cno `tags` param\u201d. `code/core/src/manager-api/modules/stories.ts` treats an absent `tags` param as \u201cuse preset defaults\u201d, so clearing the last active filter cannot round-trip when any preset has `defaultFilterSelection`. Please keep a distinct empty serialization and make sure the URL-writing path preserves empty strings instead of dropping them.\n\n<details>\n<summary>\ud83e\udd16 Prompt for AI Agents</summary>\n\n```\nVerify each finding against the current code and only fix it if needed.\n\nIn `@code/core/src/manager-api/modules/tags.ts` around lines 39 - 42, The\nserialization currently returns undefined when both included and excluded are\nempty which collapses an explicit \u201cno tags\u201d selection into an absent tags param;\nchange serializeTagsParam (in code/core/src/manager-api/modules/tags.ts) to\nreturn an explicit empty string ('') when included.length===0 &&\nexcluded.length===0 so the URL-writing path can preserve the empty value instead\nof dropping the param, and ensure this aligns with parseTagsParam so\nparseTagsParam('') continues to mean \u201cno filters\u201d while undefined remains \u201cno\ntags param / use presets\u201d (verify any callers in stories.ts that write the tags\nparam do not treat '' as missing).\n```\n\n</details>\n\n<!-- fingerprinting:phantom:medusa:grasshopper -->\n\n<!-- This is an auto-generated comment by CodeRabbit -->\n\n\u2705 Addressed in commit c9da280",
+    "author": "coderabbitai",
+    "file_path": "code/core/src/manager-api/modules/tags.ts",
+    "line_number": null,
+    "is_resolved": true,
+    "is_outdated": true,
+    "category": "inline"
+  }
+]

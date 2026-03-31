@@ -1,0 +1,26 @@
+{
+  "inline_comments": [
+    {
+      "file_path": "docs/configure/integration/typescript.mdx",
+      "line_number": 117,
+      "category": "Maintainability and Readability",
+      "importance": "minor",
+      "comment": "The explanation correctly names 'the underlying Vite plugin,' but the surrounding `<IfRenderer renderer=\"react\">` block applies to all React users regardless of builder. The existing docs (table row for `reactDocgenTypescriptOptions`) explicitly note it 'configures the react-docgen-typescript-plugin per builder,' so Webpack users with the same symptom will also land here and be confused. The section heading (or opening sentence) should call out that this issue is specific to the Vite builder, e.g., '...workspace packages (Vite builder)' or a parenthetical clarification in the opening sentence."
+    },
+    {
+      "file_path": "docs/_snippets/storybook-main-rdt-monorepo-include.md",
+      "line_number": 12,
+      "category": "Code Defect",
+      "importance": "minor",
+      "comment": "The workspace pattern `../../packages/ui/src/**/*.tsx` only covers `.tsx` files. Many workspace packages export shared type definitions from plain `.ts` files (e.g., `types.ts`, `Button.types.ts`, or an entire types-only package with no JSX). Those files won't be included in the TypeScript program, leaving the fix incomplete for those setups. Consider documenting a combined pattern such as `'../../packages/ui/src/**/*.{ts,tsx}'` or noting that users should add a separate `.ts` pattern if their shared package has non-JSX type files."
+    },
+    {
+      "file_path": "docs/_snippets/storybook-main-rdt-monorepo-include.md",
+      "line_number": 11,
+      "category": "Maintainability and Readability",
+      "importance": "minor",
+      "comment": "The comment '// Add your workspace package source files so they're included in the TS program' does not explain that the first element `'**/**.tsx'` is required to preserve the plugin's default file coverage. Providing an `include` array replaces the default entirely \u2014 a user who adapts this snippet and omits the first entry would unknowingly stop Storybook from processing all their local `.tsx` files. The comment should make this explicit, e.g.: '// The first entry preserves the default (all local .tsx files); the second adds your workspace package files.'"
+    }
+  ],
+  "general_comments": []
+}

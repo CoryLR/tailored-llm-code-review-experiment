@@ -1,4 +1,4 @@
-# 001: GitLab API Field Validation
+# Finding 001: GitLab API Field Validation
 
 Feb 22, 2026. Script: `exploratory-tests/test1_validate_api_fields.py`
 

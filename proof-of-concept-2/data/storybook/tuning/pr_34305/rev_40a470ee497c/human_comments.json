@@ -1,0 +1,11 @@
+[
+  {
+    "body": "_\u26a0\ufe0f Potential issue_ | _\ud83d\udfe0 Major_\n\n**Fix `statusPriority` order for change-detection statuses.**\n\nCurrent order makes `status-value:new` outrank `status-value:affected`. The intended order is `success < new < modified < affected < warning`.\n\n\n\n<details>\n<summary>\ud83d\udd01 Proposed fix</summary>\n\n```diff\n-  'status-value:modified',\n-  'status-value:affected',\n-  'status-value:new',\n+  'status-value:new',\n+  'status-value:modified',\n+  'status-value:affected',\n```\n</details>\n\n<!-- suggestion_start -->\n\n<details>\n<summary>\ud83d\udcdd Committable suggestion</summary>\n\n> \u203c\ufe0f **IMPORTANT**\n> Carefully review the code before committing. Ensure that it accurately replaces the highlighted code, contains no missing lines, and has no issues with indentation. Thoroughly test & benchmark the code to ensure it meets the requirements.\n\n```suggestion\n  'status-value:new',\n  'status-value:modified',\n  'status-value:affected',\n```\n\n</details>\n\n<!-- suggestion_end -->\n\n<details>\n<summary>\ud83e\udd16 Prompt for AI Agents</summary>\n\n```\nVerify each finding against the current code and only fix it if needed.\n\nIn `@code/core/src/manager/utils/status.tsx` around lines 32 - 34, The\nstatusPriority array currently places 'status-value:new' after\n'status-value:affected'; update the ordering in the statusPriority constant so\nit follows the intended precedence success < new < modified < affected < warning\nby placing 'status-value:new' immediately after 'status-value:success', then\n'status-value:modified', then 'status-value:affected', and keeping\n'status-value:warning' last; modify the statusPriority definition (and any\nreferences to it) accordingly to ensure change-detection statuses rank as:\n'status-value:success', 'status-value:new', 'status-value:modified',\n'status-value:affected', 'status-value:warning'.\n```\n\n</details>\n\n<!-- fingerprinting:phantom:poseidon:hawk -->\n\n<!-- This is an auto-generated comment by CodeRabbit -->",
+    "author": "coderabbitai",
+    "file_path": "code/core/src/manager/utils/status.tsx",
+    "line_number": null,
+    "is_resolved": true,
+    "is_outdated": true,
+    "category": "inline"
+  }
+]

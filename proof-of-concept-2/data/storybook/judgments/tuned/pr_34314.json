@@ -1,0 +1,30 @@
+{
+  "matches": [
+    {
+      "human_comment_index": 0,
+      "human_type": "inline",
+      "human_file": null,
+      "human_line": null,
+      "human_summary": "Items should be sorted alphabetically",
+      "verdict": "no_match",
+      "matched_agent_comment_index": null,
+      "explanation": "The human comment is about alphabetical sorting of items, while the only AI comment is about an incorrect default value in documentation. Completely different concerns."
+    }
+  ],
+  "novel_agent_comments": [
+    {
+      "agent_comment_index": 0,
+      "assessment": "true_positive",
+      "explanation": "Flagging a documentation default value that contradicts the actual runtime default in code is a genuinely useful finding. If the code sets changeDetection: false but docs say Default: true, that is a real documentation bug that would confuse users."
+    }
+  ],
+  "summary": {
+    "total_human_comments": 1,
+    "full_matches": 0,
+    "partial_matches": 0,
+    "no_matches": 1,
+    "novel_agent_comments": 1,
+    "recall_at_full": 0.0,
+    "recall_at_partial": 0.0
+  }
+}

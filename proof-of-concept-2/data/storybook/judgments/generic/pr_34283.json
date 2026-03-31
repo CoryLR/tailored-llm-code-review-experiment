@@ -1,0 +1,70 @@
+{
+  "matches": [
+    {
+      "human_comment_index": 0,
+      "human_type": "inline",
+      "human_file": null,
+      "human_line": null,
+      "human_summary": "Why aren't we reusing existing code in navigateWithQueryParams?",
+      "verdict": "full_match",
+      "matched_agent_comment_index": 2,
+      "explanation": "Both comments identify that navigateWithQueryParams duplicates existing URL-building logic and suggest reusing the existing code rather than reimplementing it."
+    },
+    {
+      "human_comment_index": 1,
+      "human_type": "inline",
+      "human_file": null,
+      "human_line": null,
+      "human_summary": "_changed doesn't belong here",
+      "verdict": "no_match",
+      "matched_agent_comment_index": null,
+      "explanation": "No AI comment addresses anything related to a '_changed' property being in the wrong location."
+    },
+    {
+      "human_comment_index": 2,
+      "human_type": "inline",
+      "human_file": null,
+      "human_line": null,
+      "human_summary": "Should these be sorted?",
+      "verdict": "no_match",
+      "matched_agent_comment_index": null,
+      "explanation": "No AI comment raises a concern about sorting."
+    }
+  ],
+  "novel_agent_comments": [
+    {
+      "agent_comment_index": 0,
+      "assessment": "true_positive",
+      "explanation": "Identifies a real behavioral bug: serializeTagsParam returns '' (empty string) which is not nullish, so ?? null won't trigger, leaving a stale '?tags=' in the URL and overriding defaults on reload. This is a genuine code defect with a concrete fix suggestion."
+    },
+    {
+      "agent_comment_index": 1,
+      "assessment": "true_positive",
+      "explanation": "Identifies a legitimate logic error where storyPassesFilter only accepts type === 'story' but not 'docs', causing incorrect redirects for valid docs entries that match the filter."
+    },
+    {
+      "agent_comment_index": 3,
+      "assessment": "true_positive",
+      "explanation": "Identifies the same type-checking inconsistency in selectFirstStory, where only 'story' type entries are considered but docs entries are valid filter targets. Consistent with the finding in Agent Comment 1."
+    },
+    {
+      "agent_comment_index": 4,
+      "assessment": "true_positive",
+      "explanation": "Identifies unnecessary double storage reads in getInitialState. While minor, it's a valid performance concern and the observation about the test workaround confirms it's a real issue."
+    },
+    {
+      "agent_comment_index": 5,
+      "assessment": "true_positive",
+      "explanation": "Reasonable suggestion for integration-level test coverage that would catch the ?? vs || bug described in Agent Comment 0. This is actionable test feedback."
+    }
+  ],
+  "summary": {
+    "total_human_comments": 3,
+    "full_matches": 1,
+    "partial_matches": 0,
+    "no_matches": 2,
+    "novel_agent_comments": 5,
+    "recall_at_full": 0.33,
+    "recall_at_partial": 0.33
+  }
+}

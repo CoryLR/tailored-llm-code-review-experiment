@@ -1,0 +1,12 @@
+{
+  "inline_comments": [
+    {
+      "file_path": "docs/api/main-config/main-config-features.mdx",
+      "line_number": 145,
+      "category": "Code Defect",
+      "importance": "major",
+      "comment": "The documented default (`true`) contradicts the actual runtime value. The preset in `common-preset.ts` explicitly sets `changeDetection: false`, and the JSDoc annotation in `core-common.ts` also says `@default false`. A user reading the docs will expect the feature to be on by default, but it is in fact off. Change this to `Default: \\`false\\``."
+    }
+  ],
+  "general_comments": []
+}

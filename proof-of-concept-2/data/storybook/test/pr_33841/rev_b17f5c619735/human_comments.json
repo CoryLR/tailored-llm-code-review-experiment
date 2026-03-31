@@ -1,0 +1,56 @@
+[
+  {
+    "body": "```suggestion\n// Replace your-framework with the framework you are using, e.g. react-vite, nextjs, nextjs-vite, etc.\n```",
+    "author": "kylegach",
+    "file_path": "docs/_snippets/storybook-main-rdt-monorepo-include.md",
+    "line_number": null,
+    "is_resolved": true,
+    "is_outdated": true,
+    "category": "inline"
+  },
+  {
+    "body": "```suggestion\n      // \ud83d\udc47 Add your workspace package source files so they're included in the TS program\n```",
+    "author": "kylegach",
+    "file_path": "docs/_snippets/storybook-main-rdt-monorepo-include.md",
+    "line_number": null,
+    "is_resolved": true,
+    "is_outdated": true,
+    "category": "inline"
+  },
+  {
+    "body": "```suggestion\n      // \ud83d\udc47 Add your workspace package source files so they're included in the TS program\n```",
+    "author": "kylegach",
+    "file_path": "docs/_snippets/storybook-main-rdt-monorepo-include.md",
+    "line_number": null,
+    "is_resolved": true,
+    "is_outdated": true,
+    "category": "inline"
+  },
+  {
+    "body": "```suggestion\n  ### Inherited args are missing for components from workspace packages\n```",
+    "author": "kylegach",
+    "file_path": "docs/configure/integration/typescript.mdx",
+    "line_number": null,
+    "is_resolved": true,
+    "is_outdated": true,
+    "category": "inline"
+  },
+  {
+    "body": "```suggestion\n  If you're using `react-docgen-typescript` in a monorepo with npm/yarn/pnpm workspaces, you may find that components imported from a workspace package are missing inherited args (e.g., MUI's `ButtonProps`), while the same component imported locally works fine.\n```",
+    "author": "kylegach",
+    "file_path": "docs/configure/integration/typescript.mdx",
+    "line_number": null,
+    "is_resolved": true,
+    "is_outdated": true,
+    "category": "inline"
+  },
+  {
+    "body": "```suggestion\n  Adjust the path (`../../packages/ui/src/**/*.tsx`) to match your monorepo layout. Note that `tsconfigPath` only affects compiler options. It does not change which files are included in the TypeScript program.\n```\n\nCan you clarify the `tsconfigPath` part? It seems to be missing some context.",
+    "author": "kylegach",
+    "file_path": "docs/configure/integration/typescript.mdx",
+    "line_number": null,
+    "is_resolved": true,
+    "is_outdated": true,
+    "category": "inline"
+  }
+]

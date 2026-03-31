@@ -1,0 +1,70 @@
+{
+  "matches": [
+    {
+      "human_comment_index": 0,
+      "human_type": "inline",
+      "human_file": null,
+      "human_line": null,
+      "human_summary": "Why aren't we reusing existing logic in navigateWithQueryParams?",
+      "verdict": "full_match",
+      "matched_agent_comment_index": 4,
+      "explanation": "Both comments raise the same concern: navigateWithQueryParams duplicates URL construction logic already present in navigateTo, and the code should be consolidated."
+    },
+    {
+      "human_comment_index": 1,
+      "human_type": "inline",
+      "human_file": null,
+      "human_line": null,
+      "human_summary": "_changed doesn't belong here",
+      "verdict": "no_match",
+      "matched_agent_comment_index": null,
+      "explanation": "No AI comment mentions _changed or addresses a misplaced field/property."
+    },
+    {
+      "human_comment_index": 2,
+      "human_type": "inline",
+      "human_file": null,
+      "human_line": null,
+      "human_summary": "Should these be sorted?",
+      "verdict": "no_match",
+      "matched_agent_comment_index": null,
+      "explanation": "No AI comment directly raises sorting as its primary concern. Agent Comment 4 mentions sort order tangentially but its core point is code deduplication, not sorting."
+    }
+  ],
+  "novel_agent_comments": [
+    {
+      "agent_comment_index": 0,
+      "assessment": "true_positive",
+      "explanation": "Identifies a plausible bug where `??` (nullish coalescing) doesn't coerce empty strings to null, causing stale query params. The reasoning chain is concrete and the fix is actionable."
+    },
+    {
+      "agent_comment_index": 1,
+      "assessment": "true_positive",
+      "explanation": "Highlights that docs entries in filteredIndex are not recognized by storyPassesFilter, which could cause unnecessary redirects. A reasonable logic concern."
+    },
+    {
+      "agent_comment_index": 2,
+      "assessment": "true_positive",
+      "explanation": "Points out a mismatch between viewMode from the event payload and the actual type of the first filtered entry, which could produce incorrect URLs. A valid edge case."
+    },
+    {
+      "agent_comment_index": 3,
+      "assessment": "true_positive",
+      "explanation": "Notes inconsistency between selectFirstStory and the STORY_SPECIFIED handler in their treatment of docs entries. Consistent with Agent Comment 1 and reasonable."
+    },
+    {
+      "agent_comment_index": 5,
+      "assessment": "false_positive",
+      "explanation": "The race condition concern is speculative and unlikely given typical initialization order. Without evidence that this race actually occurs, it adds noise rather than value."
+    }
+  ],
+  "summary": {
+    "total_human_comments": 3,
+    "full_matches": 1,
+    "partial_matches": 0,
+    "no_matches": 2,
+    "novel_agent_comments": 5,
+    "recall_at_full": 0.33,
+    "recall_at_partial": 0.33
+  }
+}

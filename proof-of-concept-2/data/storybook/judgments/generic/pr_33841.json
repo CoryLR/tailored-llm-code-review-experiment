@@ -1,0 +1,90 @@
+{
+  "matches": [
+    {
+      "human_comment_index": 0,
+      "human_type": "inline",
+      "human_file": "docs/_snippets/storybook-main-rdt-monorepo-include.md",
+      "human_line": null,
+      "human_summary": "Minor wording suggestion to clarify framework replacement text",
+      "verdict": "no_match",
+      "matched_agent_comment_index": null,
+      "explanation": "No AI comment addresses this editorial wording suggestion about framework examples."
+    },
+    {
+      "human_comment_index": 1,
+      "human_type": "inline",
+      "human_file": "docs/_snippets/storybook-main-rdt-monorepo-include.md",
+      "human_line": null,
+      "human_summary": "Add \ud83d\udc47 emoji prefix to comment about workspace package source files",
+      "verdict": "no_match",
+      "matched_agent_comment_index": null,
+      "explanation": "Agent Comment 2 is on the same comment area but raises a completely different concern (explaining the first include entry preserves defaults). The human just wants the \ud83d\udc47 emoji added."
+    },
+    {
+      "human_comment_index": 2,
+      "human_type": "inline",
+      "human_file": "docs/_snippets/storybook-main-rdt-monorepo-include.md",
+      "human_line": null,
+      "human_summary": "Add \ud83d\udc47 emoji prefix to comment (second instance)",
+      "verdict": "no_match",
+      "matched_agent_comment_index": null,
+      "explanation": "Same editorial suggestion as Comment 1; no AI comment matches this."
+    },
+    {
+      "human_comment_index": 3,
+      "human_type": "inline",
+      "human_file": "docs/configure/integration/typescript.mdx",
+      "human_line": null,
+      "human_summary": "Adjust section heading text to 'Inherited args are missing for components from workspace packages'",
+      "verdict": "no_match",
+      "matched_agent_comment_index": null,
+      "explanation": "Agent Comment 0 discusses the heading/section scope (Vite specificity) but the human's concern is purely about the heading wording, not builder specificity."
+    },
+    {
+      "human_comment_index": 4,
+      "human_type": "inline",
+      "human_file": "docs/configure/integration/typescript.mdx",
+      "human_line": null,
+      "human_summary": "Reword explanation paragraph about react-docgen-typescript in monorepo with workspaces",
+      "verdict": "no_match",
+      "matched_agent_comment_index": null,
+      "explanation": "No AI comment addresses the specific rewording of this explanation paragraph."
+    },
+    {
+      "human_comment_index": 5,
+      "human_type": "inline",
+      "human_file": "docs/configure/integration/typescript.mdx",
+      "human_line": null,
+      "human_summary": "Reword path explanation and request clarification about tsconfigPath context",
+      "verdict": "no_match",
+      "matched_agent_comment_index": null,
+      "explanation": "No AI comment addresses the tsconfigPath clarification or the suggested rewording."
+    }
+  ],
+  "novel_agent_comments": [
+    {
+      "agent_comment_index": 0,
+      "assessment": "true_positive",
+      "explanation": "Pointing out that the section applies to all React users but the issue may be Vite-builder specific is a valid observation that could prevent user confusion. A reasonable documentation concern."
+    },
+    {
+      "agent_comment_index": 1,
+      "assessment": "true_positive",
+      "explanation": "Noting that the glob pattern only covers .tsx and not .ts files is a genuinely useful observation. Workspace packages with type-only .ts files would be missed, making the fix incomplete for some users."
+    },
+    {
+      "agent_comment_index": 2,
+      "assessment": "true_positive",
+      "explanation": "Explaining that providing an include array replaces the default and that omitting the first entry would break local file processing is a valuable insight that could prevent user errors when adapting the snippet."
+    }
+  ],
+  "summary": {
+    "total_human_comments": 6,
+    "full_matches": 0,
+    "partial_matches": 0,
+    "no_matches": 6,
+    "novel_agent_comments": 3,
+    "recall_at_full": 0.0,
+    "recall_at_partial": 0.0
+  }
+}

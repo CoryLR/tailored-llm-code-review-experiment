@@ -1,0 +1,46 @@
+{
+  "inline_comments": [
+    {
+      "file_path": "code/core/src/manager-api/modules/stories.ts",
+      "line_number": 452,
+      "category": "Code Defect",
+      "importance": "major",
+      "comment": "`serializeTagsParam` returns `''` (not `null` or `undefined`) when both filter arrays are empty (see tags.ts line 41). The nullish coalescing operator `??` only kicks in for `null`/`undefined`, so `'' ?? null` evaluates to `''`. This means when all tag filters are cleared, `applyQueryParams` receives `{ tags: '' }`. Because `setQueryParams` in url.ts only deletes a key when the value is `null` or `undefined` (not for empty strings), `customQueryParams.tags` is set to `''` and the URL gets `?tags=` instead of the param being removed. On the next page load `tags !== undefined` is `true`, so `hasTagsParam = true`, and `parseTagsParam('')` returns empty arrays that override the configured default tag filters. The fix already exists elsewhere in the same module: use `|| null` (logical OR) instead of `?? null`, matching the pattern used for `args` and `globals` in url.ts lines 351 and 380."
+    },
+    {
+      "file_path": "code/core/src/manager-api/modules/stories.ts",
+      "line_number": 965,
+      "category": "Code Defect",
+      "importance": "major",
+      "comment": "`storyPassesFilter` checks `filteredIndex[storyId]?.type === 'story'`, but a docs entry that passes the active filter has `type === 'docs'`, so this expression evaluates to `false` for it. That causes the redirect-to-first-filtered branch to fire even though the specified story actually satisfies the filter \u2014 it just happens to be a docs entry. The redirect target selection on lines 969-973 correctly accepts both `'story'` and `'docs'` types, making the asymmetry a concrete mismatch: a user navigating to `?tags=myTag` would be bounced away from a valid docs entry that carries `myTag`. The condition should check for presence in `filteredIndex` (i.e., `filteredIndex[storyId] !== undefined`) rather than additionally constraining the type."
+    },
+    {
+      "file_path": "code/core/src/manager-api/modules/stories.ts",
+      "line_number": 437,
+      "category": "Maintainability and Readability",
+      "importance": "minor",
+      "comment": "`navigateWithQueryParams` reimplements the same filter-sort-join pattern as the private `navigateTo` function in url.ts (lines 227-232 of url.ts). Because `navigateTo` is module-private, stories.ts must duplicate it. If the URL-building logic in url.ts ever changes (e.g., switching to a proper `?` separator, adding URI encoding, or changing the empty-value filtering predicate) stories.ts would silently diverge. Consider exposing a shared helper or extending the `applyQueryParams` API to accept a destination path, so there is a single canonical URL-building code path."
+    },
+    {
+      "file_path": "code/core/src/manager-api/modules/stories.ts",
+      "line_number": 563,
+      "category": "Code Defect",
+      "importance": "minor",
+      "comment": "The filtered branch of `selectFirstStory` (the newly added block) only looks for entries with `type === 'story'`. If the filtered index contains only docs entries (e.g., the user filtered by a tag that only appears on docs pages), the search yields nothing and the function returns without navigating, leaving the preview blank. For consistency with the `firstFiltered` selection in the STORY_SPECIFIED handler (lines 969-973), the predicate should accept both `type === 'story'` and `type === 'docs'`."
+    },
+    {
+      "file_path": "code/core/src/manager-api/store.ts",
+      "line_number": 80,
+      "category": "Performance Issue",
+      "importance": "minor",
+      "comment": "The migration check calls `get(store.local)` and `get(store.session)` once each (lines 81), then calls them again unconditionally when building the merged state (lines 91-92). Each call hits the underlying storage. The values returned on lines 81 could be reused directly instead of re-reading storage a second time. As-is, this doubles the storage reads on every `getInitialState` call (not just when a migration is needed), which also forced the unit test to register double mock return values as a workaround."
+    }
+  ],
+  "general_comments": [
+    {
+      "category": "Maintainability and Readability",
+      "importance": "minor",
+      "comment": "The `serializeTagsParam` / `parseTagsParam` round-trip is not fully tested at the integration boundary that matters most: the `persistFilters \u2192 applyQueryParams \u2192 URL` path. The new tests in tags.test.js confirm that `serializeTagsParam([], [])` returns `''`, but there is no test asserting that clearing all filters causes the `tags` query parameter to be absent from the URL (rather than present as an empty `tags=` value). Adding a test that exercises `resetTagFilters` or `setAllTagFilters([], [])` and then checks the resulting navigate call or `customQueryParams` would have caught the `?? null` vs `|| null` defect described above."
+    }
+  ]
+}
